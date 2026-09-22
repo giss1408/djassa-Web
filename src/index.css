@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Base layer — resets, typography defaults, focus, and reveal choreography.
+   Tokens live in styles/tokens.css and are imported before this file.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keeps anchored sections clear of the sticky header. */
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font: var(--step-0) / 1.65 var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  letter-spacing: -0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paper texture: a barely-there warm grain that keeps large flat areas from
+   looking like a flat screen colour. Fixed so it reads as the sheet, not an
+   element that scrolls with the content. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: radial-gradient(rgba(24, 34, 31, 0.045) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--paper);
+}
+
+/* --- Focus ---------------------------------------------------------------
+   The previous page relied entirely on the UA outline, which disappeared
+   against dark panels. A visible, high-contrast ring on every interactive
+   element is a baseline requirement, not a nicety. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 1.1rem;
+  color: var(--paper);
+  background: var(--ink);
+  font-size: var(--step--1);
+  letter-spacing: 0.02em;
+  transform: translateY(-160%);
+  transition: transform var(--dur) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* --- Reveal --------------------------------------------------------------
+   `reveal-enabled` is added by JS only after confirming IntersectionObserver
+   support and that reduced motion is not requested, so content is visible by
+   default for crawlers, no-JS readers and motion-sensitive visitors. */
+.reveal-enabled [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+}
+
+.reveal-enabled [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  body::before,
+  .nav-wrap,
+  .ticker,
+  .skip-link {
+    display: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
