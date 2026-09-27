@@ -1,5 +1,5 @@
 /**
- * French copy. Source of truth for claims: djassa/docs/{PRODUCT-CONCEPT,
+ * French copy. Source of truth for claims: djassa-BE/docs/{PRODUCT-CONCEPT,
  * BUSINESS-MODEL,ROADMAP,PARTNERS-AND-OUTREACH}.md and the research notes.
  *
  * Every market figure carries its own source and date, because the research

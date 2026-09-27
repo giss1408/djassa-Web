@@ -3,7 +3,7 @@
 Single-page investor and partner site for Djassa. React + Vite, no UI framework.
 
 The narrative and every factual claim come from the concept documents in
-`../djassa/docs/`: `PRODUCT-CONCEPT.md`, `djassa-product-concept-v2.md`,
+`../djassa-BE/docs/`: `PRODUCT-CONCEPT.md`, `djassa-product-concept-v2.md`,
 `BUSINESS-MODEL.md`, `ROADMAP.md`, `PARTNERS-AND-OUTREACH.md`, and the French
 research notes. **When a claim changes there, change it here.**
 
