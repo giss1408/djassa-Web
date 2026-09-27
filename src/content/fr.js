@@ -65,6 +65,17 @@ export const fr = {
     'Consentement explicite',
     'Aucun dépôt détenu',
   ],
+  word: {
+    kicker: 'Le nom',
+    phonetic: '/dja.sa/',
+    pos: 'nom masculin',
+    origin: 'Nouchi — la langue de la rue à Abidjan',
+    senses: [
+      'Marché informel de rue : le marché spontané, au bord de la route ou dans le quartier, où l’on vend de tout, des habits de seconde main aux téléphones, souvent sans étal officiel ni autorisation.',
+      'Par extension, la rue, le « quartier » : le monde de l’économie informelle et de la débrouille quotidienne — un milieu rude et vivant où l’on s’en sort grâce aux petits commerces, aux combines et au sens de la rue.',
+    ],
+    why: 'Nous avons pris ce nom parce que c’est exactement pour eux que nous construisons : les commerçants du djassa, dont l’activité quotidienne est bien réelle mais ne laisse aucune preuve.',
+  },
   concept: {
     kicker: '01 / Le concept',
     title: 'Une seule habitude.',

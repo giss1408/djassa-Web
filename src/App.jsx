@@ -10,13 +10,14 @@ import { Nav } from './components/Nav.jsx'
 import { Roadmap } from './components/Roadmap.jsx'
 import { Status } from './components/Status.jsx'
 import { Thesis } from './components/Thesis.jsx'
+import { Word } from './components/Word.jsx'
 import { useLocale } from './hooks/useLocale.js'
 import { useReveal } from './hooks/useReveal.js'
 import './App.css'
 
 /**
  * Narrative order is deliberate and mirrors how the docs argue the case:
- * concept (one habit) → market (the gap) → positioning (where we don't go) →
+ * the name (what djassa means) → concept (one habit) → market (the gap) → positioning (where we don't go) →
  * thesis (why it compounds) → model (how it earns) → metric (what governs) →
  * execution (phases and gates) → red lines → real build status → the ask.
  */
@@ -34,6 +35,7 @@ export default function App() {
 
       <main id="main">
         <Hero content={content} />
+        <Word content={content} />
         <Concept content={content} />
         <Market content={content} />
         <Landscape content={content} />

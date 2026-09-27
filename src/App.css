@@ -593,6 +593,109 @@
 }
 
 /* --------------------------------------------------------------------------
+   3b. The name — dictionary entry for "djassa"
+   -------------------------------------------------------------------------- */
+
+.word-entry {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) 1.6fr;
+  gap: 1.5rem 3.5rem;
+  padding: 2.5rem;
+  background: var(--paper-raised);
+  border-left: 3px solid var(--orange);
+}
+
+.word-term {
+  font: italic 400 var(--display-lg) / 0.95 var(--serif);
+  color: var(--ink);
+}
+
+.word-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.word-phon {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  color: var(--ink-soft);
+}
+
+.word-pos {
+  font-style: italic;
+  align-self: center;
+}
+
+.word-origin {
+  flex-basis: 100%;
+  color: var(--orange-text);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.word-senses {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.word-senses li {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.word-sense-n {
+  flex: none;
+  min-width: 1.1em;
+  color: var(--orange-text);
+  font: 400 var(--step-2) / 1.4 var(--serif);
+}
+
+.word-senses p {
+  max-width: 60ch;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  line-height: 1.7;
+}
+
+.word-why {
+  grid-column: 2;
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-size: var(--step-0);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.word-why span {
+  flex: none;
+  color: var(--orange);
+  font-style: normal;
+}
+
+@media (max-width: 860px) {
+  .word-entry {
+    grid-template-columns: 1fr;
+    padding: 1.6rem 1.35rem;
+  }
+
+  .word-why {
+    grid-column: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
    4. Concept — the event stream
    -------------------------------------------------------------------------- */
 

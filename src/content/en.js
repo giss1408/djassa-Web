@@ -60,6 +60,17 @@ export const en = {
     'Explicit consent',
     'No deposits held',
   ],
+  word: {
+    kicker: 'The name',
+    phonetic: '/dja.sa/',
+    pos: 'noun',
+    origin: 'Nouchi — Abidjan street language',
+    senses: [
+      'An informal street market: the spontaneous roadside or neighbourhood market where vendors sell everything from second-hand clothes to phones, often without official stalls or permits.',
+      'By extension, the street, the “hood”: the world of the informal economy and the daily hustle — the rough, lively place where people get by through small trades, deals and street smarts.',
+    ],
+    why: 'We took the name because that is exactly who we build for: the merchants of the djassa, whose everyday activity is real but leaves no proof behind.',
+  },
   concept: {
     kicker: '01 / The concept',
     title: 'One habit.',
