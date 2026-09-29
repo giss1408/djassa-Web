@@ -7,6 +7,8 @@
  * (58% World Bank vs. up to 84% local sector) and must never be published as a
  * single unsourced number.
  */
+import { learnFr } from './learn.fr.js'
+
 export const fr = {
   locale: 'fr-CI',
   meta: {
@@ -19,6 +21,7 @@ export const fr = {
     home: 'Djassa — accueil',
     links: [
       { href: '#concept', label: 'Le concept' },
+      { href: '#demo', label: 'La démo' },
       { href: '#marche', label: 'Le marché' },
       { href: '#these', label: 'La thèse' },
       { href: '#modele', label: 'Le modèle' },
@@ -65,6 +68,7 @@ export const fr = {
     'Consentement explicite',
     'Aucun dépôt détenu',
   ],
+  learn: learnFr,
   word: {
     kicker: 'Le nom',
     phonetic: '/dja.sa/',

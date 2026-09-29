@@ -865,6 +865,1650 @@
 }
 
 /* --------------------------------------------------------------------------
+   4b. Learning area — walkthrough, device mocks, controls, revenue
+   Sits between the concept and the market, matching App.jsx.
+   -------------------------------------------------------------------------- */
+
+.learn-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+  align-items: end;
+}
+
+.learn-head-side .lede {
+  margin-top: 0;
+}
+
+.learn-howto {
+  max-width: 46ch;
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+  line-height: 1.7;
+}
+
+/* --- App chooser ---------------------------------------------------------- */
+
+.app-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.app-tab {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.25rem 1.4rem;
+  text-align: left;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  transition:
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+.app-tab:hover {
+  border-color: var(--line-strong);
+}
+
+.app-tab.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.app-tab-label {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  line-height: 1.1;
+}
+
+.app-tab.is-active .app-tab-label {
+  color: var(--on-dark);
+}
+
+.app-tab-tag {
+  color: var(--orange-text);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.app-tab.is-active .app-tab-tag {
+  color: var(--orange-tint);
+}
+
+.app-tab-file {
+  color: var(--muted);
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: -0.01em;
+}
+
+.app-tab.is-active .app-tab-file {
+  color: var(--on-dark-muted);
+}
+
+.app-pitch {
+  max-width: 62ch;
+  margin-top: 1.75rem;
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+/* --- Walkthrough layout --------------------------------------------------- */
+
+.walk {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.walk-device {
+  position: sticky;
+  /* Clears the sticky header; the annotation column is the taller one, so the
+     device stays in view while the reader works through it. */
+  top: 6.5rem;
+  margin: 0;
+}
+
+.walk-device figcaption {
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1.6;
+}
+
+.walk-count {
+  color: var(--orange-text);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.walk-name {
+  margin-top: 0.6rem;
+  font-family: var(--serif);
+  font-size: var(--display-sm);
+  line-height: 1;
+}
+
+.walk-summary {
+  max-width: 56ch;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  line-height: 1.7;
+}
+
+/* --- The three fixed axes ------------------------------------------------- */
+
+.walk-axes {
+  display: grid;
+  gap: 1px;
+  margin-top: 2rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.axis {
+  padding: 1.25rem 1.4rem;
+  background: var(--paper);
+}
+
+.axis dt {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.axis dd {
+  max-width: 60ch;
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+/* The mark is a glyph in a tinted square; the axis name is always spelled out
+   next to it, so the icon never carries the meaning alone. */
+.axis-mark {
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 0.75rem;
+}
+
+.axis-strength dt {
+  color: var(--orange-text);
+}
+
+.axis-strength .axis-mark {
+  background: rgba(230, 94, 50, 0.16);
+}
+
+.axis-security dt {
+  color: var(--green);
+}
+
+.axis-security .axis-mark {
+  background: var(--sage);
+}
+
+.axis-roi dt {
+  color: var(--ink);
+}
+
+.axis-roi .axis-mark {
+  background: var(--sand);
+}
+
+/* --- Stepper -------------------------------------------------------------- */
+
+.walk-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.walk-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  font-size: var(--step--1);
+  font-weight: 500;
+  transition:
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+.walk-arrow:hover:not(:disabled) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-dark);
+}
+
+.walk-arrow:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.walk-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.walk-step {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.walk-step:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.walk-step.is-current {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-dark);
+}
+
+.walk-step-n {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.625rem;
+  opacity: 0.7;
+}
+
+/* --- Event chain ---------------------------------------------------------- */
+
+.chain {
+  margin-top: 4.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.chain-head .lede {
+  margin-top: 1.25rem;
+}
+
+.chain-list {
+  display: grid;
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.chain-step {
+  display: grid;
+  grid-template-columns: 3rem 13rem minmax(0, 1fr);
+  gap: 0 1.5rem;
+  align-items: baseline;
+  padding: 1.15rem 1.4rem;
+  background: var(--paper);
+}
+
+.chain-n {
+  color: var(--orange-text);
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.75rem;
+}
+
+.chain-owner {
+  font-size: var(--step-0);
+  font-weight: 500;
+}
+
+.chain-text {
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.65;
+}
+
+.chain-note {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.75rem;
+  max-width: 78ch;
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+  line-height: 1.7;
+}
+
+.chain-note > span {
+  color: var(--orange-text);
+}
+
+/* --------------------------------------------------------------------------
+   4c. Device mocks — shared shell
+   Decorative reconstructions of the two Flutter apps. They are aria-hidden;
+   the annotation column carries the argument in real text.
+   -------------------------------------------------------------------------- */
+
+.phone {
+  --mock-ink: #18221f;
+  --mock-line: #e7e1d4;
+  --mock-muted: #5a615a;
+  container-type: inline-size;
+}
+
+.phone-shell {
+  position: relative;
+  overflow: hidden;
+  border: 9px solid #23201c;
+  border-radius: 2rem;
+  background: #fcfaf7;
+  box-shadow:
+    0 0 0 1px rgba(24, 34, 31, 0.12),
+    0 26px 50px -22px rgba(24, 34, 31, 0.5);
+}
+
+.phone-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 0.2rem;
+  color: var(--mock-ink);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.phone-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Signal and battery drawn rather than glyphed, so no icon font is needed. */
+.sig,
+.batt {
+  display: block;
+  background: var(--mock-ink);
+}
+
+.sig {
+  width: 0.7rem;
+  height: 0.5rem;
+  clip-path: polygon(0 100%, 22% 100%, 22% 62%, 0 62%, 0 100%, 39% 100%, 39% 40%, 61% 40%, 61% 100%, 78% 100%, 78% 16%, 100% 16%, 100% 100%);
+}
+
+.sig-low {
+  opacity: 0.45;
+}
+
+.batt {
+  width: 1.1rem;
+  height: 0.5rem;
+  border-radius: 1px;
+}
+
+.phone-screen {
+  display: flex;
+  flex-direction: column;
+  /* A fixed viewport so every mock is the same height and the sticky device
+     column does not jump as the reader steps through screens. */
+  height: 33rem;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   4d. Device mocks — merchant app (djassa-App-retailer)
+   Light, high-contrast, no icon glyphs, unaccented French: the app's own
+   documented choices for a market stall in sunlight on a cheap panel.
+   -------------------------------------------------------------------------- */
+
+.phone-retailer .phone-screen {
+  background: #fcfaf7;
+  font-family: var(--sans);
+}
+
+.r-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--mock-line);
+}
+
+.r-back {
+  font-size: 0.9375rem;
+}
+
+.r-bar-title {
+  flex: 1;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.r-bar-action {
+  color: #b5401d;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.r-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  overflow: hidden;
+}
+
+.r-signin {
+  gap: 0.5rem;
+  justify-content: center;
+  height: 100%;
+}
+
+.r-wordmark {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.r-sub {
+  margin-bottom: 0.9rem;
+  color: var(--mock-muted);
+  font-size: 0.75rem;
+}
+
+.r-today {
+  padding: 0.9rem;
+  background: #efeadd;
+  border-radius: 0.625rem;
+}
+
+.r-today-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+/* The day's total: the single largest element, as in the app. */
+.r-today-value {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.r-today-count {
+  display: block;
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+}
+
+.r-queue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.r-queue-action {
+  color: #b5401d;
+  font-weight: 600;
+}
+
+.r-button {
+  padding: 0.7rem;
+  background: #c94a22;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.r-button-ghost {
+  background: transparent;
+  border: 1.5px solid var(--mock-line);
+  color: var(--mock-ink);
+}
+
+.r-section {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.r-sales {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.r-sale-amount {
+  display: block;
+  font-size: 0.8125rem;
+}
+
+/* State is always a word, never a colour on its own. */
+.r-sale-state {
+  display: block;
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+}
+
+.r-sale-state.is-pending {
+  color: var(--mock-ink);
+  font-weight: 500;
+}
+
+.r-field {
+  padding: 0.55rem 0.7rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.25rem;
+}
+
+.r-field-label {
+  display: block;
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+}
+
+.r-field-value {
+  display: block;
+  font-size: 0.8125rem;
+}
+
+.r-field-hint {
+  color: #9a9789;
+}
+
+.r-field-amount {
+  border-color: #c94a22;
+  border-width: 2px;
+}
+
+.r-amount-typed {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.r-amount-echo {
+  font-size: 0.8125rem;
+}
+
+.r-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.r-chip {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--mock-line);
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+}
+
+.r-chip.is-on {
+  background: var(--mock-ink);
+  border-color: var(--mock-ink);
+  color: #fcfaf7;
+}
+
+.r-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.r-note {
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+
+.r-link {
+  margin-top: 0.4rem;
+  color: #b5401d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.r-deal {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.7rem;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.5rem;
+}
+
+.r-deal-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: baseline;
+  font-size: 0.8125rem;
+}
+
+/* Sponsored placement is labelled, in the app and here: unlabelled paid
+   placement erodes the discovery trust the customer app runs on. */
+.r-deal-badge {
+  padding: 0.1rem 0.4rem;
+  background: #f1e9d6;
+  border-radius: var(--radius-pill);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.r-deal-price {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.r-deal-price s {
+  color: var(--mock-muted);
+  font-weight: 400;
+}
+
+.r-deal-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+}
+
+.r-deal-end {
+  color: #b5401d;
+  font-weight: 600;
+}
+
+.r-preview {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.7rem;
+  background: #efeadd;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.r-preview s {
+  color: var(--mock-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4e. Device mocks — customer app (djassa-App-user)
+   Rounder, warmer, gradient headers and a raised centre pay button, per that
+   app's theme.dart — which itself derives from this site's tokens.
+   -------------------------------------------------------------------------- */
+
+.phone-user .phone-screen {
+  background: #f5f1e8;
+  font-family: var(--sans);
+}
+
+.u-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.u-header {
+  padding: 0.9rem 1rem 2.6rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  color: #fff;
+}
+
+.u-header-orange {
+  background: linear-gradient(135deg, #c94a22, #9e3517);
+}
+
+.u-header-green {
+  background: linear-gradient(135deg, #234b39, #173427);
+}
+
+.u-greeting {
+  display: block;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+.u-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.625rem;
+  font-weight: 400;
+}
+
+.u-tagline {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.6875rem;
+  opacity: 0.9;
+}
+
+/* Rides over the header's bottom edge, as in the app. */
+.u-points-card {
+  margin: -2rem 1rem 0;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 22px -12px rgba(59, 20, 6, 0.4);
+}
+
+.u-points-label {
+  display: block;
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.u-points-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.u-points-row strong {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+.u-points-row span {
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.u-points-row-big strong {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.u-points-row-big span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.u-quick {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0 1rem;
+}
+
+.u-quick-item {
+  flex: 1;
+  padding: 0.55rem 0.3rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.u-quick-item.is-primary {
+  background: #c94a22;
+  border-color: #c94a22;
+  color: #fff;
+}
+
+.u-section {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.u-section i {
+  color: #c94a22;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.u-card {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0 1rem;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
+  font-size: 0.8125rem;
+}
+
+.u-card-pharmacy {
+  border-left: 3px solid #12855a;
+}
+
+.u-meta {
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+}
+
+.u-badge {
+  justify-self: start;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.u-badge-duty {
+  background: #ddf3e8;
+  color: #0c6644;
+}
+
+/* --- Bottom bar ----------------------------------------------------------- */
+
+.u-nav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0.5rem 0.4rem 0.35rem;
+  background: #fff;
+  border-top: 1px solid var(--mock-line);
+}
+
+.u-nav-item,
+.u-nav-pay {
+  display: grid;
+  flex: 1;
+  gap: 0.2rem;
+  justify-items: center;
+  color: var(--mock-muted);
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+
+.u-nav-dot {
+  width: 1rem;
+  height: 1rem;
+  background: currentColor;
+  border-radius: 0.3rem;
+  opacity: 0.45;
+}
+
+.u-nav-item.is-active {
+  color: #c94a22;
+  font-weight: 800;
+}
+
+.u-nav-item.is-active .u-nav-dot {
+  opacity: 1;
+}
+
+/* The raised centre disc: paying is the gesture the whole design rests on. */
+.u-nav-pay {
+  position: relative;
+}
+
+.u-nav-disc {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-top: -1rem;
+  background: linear-gradient(135deg, #e65e32, #9e3517);
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.75rem;
+  box-shadow: 0 6px 14px -4px rgba(201, 74, 34, 0.6);
+}
+
+.u-nav-pay-label {
+  color: #c94a22;
+  font-weight: 800;
+}
+
+/* --- Scan ----------------------------------------------------------------- */
+
+.u-scan {
+  gap: 0;
+  background: #18221f;
+}
+
+.u-scan-view {
+  display: grid;
+  flex: 1;
+  gap: 0.5rem;
+  place-content: center;
+  justify-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.u-scan-reticle {
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 0.6rem;
+  border: 2px solid rgba(244, 241, 230, 0.9);
+  border-radius: 1rem;
+  /* Corner brackets only, the way a scanner overlay reads. */
+  mask: linear-gradient(#000 0 0) top left / 2.2rem 2.2rem no-repeat,
+    linear-gradient(#000 0 0) top right / 2.2rem 2.2rem no-repeat,
+    linear-gradient(#000 0 0) bottom left / 2.2rem 2.2rem no-repeat,
+    linear-gradient(#000 0 0) bottom right / 2.2rem 2.2rem no-repeat;
+}
+
+.u-scan-title {
+  color: #f4f1e6;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+}
+
+.u-scan-hint {
+  max-width: 16rem;
+  color: rgba(244, 241, 230, 0.75);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+
+.u-scan-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.9rem;
+}
+
+.u-scan-action {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1.5px solid rgba(244, 241, 230, 0.4);
+  border-radius: 0.75rem;
+  color: #f4f1e6;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* --- Confirm payment ------------------------------------------------------ */
+
+.u-pay {
+  padding: 0.9rem;
+}
+
+.u-bar-title {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+}
+
+.u-merchant {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
+  font-size: 0.8125rem;
+}
+
+/* The name the SERVER returned for the scanned code — not a QR payload. */
+.u-verified {
+  color: #0c6644;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.u-amount-block {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.7rem 0.8rem;
+  background: #fde9df;
+  border-radius: 1rem;
+}
+
+.u-amount-label {
+  color: #7d3a1d;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.u-amount {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.u-expires {
+  color: #7d3a1d;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.u-field-label {
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.u-wallets {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.u-wallet {
+  display: flex;
+  flex: 1;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.2rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.u-wallet.is-on {
+  border-color: #c94a22;
+  border-width: 2px;
+}
+
+/* Wallet colours are an identifying swatch beside the name, never a logo. */
+.u-wallet i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.w-wave {
+  background: #1dc8f2;
+}
+
+.w-orange {
+  background: #ff7900;
+}
+
+.w-mtn {
+  background: #ffcc00;
+}
+
+.u-input {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.5rem 0.7rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.u-earn {
+  padding: 0.4rem 0.7rem;
+  background: #234b39;
+  border-radius: var(--radius-pill);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.u-button {
+  padding: 0.65rem;
+  background: #c94a22;
+  border-radius: 0.875rem;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.u-notice {
+  color: var(--mock-muted);
+  font-size: 0.5625rem;
+  line-height: 1.5;
+}
+
+.u-notice-inline {
+  padding: 0 1rem;
+  font-size: 0.625rem;
+}
+
+/* --- Receipt -------------------------------------------------------------- */
+
+.u-receipt {
+  gap: 0.7rem;
+  padding: 1rem 0.9rem;
+}
+
+.u-tick {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0.4rem auto 0;
+  background: #12855a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.6rem #ddf3e8;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.u-ticket {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.u-ticket-state {
+  color: #0c6644;
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.u-ticket-amount {
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.u-ticket-venue {
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.u-ticket-points {
+  justify-self: center;
+  padding: 0.25rem 0.7rem;
+  background: linear-gradient(135deg, #234b39, #173427);
+  border-radius: var(--radius-pill);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+}
+
+/* The torn edge of a paper ticket. */
+.u-ticket-perf {
+  height: 1px;
+  margin: 0.5rem -0.8rem;
+  background: repeating-linear-gradient(
+    to right,
+    var(--mock-line) 0 0.3rem,
+    transparent 0.3rem 0.55rem
+  );
+}
+
+.u-ticket-details {
+  display: grid;
+  gap: 0.3rem;
+  text-align: left;
+}
+
+.u-ticket-details > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.u-ticket-details dt {
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+}
+
+.u-ticket-details dd {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* --- Loyalty -------------------------------------------------------------- */
+
+.u-progress {
+  height: 0.3rem;
+  margin-top: 0.3rem;
+  background: #e7e1d4;
+  border-radius: var(--radius-pill);
+}
+
+.u-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #234b39, #75975d);
+  border-radius: var(--radius-pill);
+}
+
+.u-reward {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+}
+
+.u-reward i {
+  color: #c94a22;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.u-history {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0 1rem;
+  padding: 0.6rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
+}
+
+.u-history li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--mock-muted);
+  font-size: 0.625rem;
+}
+
+.u-history strong {
+  color: #0c6644;
+  font-size: 0.6875rem;
+}
+
+.u-history strong.is-spent {
+  color: var(--mock-ink);
+}
+
+/* --------------------------------------------------------------------------
+   4f. Security posture — the control matrix
+   -------------------------------------------------------------------------- */
+
+.learn-security {
+  background: var(--paper-raised);
+}
+
+/* This section is the one tinted panel with a split heading on it, and vivid
+   --orange only reaches 2.91:1 on raised paper — below the 3:1 large-text
+   floor. --orange-text is the token for orange *wording*, per tokens.css. */
+.learn-security .split-heading em {
+  color: var(--orange-text);
+}
+
+.security-head .lede {
+  max-width: 62ch;
+}
+
+.matrix-controls tbody th {
+  width: 26%;
+}
+
+.matrix-controls td:last-child {
+  width: 8rem;
+}
+
+/* Every chip carries its word; the tint is a second signal, never the only
+   one. Each of these text/background pairs clears 4.5:1. */
+.state-chip {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chip-proto {
+  background: var(--sage);
+  color: #234b39;
+}
+
+.chip-partial {
+  background: var(--sand);
+  color: #5c4a15;
+}
+
+.chip-todo {
+  background: #f3ded4;
+  color: #8f3113;
+}
+
+.chip-design {
+  background: #e3e6ec;
+  color: #354357;
+}
+
+.security-note {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.75rem;
+  max-width: 78ch;
+  margin-top: 2rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--paper);
+  border-left: 3px solid var(--orange);
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+.security-note > span:first-child {
+  color: var(--orange-text);
+}
+
+.security-link {
+  display: inline-flex;
+  gap: 0.35rem;
+  grid-column: 2;
+  margin-top: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   4g. Return — per-outlet arithmetic and the revenue lines
+   -------------------------------------------------------------------------- */
+
+.roi-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+  align-items: end;
+}
+
+.roi-head .lede {
+  margin-top: 0;
+}
+
+.roi-math {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.roi-math-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.roi-math .block-title {
+  margin-bottom: 0;
+  color: var(--on-dark);
+}
+
+/* The caveat sits next to the numbers, not in a footnote: these figures are
+   illustrative and pricing still has to be tested with merchants. */
+.illustrative-flag {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--on-dark-muted);
+  border-radius: var(--radius-pill);
+  color: var(--on-dark-muted);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.roi-math-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 2rem;
+  background: rgba(244, 241, 230, 0.18);
+}
+
+.roi-figure {
+  padding: 1.5rem 1.4rem;
+  background: var(--ink);
+}
+
+.roi-figure-value {
+  display: block;
+  color: var(--orange-tint);
+  font-family: var(--serif);
+  font-size: var(--display-sm);
+  line-height: 1;
+}
+
+.roi-figure-label {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: var(--step-0);
+}
+
+.roi-figure dd {
+  margin-top: 0.4rem;
+  color: var(--on-dark-muted);
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+
+.roi-verdict {
+  max-width: 70ch;
+  margin-top: 2rem;
+  font-size: var(--step-1);
+  line-height: 1.7;
+}
+
+.roi-math .source-note {
+  margin-top: 1.25rem;
+  /* The base .source-note rule paints a light strip, which is invisible-on-
+     invisible inside this dark panel. Restate the whole surface. */
+  background: rgba(244, 241, 230, 0.06);
+  border-left-color: var(--orange);
+  color: var(--on-dark);
+}
+
+.roi-math .source-note-mark {
+  color: var(--orange-tint);
+}
+
+.roi-lines {
+  margin-top: 4rem;
+}
+
+.line-list {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) 11rem;
+  gap: 0 1.5rem;
+  align-items: start;
+  padding: 1.4rem;
+  background: var(--paper);
+}
+
+.line-step {
+  color: var(--muted);
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.75rem;
+}
+
+.line-first .line-step {
+  color: var(--orange-text);
+}
+
+.line-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.line-copy strong {
+  font-size: var(--step-1);
+  font-weight: 500;
+}
+
+.line-body {
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.65;
+}
+
+/* What blocks the line, stated on the line itself. */
+.line-depends {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+.line-depends-mark {
+  color: var(--orange-text);
+}
+
+.line-badge {
+  justify-self: start;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-first {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.badge-near {
+  background: var(--sand);
+  color: #5c4a15;
+}
+
+.badge-later {
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+}
+
+.badge-blocked {
+  background: #f3ded4;
+  color: #8f3113;
+}
+
+.roi-foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.refuse-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.refuse-list li {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  gap: 0.2rem 0.75rem;
+}
+
+.refuse-mark {
+  grid-row: span 2;
+  align-self: start;
+  color: var(--orange-text);
+  font-size: 0.75rem;
+}
+
+.refuse-list strong {
+  font-size: var(--step-0);
+  font-weight: 500;
+}
+
+.refuse-list span:last-child {
+  color: var(--muted);
+  font-size: var(--step--1);
+  line-height: 1.65;
+}
+
+.roi-moat {
+  align-self: start;
+  padding: 1.75rem;
+  background: var(--sage);
+}
+
+.roi-moat h3 {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+}
+
+.roi-moat p {
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+.roi-gate-note {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.75rem;
+  margin-top: 1.25rem !important;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(35, 75, 57, 0.25);
+  font-size: var(--step--1) !important;
+}
+
+.roi-gate-note > span {
+  color: var(--orange-text);
+}
+
+.roi-moat .text-link {
+  margin-top: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
    5. Market
    -------------------------------------------------------------------------- */
 
@@ -2026,9 +3670,26 @@
     min-height: 21rem;
   }
 
-  .model-body {
+  .model-body,
+  .roi-foot {
     grid-template-columns: 1fr;
     gap: 2.75rem;
+  }
+
+  .roi-math-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* The device stops being sticky once it sits above the prose rather than
+     beside it — a sticky element in a single column pins the wrong thing. */
+  .walk {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .walk-device {
+    position: static;
+    max-width: 20rem;
   }
 
   .horizon,
@@ -2046,6 +3707,8 @@
 @media (max-width: 860px) {
   .hero-grid,
   .concept-head,
+  .learn-head,
+  .roi-head,
   .market-head,
   .landscape-head,
   .thesis-head,
@@ -2065,6 +3728,8 @@
   }
 
   .concept-head .lede,
+  .learn-head .lede,
+  .roi-head .lede,
   .market-head .lede,
   .landscape-head .lede,
   .thesis-head .lede,
@@ -2178,12 +3843,40 @@
   .gap-grid,
   .case-grid,
   .never-grid,
-  .target-grid {
+  .target-grid,
+  .app-tabs {
     grid-template-columns: 1fr;
   }
 
   .gap-grid {
     gap: 1.75rem;
+  }
+
+  /* Chain steps and revenue lines both lose their fixed side columns and
+     restack, so the owner and the badge sit above the prose they label. */
+  .chain-step,
+  .line {
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    gap: 0.3rem 0.75rem;
+  }
+
+  .chain-text,
+  .line-copy,
+  .line-badge {
+    grid-column: 2;
+  }
+
+  .line-badge {
+    margin-top: 0.6rem;
+  }
+
+  .roi-math {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .walk-arrow {
+    flex: 1;
+    justify-content: center;
   }
 
   .case {

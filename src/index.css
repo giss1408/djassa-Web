@@ -124,6 +124,19 @@ svg {
   transform: translateY(0);
 }
 
+/* Available to assistive tech, absent from the visual layout. Used where a
+   section restates a caveat that is already visible further down the page. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* --- Reveal --------------------------------------------------------------
    `reveal-enabled` is added by JS only after confirming IntersectionObserver
    support and that reduced motion is not requested, so content is visible by

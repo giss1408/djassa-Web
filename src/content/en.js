@@ -2,6 +2,8 @@
  * English copy. Mirrors fr.js key for key — a missing key is a rendering bug,
  * not a silent fallback to French. See content/index.js for the parity check.
  */
+import { learnEn } from './learn.en.js'
+
 export const en = {
   locale: 'en',
   meta: {
@@ -14,6 +16,7 @@ export const en = {
     home: 'Djassa — home',
     links: [
       { href: '#concept', label: 'The concept' },
+      { href: '#demo', label: 'The demo' },
       { href: '#marche', label: 'The market' },
       { href: '#these', label: 'The thesis' },
       { href: '#modele', label: 'The model' },
@@ -60,6 +63,7 @@ export const en = {
     'Explicit consent',
     'No deposits held',
   ],
+  learn: learnEn,
   word: {
     kicker: 'The name',
     phonetic: '/dja.sa/',
