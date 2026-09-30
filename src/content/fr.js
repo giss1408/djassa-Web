@@ -29,7 +29,7 @@ export const fr = {
     ],
     cta: 'Dossier investisseur',
     // The printable brief (public/brief/), in the reader's language.
-    briefHref: '/brief/',
+    briefHref: '/brief/index.html',
     langLabel: 'Passer en anglais',
     menuOpen: 'Ouvrir le menu',
     menuClose: 'Fermer le menu',
