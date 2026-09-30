@@ -70,7 +70,7 @@
         <p class="note">Les nouvelles versions s’installent par-dessus l’ancienne, avec le même lien, sans perdre vos données.</p>
       </section>
 
-      <a class="share" href="https://wa.me/?text=Installez%20Djassa%20(version%20de%20test)%20%3A%20https%3A%2F%2Fdjassa.onrender.com%2Fapp%2F">
+      <a class="share" id="share" href="https://wa.me/">
         Partager ce lien sur WhatsApp
       </a>
 
@@ -79,5 +79,14 @@
         <p><a href="/">djassa — le site</a></p>
       </footer>
     </main>
+    <script>
+      // The share message carries this page's own address, whatever domain
+      // serves it (Render's generated name today, a custom domain later).
+      ;(function () {
+        var a = document.getElementById('share')
+        var url = location.origin + '/app/'
+        a.href = 'https://wa.me/?text=' + encodeURIComponent('Installez Djassa (version de test) : ' + url)
+      })()
+    </script>
   </body>
 </html>

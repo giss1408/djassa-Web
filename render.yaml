@@ -82,7 +82,7 @@ services:
       - type: rewrite
         source: /brief/
         destination: /brief/index.html
-      # The link shared on WhatsApp: djassa.onrender.com/app
+      # The link shared on WhatsApp: <this site's address>/app
       - type: rewrite
         source: /app
         destination: /app/index.html
