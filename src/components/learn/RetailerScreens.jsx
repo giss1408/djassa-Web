@@ -55,7 +55,7 @@ export function RetailerSignIn() {
 
 export function RetailerHome() {
   const sales = [
-    { amount: `2${NBSP}500${NBSP}F`, time: '12:31', state: 'synced' },
+    { amount: `2${NBSP}500${NBSP}F`, time: '12:31', state: 'synced', points: 25 },
     { amount: `1${NBSP}500${NBSP}F`, time: '12:18', state: 'pending' },
     { amount: `6${NBSP}000${NBSP}F`, time: '11:52', state: 'synced' },
   ]
@@ -102,6 +102,10 @@ export function RetailerHome() {
               <span className="r-action-ico">◈</span>
               Mes bons plans
             </span>
+            <span className="r-action r-action-wide is-green">
+              <span className="r-action-ico">★</span>
+              Points client
+            </span>
           </div>
 
           <span className="r-section">Dernieres ventes</span>
@@ -114,6 +118,7 @@ export function RetailerHome() {
                   <span className="r-sale-state">
                     {sale.time} - {states[sale.state].label}
                   </span>
+                  {sale.points ? <span className="r-sale-points">+{sale.points} pts</span> : null}
                 </span>
               </li>
             ))}
@@ -148,9 +153,10 @@ export function RetailerRecord() {
           <span className="r-ico">◯</span>
           <span>
             <span className="r-field-label">Client (optionnel)</span>
-            <span className="r-field-value r-field-hint">Numero de telephone</span>
+            <span className="r-field-value">07 12 34 56 78</span>
           </span>
         </div>
+        <span className="r-note">Avec son numero, le client gagne des points chez vous.</span>
 
         <div className="r-button">Enregistrer</div>
         <span className="r-note">

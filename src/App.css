@@ -1459,6 +1459,7 @@
 
 .r-queue {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
   padding: 0.55rem 0.6rem;
@@ -1469,10 +1470,11 @@
 }
 
 .r-queue-text {
-  flex: 1;
+  flex: 1 1 70%;
 }
 
 .r-queue-action {
+  margin-left: auto;
   color: #c94a22;
   font-weight: 700;
   white-space: nowrap;
@@ -1500,6 +1502,27 @@
 .r-action.is-primary {
   background: #c94a22;
   color: #fff;
+}
+
+.r-action-wide {
+  grid-column: 1 / -1;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem;
+}
+
+.r-action.is-green {
+  background: #e3ede5;
+  color: #234b39;
+}
+
+.r-sale-points {
+  display: block;
+  color: #234b39;
+  font-size: 0.6875rem;
+  font-weight: 700;
 }
 
 .r-action-ico {

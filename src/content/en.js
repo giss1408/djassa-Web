@@ -414,7 +414,7 @@ export const en = {
       items: [
         'Merchant app: offline sales synced without duplicates, tested on a real phone',
         'Customer app: maquis, on-duty pharmacies, deals and points (prototype)',
-        'QR payment and loyalty in sandbox mode, no real money',
+        'QR payment and loyalty in sandbox mode, no real money; points on cash sales by phone number',
         'One sale stream, labelled confirmed payment or declared cash',
         'CI/CD pipeline with image supply-chain checks',
       ],
@@ -423,7 +423,7 @@ export const en = {
       label: 'To harden before any real financial use',
       items: [
         'Phone-number login (Tier 0) instead of the demo account',
-        'Automatic Wave payment capture, and points on cash sales',
+        'Automatic Wave payment capture',
         'Live payment provider and reconciliation',
         'Per-resource authorization, production secrets, independent security review',
         'Written partner agreements and regulatory review',

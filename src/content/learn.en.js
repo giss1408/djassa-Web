@@ -80,7 +80,7 @@ export const learnEn = {
         id: 'record',
         name: 'Record a sale',
         summary:
-          'An amount, a category, an optional customer. Nothing waits on the network: confirmation lands the moment the row is on disk, and syncing happens behind it. Honest gap: the customer number stays on the phone and is not sent yet, so a cash sale does not earn points today.',
+          'An amount, a category, an optional customer. Nothing waits on the network: confirmation lands the moment the row is on disk, and syncing happens behind it. With a customer number, checked on the phone while the customer is still there, the customer earns the venue’s points on a cash sale; the sale list then shows “+25 pts”, and the Points client screen hands over their reward. No customer app needed.',
         strength:
           'This is the single habit everything else is built on. Loyalty, revenue history, tontine, reliability indicator and credit export are five reads of the same event, not five sequential projects.',
         security:

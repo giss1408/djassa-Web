@@ -87,7 +87,7 @@ export const learnFr = {
         id: 'record',
         name: 'Enregistrer une vente',
         summary:
-          'Un montant, une catégorie, un client optionnel. Rien n’attend le réseau : la confirmation arrive dès que la ligne est écrite sur le disque, et la synchronisation se fait derrière. Limite actuelle, dite franchement : le numéro du client reste sur le téléphone et n’est pas encore envoyé, donc une vente en espèces ne rapporte pas encore de points.',
+          'Un montant, une catégorie, un client optionnel. Rien n’attend le réseau : la confirmation arrive dès que la ligne est écrite sur le disque, et la synchronisation se fait derrière. Avec le numéro du client, vérifié sur le téléphone tant qu’il est encore là, une vente en espèces lui rapporte les points du commerce ; la liste affiche alors « +25 pts », et l’écran Points client lui remet sa récompense. Sans application client.',
         strength:
           'C’est l’habitude unique sur laquelle tout le reste est bâti. Fidélité, historique de revenus, tontine, indicateur de fiabilité et export de crédit sont cinq lectures du même événement, pas cinq projets successifs.',
         security:
