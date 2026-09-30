@@ -36,7 +36,7 @@ export const fr = {
     eyebrow: 'Inclusion financière — construite depuis le commerce local',
     title: 'Le progrès commence au coin de la rue.',
     intro:
-      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Djassa construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son Wave, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
+      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Djassa construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son portefeuille mobile, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
     primary: 'Lire la thèse d’investissement',
     secondary: 'Comprendre le concept',
     stage: {
@@ -64,7 +64,7 @@ export const fr = {
     'Abidjan d’abord',
     'Un seul geste',
     'Hors ligne par défaut',
-    'Sur le Wave du commerçant',
+    'Sur le portefeuille du commerçant',
     'Consentement explicite',
     'Aucun dépôt détenu',
   ],
@@ -87,7 +87,7 @@ export const fr = {
     lede:
       'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Djassa n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
     body:
-      'Quand le client paie avec le QR Wave que le commerçant utilise déjà, la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
+      'Quand le client paie avec le QR du portefeuille que le commerçant utilise déjà (Wave d’abord, les autres opérateurs ensuite), la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
     coreLabel: 'L’ÉVÉNEMENT',
     coreValue: 'transaction vérifiée',
     coreDetail: 'qui · où · combien · quand',
@@ -160,10 +160,10 @@ export const fr = {
       },
       {
         segment: 'Paiement marchand et agrégation',
-        players: 'Wave (~1 % côté marchand, ~1 M de marchands QR), Orange Money, CinetPay',
+        players: 'Wave (~1 % côté marchand, ~1 M de marchands QR), Orange Money, MTN MoMo, CinetPay ; QR interopérable PI-SPI de la BCEAO',
         stance: 'Partenaire',
         verdict: 'partner',
-        why: 'Nous nous branchons sur le QR que le commerçant utilise déjà. Nous ne lui vendons pas un paiement plus cher.',
+        why: 'Nous nous branchons sur le QR que le commerçant utilise déjà, quel que soit l’opérateur. Nous ne lui vendons pas un paiement plus cher.',
       },
       {
         segment: 'Fidélité client, preuve d’activité marchande et tontine numérique',
@@ -226,7 +226,7 @@ export const fr = {
       { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers, avec une formule gratuite plafonnée. Revenu principal du MVP.', status: 'now' },
       { step: '02', title: 'Bons plans à la une et campagnes', detail: 'Emplacement sponsorisé dans l’app client ; messages refacturés en transparence.', status: 'now' },
       { step: '03', title: 'Contrats multi-points de vente', detail: 'Réseaux et associations de commerçants, tarifés séparément.', status: 'next' },
-      { step: '04', title: 'Orchestration de paiement', detail: 'Revenu secondaire, jamais plus cher pour le commerçant que son Wave actuel.', status: 'next' },
+      { step: '04', title: 'Orchestration de paiement', detail: 'Revenu secondaire, jamais plus cher pour le commerçant que son portefeuille actuel.', status: 'next' },
       { step: '05', title: 'Apport d’affaires consenti', detail: 'Rémunéré par un partenaire agréé : crédit de stock, épargne, tontine.', status: 'later' },
       { step: '06', title: 'Services institutionnels', detail: 'Reporting et réconciliation pour institutions.', status: 'later' },
     ],
@@ -289,7 +289,7 @@ export const fr = {
           '5 à 10 entretiens commerçants',
           'Un accord de pilote restreint',
           'Un corridor, un segment, un canal d’acquisition',
-          'Accès à l’API Wave Business pour la capture automatique',
+          'Accès aux API des opérateurs pour la capture automatique (Wave d’abord), état de PI-SPI',
           'Revue de la frontière identité/KYC avec le partenaire mobile money',
         ],
         exit: 'Un utilisateur pilote et un partenaire identifiés, aucun blocage non résolu sur le flux de données du MVP.',
@@ -301,7 +301,7 @@ export const fr = {
         stateLabel: 'Suivant',
         goal: 'Enregistrer une activité utile et créer l’usage répété.',
         items: [
-          'Capture automatique des paiements Wave existants',
+          'Capture automatique des paiements existants du portefeuille, Wave d’abord',
           'Identité marchand et client par numéro (Tier 0)',
           'Points, récompenses et rapport hebdo « clients revenus »',
           'Ventes en espèces hors ligne, synchronisées sans doublon',
@@ -320,6 +320,7 @@ export const fr = {
           'Onboarding par association et parrainage',
           'Vérification progressive, là où le régulateur l’approuve',
           'Playbook d’onboarding et de support',
+          'Deuxième opérateur (MTN ou Orange) ; QR interopérable PI-SPI via un partenaire agréé',
         ],
         exit: 'Les commerçants paient ou renouvellent ; l’économie d’acquisition et de support est comprise.',
       },
@@ -428,7 +429,7 @@ export const fr = {
       label: 'À durcir avant tout usage financier réel',
       items: [
         'Connexion par numéro (Tier 0) à la place du compte de démonstration',
-        'Capture automatique des paiements Wave',
+        'Capture automatique des paiements du portefeuille (Wave d’abord)',
         'Prestataire de paiement réel et réconciliation',
         'Autorisation par ressource, secrets de production, revue de sécurité indépendante',
         'Accords partenaires écrits et revue réglementaire',

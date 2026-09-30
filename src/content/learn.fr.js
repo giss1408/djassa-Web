@@ -21,7 +21,7 @@ export const learnFr = {
   title: 'Deux applications.',
   titleEm: 'Un seul événement.',
   lede:
-    'Le commerçant enregistre une vente. Le client paie et gagne des points. Les deux gestes écrivent le même flux d’événements, tout comme un paiement Wave que le commerçant reçoit déjà, capturé automatiquement. Ce flux est la preuve dont un prêteur a besoin.',
+    'Le commerçant enregistre une vente. Le client paie et gagne des points. Les deux gestes écrivent le même flux d’événements, tout comme un paiement que le commerçant reçoit déjà sur son portefeuille (Wave d’abord), capturé automatiquement. Ce flux est la preuve dont un prêteur a besoin.',
   howTo:
     'Choisissez une application, puis avancez écran par écran. Chaque écran est commenté sur trois axes : la force du concept qu’il porte, le contrôle de sécurité qu’il applique, et la ligne de revenu qu’il alimente.',
   fidelity:
@@ -144,7 +144,7 @@ export const learnFr = {
         security:
           'Rien de ce qui est lu dans le QR n’est affiché ni cru au-delà du code lui-même. Le code part au serveur, et l’écran suivant montre le commerçant que le serveur désigne. Un autocollant contrefait ne peut donc pas afficher un nom de confiance.',
         roi:
-          'Aucun frais pour le client, jamais. Ce parcours Djassa sert de solution de repli pour les commerçants dont le Wave n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que son QR Wave aujourd’hui.',
+          'Aucun frais pour le client, jamais. Ce parcours Djassa sert de solution de repli pour les commerçants dont le portefeuille n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que le QR de son propre portefeuille aujourd’hui.',
       },
       {
         id: 'pay',
@@ -168,7 +168,7 @@ export const learnFr = {
         security:
           'Les états d’un paiement sont explicites — créé, en attente, réussi, refusé, annulé, contesté — et seule une transition autorisée est acceptée. Une signature valide ne suffit jamais à créditer de l’argent : horodatage dans la fenêtre, forme du message, montant, devise et idempotence en base sont vérifiés d’abord.',
         roi:
-          'Chaque reçu réussi est un événement confirmé par le prestataire, exactement comme un paiement Wave capturé sur le QR du commerçant. La part du chiffre confirmée ainsi est ce qu’un analyste crédit veut voir.',
+          'Chaque reçu réussi est un événement confirmé par le prestataire, exactement comme un paiement capturé sur le QR du portefeuille du commerçant. La part du chiffre confirmée ainsi est ce qu’un analyste crédit veut voir.',
       },
       {
         id: 'loyalty',
@@ -200,7 +200,7 @@ export const learnFr = {
       { owner: 'Phase 5 — partenaire agréé', text: 'Sur consentement explicite et révocable, une attestation de revenus part vers une institution agréée.' },
     ],
     note:
-      'La source privilégiée ne demande aucune application : un paiement sur le QR Wave du commerçant est capturé automatiquement et rapporte des points au client. Les ventes en espèces se déclarent depuis le téléphone. Chaque source vit dans le même flux avec une étiquette explicite — confirmé par le prestataire, ou déclaré par le commerçant. Un partenaire qui audite l’export trouvera la distinction ; la ranger dans une seconde table serait la perdre.',
+      'La source privilégiée ne demande aucune application : un paiement sur le QR du portefeuille du commerçant (Wave d’abord) est capturé automatiquement et rapporte des points au client. Les ventes en espèces se déclarent depuis le téléphone. Chaque source vit dans le même flux avec une étiquette explicite — confirmé par le prestataire, ou déclaré par le commerçant. Un partenaire qui audite l’export trouvera la distinction ; la ranger dans une seconde table serait la perdre.',
   },
 
   security: {
@@ -272,14 +272,14 @@ export const learnFr = {
     lede:
       'Classées selon qu’elles suivent directement la valeur apportée au commerçant, et par nombre de dépendances externes. Aucune ne prélève sur chaque vente plus que ce que le commerçant paie aujourd’hui, aucune ne suppose l’approbation d’un crédit, et la commission d’apport partenaire — la plus grosse à terme — n’a pas sa place dans une prévision de première année.',
     illustrativeLabel: 'Illustratif',
-    mathTitle: 'Un point de vente : pourquoi nous nous appuyons sur Wave au lieu de le remplacer',
+    mathTitle: 'Un point de vente : pourquoi nous nous appuyons sur le portefeuille du commerçant au lieu de le remplacer',
     math: [
       { value: '3 000 000 F', label: 'encaissés par mois et par point de vente', detail: '40 ventes/jour × 2 500 F, maquis type' },
       { value: '≈ 70 000 F', label: 'surcoût mensuel si les paiements étaient détournés', detail: '60 % payés en mobile money : ~3 % + 50 F par vente via un agrégateur, contre ~1 % sur son propre Wave' },
       { value: '5 000 – 10 000 F', label: 'hypothèse d’abonnement', detail: 'Peu, face à la marge que rapportent les clients qui reviennent' },
     ],
     mathVerdict:
-      'Prendre une part des paiements obligerait le commerçant à passer sur un rail plus cher, ce qui lui coûterait plus que l’abonnement et plus que ce que la fidélité rapporte. Djassa se branche donc sur le QR Wave que le commerçant utilise déjà, et fait payer ce qu’il ajoute : des clients qui reviennent, et la preuve de son activité.',
+      'Prendre une part des paiements obligerait le commerçant à passer sur un rail plus cher, ce qui lui coûterait plus que l’abonnement et plus que ce que la fidélité rapporte. Djassa se branche donc sur le QR du portefeuille que le commerçant utilise déjà — Wave d’abord, les autres opérateurs et le QR interopérable PI-SPI ensuite — et fait payer ce qu’il ajoute : des clients qui reviennent, et la preuve de son activité.',
     mathSource: 'Chiffres illustratifs, non contractuels. Frais : Kolonell 2026 (Wave ~1 %, CinetPay ~3 % + 50 F). À revérifier avec les commerçants du pilote.',
     linesTitle: 'Ordre des lignes de revenu',
     lines: [
@@ -287,7 +287,7 @@ export const learnFr = {
         step: '01',
         title: 'Abonnement commerçant',
         body: 'Mensuel par point de vente, avec une formule gratuite plafonnée. Converti au jour 30 sur l’écran qui montre au commerçant son chiffre et les clients revenus. Encaissé par mobile money récurrent.',
-        depends: 'Capture automatique Wave et activité réelle',
+        depends: 'Capture automatique du portefeuille et activité réelle',
         state: 'Recommandée en premier',
         tone: 'first',
       },
@@ -310,8 +310,8 @@ export const learnFr = {
       {
         step: '04',
         title: 'Partage du revenu de paiement',
-        body: 'Ligne mineure, sur les seuls paiements du parcours Djassa, là où le prestataire agréé l’autorise. Jamais plus cher que ce que le commerçant paie sur son propre Wave.',
-        depends: 'Accord agrégateur au niveau du tarif Wave ou en dessous',
+        body: 'Ligne mineure, sur les seuls paiements du parcours Djassa, là où le prestataire agréé l’autorise. Jamais plus cher que ce que le commerçant paie aujourd’hui sur son propre portefeuille.',
+        depends: 'Un tarif au niveau du portefeuille actuel du commerçant ou en dessous',
         state: 'Mineure',
         tone: 'later',
       },
@@ -334,14 +334,14 @@ export const learnFr = {
     ],
     refuseTitle: 'Ce que nous refusons de monétiser',
     refuse: [
-      { title: 'Rendre le paiement plus cher', body: 'Aucun frais pour le client, et jamais plus pour le commerçant que son propre Wave. Sinon l’espèce gagne aussitôt, et l’événement qui porte tout le reste disparaît.' },
+      { title: 'Rendre le paiement plus cher', body: 'Aucun frais pour le client, et jamais plus pour le commerçant que son propre portefeuille. Sinon l’espèce gagne aussitôt, et l’événement qui porte tout le reste disparaît.' },
       { title: 'Convertir les points en argent', body: 'Interdit jusqu’à l’existence d’un partenaire agréé, et hors de notre périmètre même après.' },
       { title: 'Vendre des données de transaction identifiables', body: 'La donnée se construit avec le consentement de la personne concernée ; elle ne se revend pas.' },
       { title: 'Devenir le prêteur', body: 'Ni dépôt détenu, ni crédit accordé, ni promesse d’approbation. Le partenaire agréé garde ce rôle.' },
     ],
     moatTitle: 'Le vrai fossé',
     moat:
-      'La part du chiffre d’un commerçant confirmée par un prestataire de paiement, qu’elle soit capturée sur son propre Wave ou payée via Djassa, est un fossé plus solide que le programme de fidélité. Elle ne s’achète pas : elle s’accumule un événement à la fois sans demander au commerçant de changer sa façon d’encaisser, et la fidélité donne à ses clients une raison de payer en numérique.',
+      'La part du chiffre d’un commerçant confirmée par un prestataire de paiement, qu’elle soit capturée sur son propre portefeuille ou payée via Djassa, est un fossé plus solide que le programme de fidélité. Elle ne s’achète pas : elle s’accumule un événement à la fois sans demander au commerçant de changer sa façon d’encaisser, et la fidélité donne à ses clients une raison de payer en numérique.',
     gateNote:
       'Rien de tout cela ne justifie une expansion : aucun second corridor avant que le premier n’ait démontré ses seuils d’économie unitaire.',
     gateLink: 'Voir les seuils du modèle',

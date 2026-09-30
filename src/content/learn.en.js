@@ -14,7 +14,7 @@ export const learnEn = {
   title: 'Two apps.',
   titleEm: 'One event.',
   lede:
-    'The merchant records a sale. The customer pays and earns points. Both gestures write the same event stream, and so does a Wave payment the merchant already receives, captured automatically. That stream is the proof a lender needs.',
+    'The merchant records a sale. The customer pays and earns points. Both gestures write the same event stream, and so does a wallet payment the merchant already receives (Wave first), captured automatically. That stream is the proof a lender needs.',
   howTo:
     'Pick an app, then move screen by screen. Each screen is annotated on three axes: the strength of the concept it carries, the security control it applies, and the revenue line it feeds.',
   fidelity:
@@ -137,7 +137,7 @@ export const learnEn = {
         security:
           'Nothing read from the QR is displayed or trusted beyond the code itself. The code goes to the server, and the next screen shows the merchant the server names. A forged sticker therefore cannot display a trusted name.',
         roi:
-          'No fee for the customer, ever. This Djassa route is the fallback for merchants whose own Wave is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their Wave QR does today.',
+          'No fee for the customer, ever. This Djassa route is the fallback for merchants whose own wallet is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their own wallet QR does today.',
       },
       {
         id: 'pay',
@@ -161,7 +161,7 @@ export const learnEn = {
         security:
           'Payment states are explicit — created, pending, succeeded, failed, cancelled, disputed — and only an allowed transition is accepted. A valid signature is never enough to credit money: timestamp inside the window, payload shape, amount, currency and database-backed idempotency are checked first.',
         roi:
-          'Every successful receipt is a provider-confirmed event, exactly like a Wave payment captured from the merchant’s own QR. The share of turnover confirmed that way is what a credit analyst wants to see.',
+          'Every successful receipt is a provider-confirmed event, exactly like a wallet payment captured from the merchant’s own QR. The share of turnover confirmed that way is what a credit analyst wants to see.',
       },
       {
         id: 'loyalty',
@@ -193,7 +193,7 @@ export const learnEn = {
       { owner: 'Phase 5 — licensed partner', text: 'On explicit, revocable consent, a revenue attestation goes to a licensed institution.' },
     ],
     note:
-      'The preferred source needs no app at all: a payment to the merchant’s own Wave QR is captured automatically and earns the customer points. Cash sales are declared from the phone. Every source lives in the same stream with an explicit label — provider-confirmed, or merchant-declared. A partner auditing the export will find the distinction; filing it in a second table would lose it.',
+      'The preferred source needs no app at all: a payment to the merchant’s own wallet QR (Wave first) is captured automatically and earns the customer points. Cash sales are declared from the phone. Every source lives in the same stream with an explicit label — provider-confirmed, or merchant-declared. A partner auditing the export will find the distinction; filing it in a second table would lose it.',
   },
 
   security: {
@@ -265,14 +265,14 @@ export const learnEn = {
     lede:
       'Ranked by how directly they follow merchant value, and by how few external dependencies they need. None takes a cut of each sale above what the merchant pays today, none assumes a credit approval, and the partner referral fee — the largest eventually — has no place in a year-one forecast.',
     illustrativeLabel: 'Illustrative',
-    mathTitle: 'One outlet: why we build on Wave instead of replacing it',
+    mathTitle: 'One outlet: why we build on the merchant’s wallet instead of replacing it',
     math: [
       { value: '3,000,000 F', label: 'collected per month per outlet', detail: '40 sales/day × 2,500 F, typical maquis' },
       { value: '≈ 70,000 F', label: 'extra cost per month if payments were rerouted', detail: '60% paid by mobile money: ~3% + 50 F per sale via an aggregator, versus ~1% on their own Wave' },
       { value: '5,000 – 10,000 F', label: 'subscription hypothesis', detail: 'Small against the gross profit returning customers bring in' },
     ],
     mathVerdict:
-      'Taking a share of payments would mean moving the merchant onto a more expensive rail, which costs them more than the subscription and more than loyalty brings in. So Djassa sits on top of the Wave QR the merchant already uses and charges for what it adds: customers who come back, and proof of the business.',
+      'Taking a share of payments would mean moving the merchant onto a more expensive rail, which costs them more than the subscription and more than loyalty brings in. So Djassa sits on top of the wallet QR the merchant already uses — Wave first, other operators and the interoperable PI-SPI QR next — and charges for what it adds: customers who come back, and proof of the business.',
     mathSource: 'Illustrative, non-contractual figures. Fees: Kolonell 2026 (Wave ~1%, CinetPay ~3% + 50 F). To be re-verified with pilot merchants.',
     linesTitle: 'Revenue line order',
     lines: [
@@ -280,7 +280,7 @@ export const learnEn = {
         step: '01',
         title: 'Merchant subscription',
         body: 'Monthly per outlet, with a capped free plan. Converted at day 30 on the screen that shows the merchant their takings and the customers who came back. Collected by recurring mobile money.',
-        depends: 'Automatic Wave capture and real activity',
+        depends: 'Automatic wallet capture and real activity',
         state: 'Recommended first',
         tone: 'first',
       },
@@ -303,8 +303,8 @@ export const learnEn = {
       {
         step: '04',
         title: 'Payment revenue share',
-        body: 'A minor line, on Djassa-route payments only, where the licensed provider allows it. Never priced above what the merchant pays on their own Wave.',
-        depends: 'Aggregator agreement at or below Wave’s rate',
+        body: 'A minor line, on Djassa-route payments only, where the licensed provider allows it. Never priced above what the merchant pays on their own wallet today.',
+        depends: 'A rate at or below the merchant’s current wallet',
         state: 'Minor',
         tone: 'later',
       },
@@ -327,14 +327,14 @@ export const learnEn = {
     ],
     refuseTitle: 'What we refuse to monetize',
     refuse: [
-      { title: 'Making payment cost more', body: 'No fee for the customer, and never more for the merchant than their own Wave. Otherwise cash wins instantly, and the event everything rests on dies.' },
+      { title: 'Making payment cost more', body: 'No fee for the customer, and never more for the merchant than their own wallet. Otherwise cash wins instantly, and the event everything rests on dies.' },
       { title: 'Converting points to cash', body: 'Forbidden until a licensed partner exists, and outside our perimeter even then.' },
       { title: 'Selling identifiable transaction data', body: 'Data is built with the consent of the person it concerns; it is not resold.' },
       { title: 'Becoming the lender', body: 'No deposits held, no credit granted, no promise of approval. The licensed partner keeps that role.' },
     ],
     moatTitle: 'The real moat',
     moat:
-      'The share of a merchant’s turnover confirmed by a payment provider, whether captured from their own Wave or paid through Djassa, is a stronger moat than the loyalty programme. It cannot be bought: it accumulates one event at a time without asking the merchant to change how they get paid, and loyalty gives their customers a reason to pay digitally.',
+      'The share of a merchant’s turnover confirmed by a payment provider, whether captured from their own wallet or paid through Djassa, is a stronger moat than the loyalty programme. It cannot be bought: it accumulates one event at a time without asking the merchant to change how they get paid, and loyalty gives their customers a reason to pay digitally.',
     gateNote:
       'None of this justifies expansion: no second corridor before the first has demonstrated its unit-economics gates.',
     gateLink: 'See the model’s gates',

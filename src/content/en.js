@@ -31,7 +31,7 @@ export const en = {
     eyebrow: 'Financial inclusion — built from local commerce',
     title: 'Progress starts at the corner shop.',
     intro:
-      'In Côte d’Ivoire, 25 million active mobile-money accounts coexist with a 31% banked rate. Access is solved; proof of activity is not. Djassa builds that proof from what already happens at the counter, a customer paying with Wave and a merchant getting paid, and turns it into a reason for the customer to come back.',
+      'In Côte d’Ivoire, 25 million active mobile-money accounts coexist with a 31% banked rate. Access is solved; proof of activity is not. Djassa builds that proof from what already happens at the counter, a customer paying from their mobile wallet and a merchant getting paid, and turns it into a reason for the customer to come back.',
     primary: 'Read the investment thesis',
     secondary: 'Understand the concept',
     stage: {
@@ -59,7 +59,7 @@ export const en = {
     'Abidjan first',
     'One single habit',
     'Offline by default',
-    'On the merchant’s own Wave',
+    'On the merchant’s own wallet',
     'Explicit consent',
     'No deposits held',
   ],
@@ -82,7 +82,7 @@ export const en = {
     lede:
       'Most merchant tools fail because every new feature asks for a new habit. Djassa asks for one: record the sale. Everything else is a different read of the same event.',
     body:
-      'When a customer pays with the Wave QR the merchant already uses, the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
+      'When a customer pays with the wallet QR the merchant already uses (Wave first, other operators next), the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
     coreLabel: 'THE EVENT',
     coreValue: 'verified transaction',
     coreDetail: 'who · where · how much · when',
@@ -155,10 +155,10 @@ export const en = {
       },
       {
         segment: 'Merchant payments and aggregation',
-        players: 'Wave (~1% merchant fee, ~1M QR merchants), Orange Money, CinetPay',
+        players: 'Wave (~1% merchant fee, ~1M QR merchants), Orange Money, MTN MoMo, CinetPay; BCEAO PI-SPI interoperable QR',
         stance: 'Partner',
         verdict: 'partner',
-        why: 'We plug into the QR the merchant already uses. We do not sell them a more expensive payment.',
+        why: 'We plug into the QR the merchant already uses, whatever the operator. We do not sell them a more expensive payment.',
       },
       {
         segment: 'Customer loyalty, merchant activity proof and digital tontine',
@@ -221,7 +221,7 @@ export const en = {
       { step: '01', title: 'Merchant subscription', detail: 'Monthly per outlet, tiered, with a capped free plan. Primary MVP revenue.', status: 'now' },
       { step: '02', title: 'Featured deals and campaigns', detail: 'Sponsored slot in the customer app; messages passed through at cost.', status: 'now' },
       { step: '03', title: 'Multi-outlet contracts', detail: 'Merchant networks and associations, priced separately.', status: 'next' },
-      { step: '04', title: 'Payment orchestration', detail: 'Secondary revenue, never more expensive for the merchant than their current Wave.', status: 'next' },
+      { step: '04', title: 'Payment orchestration', detail: 'Secondary revenue, never more expensive for the merchant than their current wallet.', status: 'next' },
       { step: '05', title: 'Consented referrals', detail: 'Paid by a licensed partner: stock credit, savings, tontine.', status: 'later' },
       { step: '06', title: 'Institutional services', detail: 'Reporting and reconciliation for institutions.', status: 'later' },
     ],
@@ -284,7 +284,7 @@ export const en = {
           '5 to 10 merchant interviews',
           'A narrow pilot agreement',
           'One corridor, one segment, one acquisition channel',
-          'Wave Business API access for automatic capture',
+          'Operator API access for automatic capture (Wave first), PI-SPI status',
           'Identity/KYC boundary review with the mobile-money partner',
         ],
         exit: 'A pilot user and partner identified, with no unresolved blocker on the MVP data flow.',
@@ -296,7 +296,7 @@ export const en = {
         stateLabel: 'Next',
         goal: 'Record useful activity and create repeat usage.',
         items: [
-          'Automatic capture of existing Wave payments',
+          'Automatic capture of existing wallet payments, Wave first',
           'Merchant and customer identity by phone number (Tier 0)',
           'Points, rewards and a weekly “customers who came back” report',
           'Offline cash sales, synced without duplicates',
@@ -315,6 +315,7 @@ export const en = {
           'Association and referral onboarding',
           'Progressive verification, where the regulator approves it',
           'Onboarding and support playbook',
+          'Second operator (MTN or Orange); PI-SPI interoperable QR via a licensed partner',
         ],
         exit: 'Merchants pay or renew; acquisition and support economics are understood.',
       },
@@ -423,7 +424,7 @@ export const en = {
       label: 'To harden before any real financial use',
       items: [
         'Phone-number login (Tier 0) instead of the demo account',
-        'Automatic Wave payment capture',
+        'Automatic wallet payment capture (Wave first)',
         'Live payment provider and reconciliation',
         'Per-resource authorization, production secrets, independent security review',
         'Written partner agreements and regulatory review',
