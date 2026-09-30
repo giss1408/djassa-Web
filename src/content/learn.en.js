@@ -18,7 +18,7 @@ export const learnEn = {
   howTo:
     'Pick an app, then move screen by screen. Each screen is annotated on three axes: the strength of the concept it carries, the security control it applies, and the revenue line it feeds.',
   fidelity:
-    'Screens reconstructed from the two Flutter apps’ code, in French as in the product — including the missing accents in the merchant app, a documented choice for cheap screens. Amounts, business names and numbers are examples.',
+    'Screens reconstructed from the two Flutter apps’ code (integration branch), in French as in the product — including the missing accents in the merchant app, a documented choice for cheap screens. Amounts, business names and numbers are examples.',
 
   apps: [
     {
@@ -27,7 +27,7 @@ export const learnEn = {
       file: 'djassa-App-retailer',
       tag: 'Offline first',
       pitch:
-        'Built for a market stall in full sun on an entry-level phone: high contrast, 48dp minimum targets, no bundled icon font, and nothing that waits on the network.',
+        'The same look as the customer app, so the two read as one product, but built for a market stall in full sun on an entry-level phone: 52dp targets, a 15sp text floor, sync state in words plus an icon, and nothing that waits on the network.',
     },
     {
       id: 'user',
@@ -74,13 +74,13 @@ export const learnEn = {
         security:
           'The queue is stated in words rather than a spinner: “2 waiting to send”, “Sent”, “Rejected”. A merchant who cannot tell what left the phone will not trust the app with their books. State is carried by a word, never by colour alone.',
         roi:
-          'Line 1 — merchant subscription, the recommended first line. Conversion happens at day 30, once this screen has accumulated enough activity to be worth a price, not at day 0.',
+          'Line 1 — merchant subscription, the recommended first line. Conversion happens at day 30, once this screen has accumulated enough activity to be worth a price, not at day 0. Plans and payments are kept in an append-only billing ledger; for the pilot, the mobile-money transfer is recorded by hand.',
       },
       {
         id: 'record',
         name: 'Record a sale',
         summary:
-          'An amount, a category, an optional customer. Nothing waits on the network: confirmation lands the moment the row is on disk, and syncing happens behind it.',
+          'An amount, a category, an optional customer. Nothing waits on the network: confirmation lands the moment the row is on disk, and syncing happens behind it. Honest gap: the customer number stays on the phone and is not sent yet, so a cash sale does not earn points today.',
         strength:
           'This is the single habit everything else is built on. Loyalty, revenue history, tontine, reliability indicator and credit export are five reads of the same event, not five sequential projects.',
         security:
@@ -96,7 +96,7 @@ export const learnEn = {
         strength:
           'An offer links the two apps with no media budget: it pushes the merchant toward the customer app, and the customer app toward the counter. Each side makes the other more useful.',
         security:
-          'Paid featuring is never self-granted: only an admin endpoint can set it. A merchant cannot sponsor themselves, and sponsored placement is labelled as such on the customer side.',
+          'Paid featuring is never self-granted: only an admin can sell a placement, and it ends with its time window. A merchant cannot sponsor themselves, and sponsored placement is labelled as such on the customer side.',
         roi:
           'Line 2 — featured deal placement. It is the fastest cash: a local merchant buys advertising far more readily than software, and it is a one-off sale rather than a monthly commitment.',
       },
@@ -110,7 +110,7 @@ export const learnEn = {
         security:
           'Title, percentage and price are validated on the phone and again on the server. A promo price above the normal price is refused before publication, so no incoherent offer reaches customers.',
         roi:
-          'A placement record — deal, period, price, paid date, status — still has to be built so a slot expires and can be invoiced. That is precisely the debt between line 2 and real revenue.',
+          'Each placement is now recorded — deal, window, price, paid status, who sold it — and expires on its own. Slots are capped per commune and category, because scarcity is what makes them worth buying.',
       },
     ],
 

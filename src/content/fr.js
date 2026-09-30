@@ -420,7 +420,7 @@ export const fr = {
         'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone',
         'App client : maquis, pharmacies de garde, bons plans et points (prototype)',
         'Paiement par QR et fidélité en mode sandbox, sans argent réel',
-        'Backend FastAPI : webhooks signés et idempotents, migrations, supervision',
+        'Un seul flux de ventes, étiqueté paiement confirmé ou espèces déclarées',
         'Pipeline CI/CD avec contrôles de chaîne d’approvisionnement des images',
       ],
     },
@@ -428,7 +428,7 @@ export const fr = {
       label: 'À durcir avant tout usage financier réel',
       items: [
         'Connexion par numéro (Tier 0) à la place du compte de démonstration',
-        'Capture automatique des paiements Wave et historique unique par commerçant',
+        'Capture automatique des paiements Wave, et points sur les ventes en espèces',
         'Prestataire de paiement réel et réconciliation',
         'Autorisation par ressource, secrets de production, revue de sécurité indépendante',
         'Accords partenaires écrits et revue réglementaire',

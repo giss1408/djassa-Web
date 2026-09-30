@@ -1,39 +1,53 @@
 /**
  * Merchant-app screen reconstructions (`djassa-App-retailer/lib/features/`).
  *
- * Fidelity rules, carried over from that app's own constraints:
+ * The app now shares the customer app's visual language (tokens, serif
+ * wordmark, gradient headers, soft cards — `lib/ui/theme.dart`), so these mocks
+ * reuse the same palette. What stays merchant-specific, and is copied here:
  *
- * * **French, unaccented.** `lib/l10n/strings.dart` drops every accent on
- *   purpose. Copying the strings faithfully means copying that too — "Derniere
- *   vente", not "Dernière vente".
- * * **No icon glyphs.** The app bundles no Material icon font, so anything that
- *   looks like an icon here is a text character, as it is in the app.
- * * **Words, not colours, for state.** `_SaleRow` pairs every sync state with a
- *   word because a cheap panel in sunlight washes hues out.
+ * * **French, unaccented.** `lib/l10n/strings.dart` still drops every accent on
+ *   purpose. Copying the strings faithfully means copying that too — "Dernieres
+ *   ventes", not "Dernières ventes".
+ * * **Words plus an icon for state, never colour alone.** `_SaleRow` pairs every
+ *   sync state with a word, because a cheap panel in sunlight washes hues out.
+ * * **Big targets.** 52dp minimum touch targets and a 15sp text floor.
  *
- * Amounts are examples; `formatMoney` in `lib/ui/money_text.dart` is the format
- * being imitated — non-breaking space groups, no decimals, a bare "F".
+ * Icons are drawn with text glyphs: the site bundles no Material icon font, and
+ * the frame is decorative (`aria-hidden`). Amounts are examples; `formatMoney`
+ * in `lib/ui/money_text.dart` is the format being imitated — non-breaking space
+ * groups, no decimals, a bare "F".
  */
 import { PhoneFrame, RetailerBar } from './PhoneFrame.jsx'
 
-const NBSP = ' '
+const NBSP = ' '
 
 export function RetailerSignIn() {
   return (
     <PhoneFrame app="retailer">
-      <div className="r-screen r-signin">
-        <span className="r-wordmark">Djassa</span>
-        <span className="r-sub">Espace marchand</span>
-        <div className="r-field">
-          <span className="r-field-label">Identifiant</span>
-          <span className="r-field-value">awa.kone</span>
+      <div className="r-screen r-screen-flush">
+        <div className="r-hero">
+          <span className="r-badge">d</span>
+          <span className="r-wordmark">Djassa</span>
+          <span className="r-sub">Espace marchand</span>
         </div>
-        <div className="r-field">
-          <span className="r-field-label">Mot de passe</span>
-          <span className="r-field-value">••••••••</span>
+        <div className="r-body">
+          <div className="r-field">
+            <span className="r-ico">◯</span>
+            <span>
+              <span className="r-field-label">Identifiant</span>
+              <span className="r-field-value">awa.kone</span>
+            </span>
+          </div>
+          <div className="r-field">
+            <span className="r-ico">▢</span>
+            <span>
+              <span className="r-field-label">Mot de passe</span>
+              <span className="r-field-value">••••••••</span>
+            </span>
+          </div>
+          <div className="r-button">Se connecter</div>
+          <span className="r-link">Que veut dire djassa ?</span>
         </div>
-        <div className="r-button">Se connecter</div>
-        <span className="r-link">Que veut dire djassa ?</span>
       </div>
     </PhoneFrame>
   )
@@ -41,48 +55,70 @@ export function RetailerSignIn() {
 
 export function RetailerHome() {
   const sales = [
-    { amount: `2${NBSP}500${NBSP}F`, time: '12:31', state: 'Envoyee' },
-    { amount: `1${NBSP}500${NBSP}F`, time: '12:18', state: 'Pas encore envoyee' },
-    { amount: `6${NBSP}000${NBSP}F`, time: '11:52', state: 'Envoyee' },
-    { amount: `800${NBSP}F`, time: '11:40', state: 'Envoyee' },
+    { amount: `2${NBSP}500${NBSP}F`, time: '12:31', state: 'synced' },
+    { amount: `1${NBSP}500${NBSP}F`, time: '12:18', state: 'pending' },
+    { amount: `6${NBSP}000${NBSP}F`, time: '11:52', state: 'synced' },
   ]
+  const states = {
+    synced: { label: 'Envoyee', icon: '✓' },
+    pending: { label: 'Pas encore envoyee', icon: '◷' },
+  }
   return (
     <PhoneFrame app="retailer">
-      <RetailerBar title="Djassa" action="Se deconnecter" />
-      <div className="r-screen">
-        {/* The day's total: deliberately the largest thing on the screen. */}
+      <div className="r-screen r-screen-flush">
+        <div className="r-header">
+          <span>
+            <span className="r-greeting">BONJOUR</span>
+            <span className="r-name">Maquis Chez Awa</span>
+            <span className="r-tagline">Espace marchand</span>
+          </span>
+          <span className="r-avatar">M</span>
+        </div>
+
+        {/* The day's total rides over the header edge and stays the largest
+            thing on screen: it is what the merchant opens the app to see. */}
         <div className="r-today">
-          <span className="r-today-label">Aujourd'hui</span>
+          <span className="r-today-label">AUJOURD'HUI</span>
           <strong className="r-today-value">
             48{NBSP}300{NBSP}F
           </strong>
           <span className="r-today-count">19 ventes du jour</span>
         </div>
 
-        {/* The queue, in words. This is the trust mechanism, not a spinner. */}
-        <div className="r-queue">
-          <span>1 en attente d'envoi</span>
-          <span className="r-queue-action">Envoyer maintenant</span>
+        <div className="r-body">
+          {/* The queue, in words. This is the trust mechanism, not a spinner. */}
+          <div className="r-queue">
+            <span className="r-ico">↑</span>
+            <span className="r-queue-text">1 vente en attente d'envoi</span>
+            <span className="r-queue-action">Envoyer maintenant</span>
+          </div>
+
+          <div className="r-actions">
+            <span className="r-action is-primary">
+              <span className="r-action-ico">▤</span>
+              Enregistrer une vente
+            </span>
+            <span className="r-action">
+              <span className="r-action-ico">◈</span>
+              Mes bons plans
+            </span>
+          </div>
+
+          <span className="r-section">Dernieres ventes</span>
+          <ul className="r-sales">
+            {sales.map((sale, index) => (
+              <li key={index} className={`r-sale is-${sale.state}`}>
+                <span className="r-sale-ico">{states[sale.state].icon}</span>
+                <span>
+                  <span className="r-sale-amount">{sale.amount}</span>
+                  <span className="r-sale-state">
+                    {sale.time} - {states[sale.state].label}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <div className="r-button">Enregistrer une vente</div>
-        <div className="r-button r-button-ghost">Mes bons plans</div>
-
-        <span className="r-section">Dernieres ventes</span>
-        <ul className="r-sales">
-          {sales.map((sale, index) => (
-            <li key={index}>
-              <span className="r-sale-amount">{sale.amount}</span>
-              <span
-                className={`r-sale-state ${
-                  sale.state === 'Pas encore envoyee' ? 'is-pending' : ''
-                }`}
-              >
-                {sale.time} - {sale.state}
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
     </PhoneFrame>
   )
@@ -93,13 +129,13 @@ export function RetailerRecord() {
     <PhoneFrame app="retailer">
       <RetailerBar title="Enregistrer une vente" back />
       <div className="r-screen">
-        <div className="r-field r-field-amount">
+        <div className="r-amount-card">
           <span className="r-field-label">Montant</span>
           <span className="r-amount-typed">2500</span>
+          {/* The parsed amount echoed back formatted: the merchant's check
+              against a mistyped digit before the sale is recorded. */}
+          <span className="r-amount-echo">2{NBSP}500{NBSP}F</span>
         </div>
-        {/* The parsed amount echoed back formatted: the merchant's check
-            against a mistyped digit before the sale is recorded. */}
-        <span className="r-amount-echo">2{NBSP}500{NBSP}F</span>
 
         <span className="r-section">Type</span>
         <div className="r-chips">
@@ -109,12 +145,17 @@ export function RetailerRecord() {
         </div>
 
         <div className="r-field">
-          <span className="r-field-label">Client (optionnel)</span>
-          <span className="r-field-value r-field-hint">Numero de telephone</span>
+          <span className="r-ico">◯</span>
+          <span>
+            <span className="r-field-label">Client (optionnel)</span>
+            <span className="r-field-value r-field-hint">Numero de telephone</span>
+          </span>
         </div>
 
         <div className="r-button">Enregistrer</div>
-        <span className="r-note">Vente enregistree sur le telephone.</span>
+        <span className="r-note">
+          <span className="r-ico-inline">▢</span> Vente enregistree sur le telephone.
+        </span>
       </div>
     </PhoneFrame>
   )
@@ -126,32 +167,30 @@ export function RetailerDeals() {
       <RetailerBar title="Mes bons plans" back />
       <div className="r-screen">
         <span className="r-note">
-          Vos offres apparaissent dans l'application client Djassa, dans Bons plans et
-          sur la page de votre commerce.
+          <span className="r-ico-inline">ⓘ</span> Vos offres apparaissent dans
+          l'application client Djassa, dans Bons plans et sur la page de votre commerce.
         </span>
-        <div className="r-button">Nouveau bon plan</div>
+        <div className="r-button">+ Nouveau bon plan</div>
         <span className="r-note">Maximum 5 bons plans en meme temps.</span>
 
         <div className="r-deal">
-          <div className="r-deal-head">
-            <strong>Poulet braise + attieke</strong>
-            <span className="r-deal-badge">Mis en avant par Djassa</span>
-          </div>
+          <span className="r-tag">⚡ Mis en avant par Djassa</span>
+          <strong className="r-deal-title">Poulet braise + attieke</strong>
           <span className="r-deal-price">
             2{NBSP}000{NBSP}F <s>3{NBSP}000{NBSP}F</s>
           </span>
           <span className="r-deal-foot">
-            Jusqu'au 14 oct. <span className="r-deal-end">Terminer</span>
+            <span>◷ Jusqu'au 14 oct.</span>
+            <span className="r-deal-end">Terminer</span>
           </span>
         </div>
 
         <div className="r-deal">
-          <div className="r-deal-head">
-            <strong>-20 % sur le riz gras le mardi</strong>
-          </div>
+          <strong className="r-deal-title">-20 % sur le riz gras le mardi</strong>
           <span className="r-deal-price">Reduction 20 %</span>
           <span className="r-deal-foot">
-            Jusqu'au 7 oct. <span className="r-deal-end">Terminer</span>
+            <span>◷ Jusqu'au 7 oct.</span>
+            <span className="r-deal-end">Terminer</span>
           </span>
         </div>
       </div>
@@ -165,8 +204,10 @@ export function RetailerNewDeal() {
       <RetailerBar title="Nouveau bon plan" back />
       <div className="r-screen">
         <div className="r-field">
-          <span className="r-field-label">Titre de l'offre</span>
-          <span className="r-field-value">Poulet braise + attieke</span>
+          <span>
+            <span className="r-field-label">Titre de l'offre</span>
+            <span className="r-field-value">Poulet braise + attieke</span>
+          </span>
         </div>
 
         <span className="r-section">Type d'offre</span>
@@ -177,12 +218,16 @@ export function RetailerNewDeal() {
 
         <div className="r-row">
           <div className="r-field">
-            <span className="r-field-label">Prix promo (F)</span>
-            <span className="r-field-value">2000</span>
+            <span>
+              <span className="r-field-label">Prix promo (F)</span>
+              <span className="r-field-value">2000</span>
+            </span>
           </div>
           <div className="r-field">
-            <span className="r-field-label">Prix normal (F)</span>
-            <span className="r-field-value">3000</span>
+            <span>
+              <span className="r-field-label">Prix normal (F)</span>
+              <span className="r-field-value">3000</span>
+            </span>
           </div>
         </div>
 
@@ -194,11 +239,14 @@ export function RetailerNewDeal() {
         </div>
 
         {/* The preview: what the customer will see, before publishing. */}
-        <span className="r-section">Apercu pour vos clients</span>
+        <span className="r-section">◉ Apercu pour vos clients</span>
         <div className="r-preview">
+          <span className="r-preview-offer">2{NBSP}000{NBSP}F</span>
           <strong>Poulet braise + attieke</strong>
-          <span>
-            2{NBSP}000{NBSP}F <s>3{NBSP}000{NBSP}F</s> · Plus que 7 j
+          <span className="r-deal-foot">
+            <span>
+              <s>3{NBSP}000{NBSP}F</s> · ◷ Jusqu'au 7 oct.
+            </span>
           </span>
         </div>
 

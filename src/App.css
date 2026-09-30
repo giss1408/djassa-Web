@@ -1281,12 +1281,14 @@
 
 /* --------------------------------------------------------------------------
    4d. Device mocks — merchant app (djassa-App-retailer)
-   Light, high-contrast, no icon glyphs, unaccented French: the app's own
-   documented choices for a market stall in sunlight on a cheap panel.
+   Same visual language as the customer app (shared tokens, serif wordmark,
+   gradient header, soft cards), per the app's theme.dart. Kept from the
+   original merchant design: unaccented French, large targets, and sync state
+   always shown as a word plus an icon, never colour alone.
    -------------------------------------------------------------------------- */
 
 .phone-retailer .phone-screen {
-  background: #fcfaf7;
+  background: #f5f1e8;
   font-family: var(--sans);
 }
 
@@ -1295,22 +1297,23 @@
   align-items: center;
   gap: 0.5rem;
   flex: 0 0 auto;
-  padding: 0.7rem 0.9rem;
-  border-bottom: 1px solid var(--mock-line);
+  padding: 0.7rem 0.9rem 0.4rem;
 }
 
 .r-back {
-  font-size: 0.9375rem;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .r-bar-title {
   flex: 1;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .r-bar-action {
-  color: #b5401d;
+  color: #c94a22;
   font-size: 0.6875rem;
   font-weight: 600;
 }
@@ -1319,116 +1322,257 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  padding: 0.9rem;
+  padding: 0.5rem 0.9rem 0.9rem;
   overflow: hidden;
 }
 
-.r-signin {
-  gap: 0.5rem;
-  justify-content: center;
+.r-screen-flush {
+  gap: 0;
   height: 100%;
+  padding: 0;
 }
 
-.r-wordmark {
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.r-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.8rem 0.9rem;
 }
 
-.r-sub {
-  margin-bottom: 0.9rem;
+.r-ico,
+.r-ico-inline {
   color: var(--mock-muted);
   font-size: 0.75rem;
 }
 
+.r-ico {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 1.1rem;
+}
+
+/* Sign-in: gradient hero with the wordmark initial in a white disc. */
+.r-hero {
+  display: grid;
+  justify-items: start;
+  gap: 0.15rem;
+  padding: 1.6rem 1rem 1.2rem;
+  background: linear-gradient(135deg, #c94a22, #9e3517);
+  border-radius: 0 0 1.5rem 1.5rem;
+  color: #fff;
+}
+
+.r-badge {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 0.4rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  color: #c94a22;
+  font: 400 1.75rem/1 var(--serif);
+}
+
+.r-wordmark {
+  font: 400 1.75rem/1 var(--serif);
+}
+
+.r-sub {
+  font-size: 0.75rem;
+  opacity: 0.88;
+}
+
+/* Home: orange header with the business name, green day card over its edge. */
+.r-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.9rem 1rem 3.4rem;
+  background: linear-gradient(135deg, #c94a22, #9e3517);
+  border-radius: 0 0 1.5rem 1.5rem;
+  color: #fff;
+}
+
+.r-greeting {
+  display: block;
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+}
+
+.r-name {
+  display: block;
+  font: 400 1.375rem/1.1 var(--serif);
+}
+
+.r-tagline {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.6875rem;
+  opacity: 0.88;
+}
+
+.r-avatar {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
 .r-today {
-  padding: 0.9rem;
-  background: #efeadd;
-  border-radius: 0.625rem;
+  margin: -2.8rem 1rem 0;
+  padding: 0.75rem 0.9rem;
+  background: linear-gradient(135deg, #234b39, #173427);
+  border-radius: 1rem;
+  box-shadow: 0 10px 22px -12px rgba(23, 52, 39, 0.55);
+  color: #fff;
 }
 
 .r-today-label {
   display: block;
-  font-size: 0.6875rem;
-  font-weight: 600;
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.72;
 }
 
 /* The day's total: the single largest element, as in the app. */
 .r-today-value {
   display: block;
-  margin-top: 0.15rem;
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  margin-top: 0.1rem;
+  font: 400 1.875rem/1 var(--serif);
 }
 
 .r-today-count {
   display: block;
-  color: var(--mock-muted);
+  margin-top: 0.15rem;
   font-size: 0.6875rem;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 .r-queue {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.75rem;
+  gap: 0.4rem;
+  padding: 0.55rem 0.6rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 0.75rem;
+  font-size: 0.6875rem;
+}
+
+.r-queue-text {
+  flex: 1;
 }
 
 .r-queue-action {
-  color: #b5401d;
-  font-weight: 600;
+  color: #c94a22;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.r-button {
-  padding: 0.7rem;
-  background: #c94a22;
-  border-radius: 0.5rem;
-  color: #fff;
-  font-size: 0.8125rem;
-  font-weight: 600;
+.r-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.r-action {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0.3rem;
+  background: #fde9df;
+  border-radius: 0.75rem;
+  color: #c94a22;
+  font-size: 0.625rem;
+  font-weight: 700;
   text-align: center;
 }
 
-.r-button-ghost {
-  background: transparent;
-  border: 1.5px solid var(--mock-line);
-  color: var(--mock-ink);
+.r-action.is-primary {
+  background: #c94a22;
+  color: #fff;
+}
+
+.r-action-ico {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .r-section {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .r-sales {
   display: grid;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
+}
+
+.r-sale {
+  display: flex;
+  align-items: center;
   gap: 0.55rem;
+  padding: 0.5rem 0.65rem;
+}
+
+.r-sale + .r-sale {
+  border-top: 1px solid var(--mock-line);
+}
+
+.r-sale-ico {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.5rem;
+  height: 1.5rem;
+  background: rgba(90, 97, 90, 0.12);
+  border-radius: 50%;
+  color: var(--mock-muted);
+  font-size: 0.6875rem;
+}
+
+.r-sale.is-pending .r-sale-ico {
+  background: rgba(24, 34, 31, 0.12);
+  color: var(--mock-ink);
 }
 
 .r-sale-amount {
   display: block;
   font-size: 0.8125rem;
+  font-weight: 600;
 }
 
-/* State is always a word, never a colour on its own. */
+/* State is always a word (and an icon), never a colour on its own. */
 .r-sale-state {
   display: block;
   color: var(--mock-muted);
   font-size: 0.6875rem;
 }
 
-.r-sale-state.is-pending {
+.r-sale.is-pending .r-sale-state {
   color: var(--mock-ink);
   font-weight: 500;
 }
 
 .r-field {
-  padding: 0.55rem 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.7rem;
   background: #fff;
   border: 1px solid var(--mock-line);
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
 }
 
 .r-field-label {
@@ -1446,19 +1590,22 @@
   color: #9a9789;
 }
 
-.r-field-amount {
-  border-color: #c94a22;
-  border-width: 2px;
+.r-amount-card {
+  display: grid;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  border: 2px solid #c94a22;
+  border-radius: 1rem;
 }
 
 .r-amount-typed {
   display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font: 400 2rem/1.1 var(--serif);
 }
 
 .r-amount-echo {
-  font-size: 0.8125rem;
+  color: var(--mock-muted);
+  font-size: 0.75rem;
 }
 
 .r-chips {
@@ -1469,21 +1616,33 @@
 
 .r-chip {
   padding: 0.3rem 0.65rem;
+  background: #fff;
   border: 1px solid var(--mock-line);
   border-radius: var(--radius-pill);
   font-size: 0.6875rem;
 }
 
 .r-chip.is-on {
-  background: var(--mock-ink);
-  border-color: var(--mock-ink);
-  color: #fcfaf7;
+  background: #fde9df;
+  border-color: #c94a22;
+  color: #9e3517;
+  font-weight: 600;
 }
 
 .r-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+}
+
+.r-button {
+  padding: 0.7rem;
+  background: #c94a22;
+  border-radius: var(--radius-pill);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .r-note {
@@ -1493,8 +1652,8 @@
 }
 
 .r-link {
-  margin-top: 0.4rem;
-  color: #b5401d;
+  margin-top: 0.2rem;
+  color: #c94a22;
   font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
@@ -1502,30 +1661,27 @@
 
 .r-deal {
   display: grid;
+  justify-items: start;
   gap: 0.25rem;
-  padding: 0.7rem;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
   border: 1px solid var(--mock-line);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
-.r-deal-head {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  align-items: baseline;
+.r-deal-title {
   font-size: 0.8125rem;
 }
 
 /* Sponsored placement is labelled, in the app and here: unlabelled paid
    placement erodes the discovery trust the customer app runs on. */
-.r-deal-badge {
-  padding: 0.1rem 0.4rem;
-  background: #f1e9d6;
+.r-tag {
+  padding: 0.12rem 0.45rem;
+  background: #fde9df;
   border-radius: var(--radius-pill);
+  color: #c94a22;
   font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .r-deal-price {
@@ -1533,7 +1689,8 @@
   font-weight: 600;
 }
 
-.r-deal-price s {
+.r-deal-price s,
+.r-preview s {
   color: var(--mock-muted);
   font-weight: 400;
 }
@@ -1542,26 +1699,29 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  justify-self: stretch;
   color: var(--mock-muted);
   font-size: 0.6875rem;
 }
 
 .r-deal-end {
-  color: #b5401d;
-  font-weight: 600;
+  color: #c94a22;
+  font-weight: 700;
 }
 
 .r-preview {
   display: grid;
-  gap: 0.2rem;
-  padding: 0.7rem;
-  background: #efeadd;
-  border-radius: 0.5rem;
+  gap: 0.15rem;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--mock-line);
+  border-radius: 1rem;
   font-size: 0.75rem;
 }
 
-.r-preview s {
-  color: var(--mock-muted);
+.r-preview-offer {
+  color: #c94a22;
+  font: 400 1.5rem/1 var(--serif);
 }
 
 /* --------------------------------------------------------------------------

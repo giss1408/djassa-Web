@@ -25,11 +25,11 @@ export function PhoneFrame({ app, children }) {
   )
 }
 
-/** Merchant app bar: plain title, text actions, no icon font (none is bundled). */
+/** Merchant app bar: serif title and a back chevron, as in the app's AppBar theme. */
 export function RetailerBar({ title, action, back = false }) {
   return (
     <div className="r-bar">
-      {back ? <span className="r-back">←</span> : null}
+      {back ? <span className="r-back">‹</span> : null}
       <span className="r-bar-title">{title}</span>
       {action ? <span className="r-bar-action">{action}</span> : null}
     </div>

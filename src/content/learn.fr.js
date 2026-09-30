@@ -25,7 +25,7 @@ export const learnFr = {
   howTo:
     'Choisissez une application, puis avancez écran par écran. Chaque écran est commenté sur trois axes : la force du concept qu’il porte, le contrôle de sécurité qu’il applique, et la ligne de revenu qu’il alimente.',
   fidelity:
-    'Écrans reconstitués depuis le code des deux applications Flutter, en français comme dans le produit — y compris l’absence d’accents dans l’application commerçant, qui est un choix documenté pour les écrans bon marché. Montants, noms de commerce et numéros sont des exemples.',
+    'Écrans reconstitués depuis le code des deux applications Flutter (branche integration), en français comme dans le produit — y compris l’absence d’accents dans l’application commerçant, qui est un choix documenté pour les écrans bon marché. Montants, noms de commerce et numéros sont des exemples.',
 
   apps: [
     {
@@ -34,7 +34,7 @@ export const learnFr = {
       file: 'djassa-App-retailer',
       tag: 'Hors ligne d’abord',
       pitch:
-        'Conçue pour un étal en plein soleil sur un téléphone d’entrée de gamme : contraste élevé, cibles de 48 dp minimum, aucune police d’icônes embarquée, rien qui attende le réseau.',
+        'Le même style que l’application client, pour qu’elles forment un seul produit, mais conçue pour un étal en plein soleil sur un téléphone d’entrée de gamme : cibles de 52 dp, texte de 15 sp minimum, état de synchronisation en mots plus une icône, rien qui attende le réseau.',
     },
     {
       id: 'user',
@@ -81,13 +81,13 @@ export const learnFr = {
         security:
           'La file d’attente est annoncée en mots plutôt qu’en spinner : « 2 en attente d’envoi », « Envoyée », « Refusée ». Un commerçant qui ne sait pas ce qui a quitté son téléphone ne confiera pas sa comptabilité à l’application. L’état est porté par un mot, jamais par une couleur seule.',
         roi:
-          'Ligne 1 — abonnement commerçant, la première ligne recommandée. La conversion se joue au jour 30, quand cet écran a accumulé assez d’activité pour valoir un prix, et non au jour 0.',
+          'Ligne 1 — abonnement commerçant, la première ligne recommandée. La conversion se joue au jour 30, quand cet écran a accumulé assez d’activité pour valoir un prix, et non au jour 0. Formules et paiements sont tenus dans un registre de facturation en ajout seul ; pendant le pilote, le virement mobile money est saisi à la main.',
       },
       {
         id: 'record',
         name: 'Enregistrer une vente',
         summary:
-          'Un montant, une catégorie, un client optionnel. Rien n’attend le réseau : la confirmation arrive dès que la ligne est écrite sur le disque, et la synchronisation se fait derrière.',
+          'Un montant, une catégorie, un client optionnel. Rien n’attend le réseau : la confirmation arrive dès que la ligne est écrite sur le disque, et la synchronisation se fait derrière. Limite actuelle, dite franchement : le numéro du client reste sur le téléphone et n’est pas encore envoyé, donc une vente en espèces ne rapporte pas encore de points.',
         strength:
           'C’est l’habitude unique sur laquelle tout le reste est bâti. Fidélité, historique de revenus, tontine, indicateur de fiabilité et export de crédit sont cinq lectures du même événement, pas cinq projets successifs.',
         security:
@@ -103,7 +103,7 @@ export const learnFr = {
         strength:
           'L’offre relie les deux applications sans budget média : elle pousse le commerçant vers l’application client, et l’application client vers le comptoir. Chaque côté rend l’autre plus utile.',
         security:
-          'La mise en avant payante n’est jamais auto-attribuée : seul un endpoint d’administration peut la poser. Un commerçant ne peut pas se sponsoriser lui-même, et le placement sponsorisé est affiché comme tel côté client.',
+          'La mise en avant payante n’est jamais auto-attribuée : seul un administrateur peut vendre un placement, qui prend fin avec sa période. Un commerçant ne peut pas se sponsoriser lui-même, et le placement sponsorisé est affiché comme tel côté client.',
         roi:
           'Ligne 2 — placement d’offre mis en avant. C’est la trésorerie la plus rapide : un commerçant local achète de la publicité bien plus volontiers qu’un abonnement logiciel, et c’est une vente unique plutôt qu’un engagement mensuel.',
       },
@@ -117,7 +117,7 @@ export const learnFr = {
         security:
           'Titre, pourcentage et prix sont validés sur le téléphone puis au serveur. Un prix promo supérieur au prix normal est refusé avant publication, donc aucune offre incohérente n’atteint les clients.',
         roi:
-          'Un enregistrement de placement — offre, période, prix, date de paiement, statut — reste à construire pour qu’un créneau expire et puisse être facturé. C’est exactement la dette qui sépare la ligne 2 d’un revenu réel.',
+          'Chaque placement est désormais enregistré — offre, période, prix, statut de paiement, vendeur — et expire de lui-même. Les créneaux sont plafonnés par commune et par catégorie : c’est la rareté qui leur donne de la valeur.',
       },
     ],
 
