@@ -274,3 +274,50 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Confidentiality notice on the brief, and the NDA pages (legal-doc). */
+.notice.confidential {
+  background: #e3ede5;
+  border-left-color: var(--green);
+}
+
+.legal-doc h1 {
+  font-size: 2.2rem;
+}
+
+.legal-doc h2 {
+  font-size: 1.1rem;
+}
+
+.opt {
+  color: var(--muted);
+  font: italic 400 0.85rem var(--sans);
+}
+
+.sign-table th {
+  width: 50%;
+  color: var(--ink);
+}
+
+.sign-table td {
+  width: 50%;
+}
+
+/* Room for a handwritten signature on paper. */
+.sign-space td {
+  height: 4.5rem;
+}
+
+@media print {
+  .legal-doc h1 {
+    font-size: 20pt;
+  }
+
+  .legal-doc h2 {
+    font-size: 11pt;
+  }
+
+  .sign {
+    break-inside: avoid;
+  }
+}
