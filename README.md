@@ -39,7 +39,7 @@ The repository is ready to deploy as a Render **static site** from
 [`render.yaml`](render.yaml) (a Blueprint):
 
 1. Render dashboard → **New → Blueprint** → connect this GitHub repository.
-2. Render reads `render.yaml` and creates `djassa`: build
+2. Render reads `render.yaml` and creates `djassa-web`: build
    `npm ci && npm run check:content && npm run build`, publish `./dist`,
    Node 22.12 (also pinned in `.node-version` and `engines`).
 3. Deploys follow the repository's **default branch**. The latest work is on
