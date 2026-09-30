@@ -1,6 +1,6 @@
 /**
- * French copy. Source of truth for claims: djassa-BE/docs/{PRODUCT-CONCEPT,
- * BUSINESS-MODEL,ROADMAP,PARTNERS-AND-OUTREACH}.md and the research notes.
+ * French copy. Source of truth for claims: djassa-BE/docs/business/{CONCEPT,
+ * MARKET,BUSINESS-MODEL,ROADMAP,PARTNERS}.md.
  *
  * Every market figure carries its own source and date, because the research
  * notes explicitly warn that inclusion figures diverge by methodology
@@ -36,13 +36,13 @@ export const fr = {
     eyebrow: 'Inclusion financière — construite depuis le commerce local',
     title: 'Le progrès commence au coin de la rue.',
     intro:
-      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Djassa construit cette preuve à partir du geste que le commerçant fait déjà : enregistrer une vente.',
+      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Djassa construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son Wave, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
     primary: 'Lire la thèse d’investissement',
     secondary: 'Comprendre le concept',
     stage: {
       label: 'Stade actuel',
       value: 'Pré-pilote',
-      detail: 'Concept et backend prototype validés en interne. Pilote Abidjan : 5 à 10 commerçants, à lancer.',
+      detail: 'Backend et deux applications prototypes (commerçant, client). Pilote Abidjan : 5 à 10 commerçants, à lancer.',
     },
     card: {
       tag: 'DJASSA / TRANSACTION',
@@ -64,7 +64,7 @@ export const fr = {
     'Abidjan d’abord',
     'Un seul geste',
     'Hors ligne par défaut',
-    'Mobile money natif',
+    'Sur le Wave du commerçant',
     'Consentement explicite',
     'Aucun dépôt détenu',
   ],
@@ -87,7 +87,7 @@ export const fr = {
     lede:
       'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Djassa n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
     body:
-      'Le commerçant scanne un QR code ou saisit un numéro. C’est le seul geste nouveau. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
+      'Quand le client paie avec le QR Wave que le commerçant utilise déjà, la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
     coreLabel: 'L’ÉVÉNEMENT',
     coreValue: 'transaction vérifiée',
     coreDetail: 'qui · où · combien · quand',
@@ -99,7 +99,7 @@ export const fr = {
       { title: 'Financement', detail: 'dossier transmis au partenaire agréé', phase: 'Phase 5' },
     ],
     note:
-      'Conséquence de conception : toute fonctionnalité qui exigerait une deuxième habitude du commerçant est hors périmètre, sauf s’il n’existe aucun autre moyen d’obtenir le signal.',
+      'Conséquence de conception : toute fonctionnalité qui exigerait une deuxième habitude du commerçant est hors périmètre, sauf s’il n’existe aucun autre moyen d’obtenir le signal. Et aucun paiement ne doit coûter au commerçant plus cher qu’aujourd’hui.',
   },
   market: {
     kicker: '02 / Le marché',
@@ -109,7 +109,7 @@ export const fr = {
       'Le paradoxe ivoirien est documenté : le portefeuille numérique est quasi universel, mais épargner, emprunter ou prouver son activité reste hors de portée. C’est cet écart — pas l’accès au paiement — qui constitue le gisement.',
     stats: [
       { value: '25 M+', label: 'comptes mobile money actifs', sub: 'pour ~28–31 M d’habitants', source: 'BCEAO, 2024–2026' },
-      { value: '~89 %', label: 'taux de pénétration mobile money', sub: 'parmi les plus élevés au monde', source: 'GSMA' },
+      { value: '2,72 M', label: 'points de paiement marchand', sub: '23,3 % des opérations mobile money (3,3 % en 2020)', source: 'BCEAO via Launch Base Africa, 2024' },
       { value: '31,2 %', label: 'taux de bancarisation strict', sub: '43,6 % avec la microfinance', source: 'Indicateurs nationaux, 2023' },
       { value: '2,9 M', label: 'clients de la microfinance', sub: '+14,3 % en un trimestre', source: 'APSFD-CI, T1 2026' },
       { value: '~20 %', label: 'du PIB porté par les PME', sub: '~23 % des emplois', source: 'Gouvernement ivoirien' },
@@ -159,18 +159,18 @@ export const fr = {
         why: 'Marché déjà financé et structuré.',
       },
       {
-        segment: 'Agrégation de paiement',
-        players: 'CinetPay, Hub2',
+        segment: 'Paiement marchand et agrégation',
+        players: 'Wave (~1 % côté marchand, ~1 M de marchands QR), Orange Money, CinetPay',
         stance: 'Partenaire',
         verdict: 'partner',
-        why: 'Nous intégrons ces rails, nous ne les reconstruisons pas.',
+        why: 'Nous nous branchons sur le QR que le commerçant utilise déjà. Nous ne lui vendons pas un paiement plus cher.',
       },
       {
-        segment: 'Preuve d’activité marchande et tontine numérique',
+        segment: 'Fidélité client, preuve d’activité marchande et tontine numérique',
         players: 'Aucun acteur ivoirien dominant',
         stance: 'Notre place',
         verdict: 'in',
-        why: 'Segment vacant localement, aligné avec le chantier réglementaire ouvert par la BCEAO sur le scoring alternatif.',
+        why: 'Segment vacant localement : les portefeuilles encaissent, mais aucun ne fait revenir le client. Aligné avec le chantier BCEAO sur le scoring alternatif.',
       },
     ],
   },
@@ -186,15 +186,15 @@ export const fr = {
         label: 'Le wedge',
         title: 'Le commerçant paie pour une valeur visible.',
         body:
-          'La fidélité et le suivi d’activité génèrent un abonnement SaaS avant toute commission financière. Le premier client est celui qui utilise le produit chaque jour — pas un partenaire bancaire hypothétique.',
-        proof: 'Premier revenu : abonnement mensuel par point de vente, payé en mobile money.',
+          'La fidélité fait revenir les clients : c’est ce que le commerçant voit chaque semaine, et ce pour quoi il paie, avant toute commission financière. Le premier client est celui qui utilise le produit chaque jour — pas un partenaire bancaire hypothétique.',
+        proof: 'Premier revenu : abonnement mensuel par point de vente, payé en mobile money, avec une formule gratuite plafonnée. Prix testés pendant le pilote.',
       },
       {
         icon: '∞',
         label: 'L’avantage cumulatif',
         title: 'Chaque vente rend le produit plus utile.',
         body:
-          'Plus l’événement est enregistré, plus l’historique devient fiable, les retours clients mesurables et les partenaires financiers intéressés. La donnée n’est pas revendue : elle est construite avec le consentement de la personne concernée.',
+          'Plus l’événement est enregistré, plus l’historique devient fiable, les retours clients mesurables et les partenaires financiers intéressés. La donnée n’est pas revendue : elle est construite avec le consentement de la personne concernée. Ailleurs en Afrique, le crédit marchand fondé sur les données de paiement a été suivi de +36 % (Moniepoint) à +42 % (Kopo Kopo) de croissance des transactions.',
         proof: 'La complétude du flux est la barrière à l’entrée — elle ne se rachète pas, elle s’accumule.',
       },
       {
@@ -223,11 +223,11 @@ export const fr = {
       'L’abonnement marchand finance le produit. Les revenus partenaires n’arrivent qu’après un usage fiable, un consentement traçable, une réconciliation propre et un périmètre réglementaire confirmé.',
     streamsTitle: 'Ordre des revenus',
     streams: [
-      { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers d’activité. Revenu principal du MVP.', status: 'now' },
-      { step: '02', title: 'Campagnes et messagerie', detail: 'Option payante avec coûts refacturés en transparence.', status: 'now' },
+      { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers, avec une formule gratuite plafonnée. Revenu principal du MVP.', status: 'now' },
+      { step: '02', title: 'Bons plans à la une et campagnes', detail: 'Emplacement sponsorisé dans l’app client ; messages refacturés en transparence.', status: 'now' },
       { step: '03', title: 'Contrats multi-points de vente', detail: 'Réseaux et associations de commerçants, tarifés séparément.', status: 'next' },
-      { step: '04', title: 'Orchestration de paiement', detail: 'Là où le prestataire agréé l’autorise.', status: 'next' },
-      { step: '05', title: 'Apport d’affaires consenti', detail: 'Rémunéré par un partenaire agréé d’épargne ou de crédit.', status: 'later' },
+      { step: '04', title: 'Orchestration de paiement', detail: 'Revenu secondaire, jamais plus cher pour le commerçant que son Wave actuel.', status: 'next' },
+      { step: '05', title: 'Apport d’affaires consenti', detail: 'Rémunéré par un partenaire agréé : crédit de stock, épargne, tontine.', status: 'later' },
       { step: '06', title: 'Services institutionnels', detail: 'Reporting et réconciliation pour institutions.', status: 'later' },
     ],
     statusLabels: { now: 'MVP', next: 'Après preuve', later: 'Après partenariat' },
@@ -238,9 +238,9 @@ export const fr = {
       'Revenu récurrent mensuel',
       'Coût d’acquisition et durée d’onboarding',
       'Clients actifs par point de vente',
-      'Transactions enregistrées par commerçant actif',
+      'Taux de retour des clients identifiés',
       'Rétention à 30, 60 et 90 jours',
-      'Coût messagerie et paiement par transaction',
+      'Coût des notifications par point de vente',
       'Coût de support par commerçant',
       'Marge brute par formule',
     ],
@@ -289,7 +289,7 @@ export const fr = {
           '5 à 10 entretiens commerçants',
           'Un accord de pilote restreint',
           'Un corridor, un segment, un canal d’acquisition',
-          'Accès au sandbox du prestataire de paiement',
+          'Accès à l’API Wave Business pour la capture automatique',
           'Revue de la frontière identité/KYC avec le partenaire mobile money',
         ],
         exit: 'Un utilisateur pilote et un partenaire identifiés, aucun blocage non résolu sur le flux de données du MVP.',
@@ -301,10 +301,10 @@ export const fr = {
         stateLabel: 'Suivant',
         goal: 'Enregistrer une activité utile et créer l’usage répété.',
         items: [
-          'Identité marchand et client (Tier 0)',
-          'Règles de fidélité et points',
-          'Historique de transactions et reporting',
-          'File d’attente hors ligne et synchronisation sans doublon',
+          'Capture automatique des paiements Wave existants',
+          'Identité marchand et client par numéro (Tier 0)',
+          'Points, récompenses et rapport hebdo « clients revenus »',
+          'Ventes en espèces hors ligne, synchronisées sans doublon',
           'Exports sous contrôle de consentement',
         ],
         exit: 'Capture régulière mesurée, rétention marchande suivie, conversion payante observée.',
@@ -316,7 +316,7 @@ export const fr = {
         stateLabel: 'Planifié',
         goal: 'Rendre le produit marchand répétable dans le premier corridor avant toute complexité financière.',
         items: [
-          'Campagnes et réactivation client',
+          'Bons plans, campagnes et relance des clients perdus',
           'Onboarding par association et parrainage',
           'Vérification progressive, là où le régulateur l’approuve',
           'Playbook d’onboarding et de support',
@@ -417,20 +417,20 @@ export const fr = {
     built: {
       label: 'Construit',
       items: [
-        'Backend FastAPI avec modèles SQLAlchemy et migrations Alembic',
-        'PostgreSQL, Redis et Celery pour le travail asynchrone',
-        'Vérification de signature des webhooks et traitement idempotent',
-        'Métriques Prometheus et instrumentation OpenTelemetry',
+        'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone',
+        'App client : maquis, pharmacies de garde, bons plans et points (prototype)',
+        'Paiement par QR et fidélité en mode sandbox, sans argent réel',
+        'Backend FastAPI : webhooks signés et idempotents, migrations, supervision',
         'Pipeline CI/CD avec contrôles de chaîne d’approvisionnement des images',
       ],
     },
     pending: {
       label: 'À durcir avant tout usage financier réel',
       items: [
-        'Authentification et autorisation par ressource',
-        'Workflows financiers de bout en bout',
-        'Configuration de production et gestion des secrets',
-        'Revue de sécurité et de confidentialité indépendante',
+        'Connexion par numéro (Tier 0) à la place du compte de démonstration',
+        'Capture automatique des paiements Wave et historique unique par commerçant',
+        'Prestataire de paiement réel et réconciliation',
+        'Autorisation par ressource, secrets de production, revue de sécurité indépendante',
         'Accords partenaires écrits et revue réglementaire',
       ],
     },
@@ -444,7 +444,7 @@ export const fr = {
       'Nous cherchons trois types d’interlocuteurs : des commerçants d’Abidjan prêts à tester, une institution de microfinance intéressée par un pilote consenti et restreint, et des investisseurs qui acceptent qu’une expansion se mérite par la preuve.',
     asks: [
       { who: 'Commerçants', what: 'Un pilote de 5 à 10 points de vente à Abidjan, sur un corridor dense.' },
-      { who: 'Institutions et partenaires', what: 'Une revue du flux de données, du périmètre et du modèle d’apport consenti.' },
+      { who: 'Institutions et partenaires', what: 'Une revue du flux de données, de la capture des paiements existants et du modèle d’apport consenti.' },
       { who: 'Investisseurs', what: 'Le dossier complet : économie unitaire, portes de sortie par phase, périmètre réglementaire.' },
     ],
     cta: 'Écrire à l’équipe',
@@ -454,10 +454,10 @@ export const fr = {
     rights: '© 2026 Djassa — Abidjan, Côte d’Ivoire',
     note: 'Un produit en construction, avec soin.',
     brandNote:
-      'Djassa désigne l’initiative produit et technologique ; Dkassa désigne le volet inclusion financière. Le nom de marque définitif reste à confirmer.',
+      'Djassa est un produit unique ; le nom « Dkassa », employé dans des notes anciennes, n’est plus utilisé. Le nom de marque définitif reste à confirmer juridiquement.',
     disclaimer:
       'Document d’information. Ne constitue ni une offre de services financiers, ni une sollicitation d’investissement. Les chiffres de marché sont cités avec leur source et doivent être revérifiés avant tout usage contractuel.',
     sourcesLabel: 'Sources citées',
-    sources: 'Banque mondiale (Global Findex 2025) · GSMA · BCEAO · APSFD-CI · APIF-CI · SGPME · indicateurs nationaux 2023',
+    sources: 'Banque mondiale (Global Findex 2025) · GSMA · BCEAO · APSFD-CI · APIF-CI · SGPME · indicateurs nationaux 2023 · Launch Base Africa · CGAP · TechCabal',
   },
 }
