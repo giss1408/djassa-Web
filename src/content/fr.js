@@ -28,6 +28,8 @@ export const fr = {
       { href: '#execution', label: 'L’exécution' },
     ],
     cta: 'Dossier investisseur',
+    // The printable brief (public/brief/), in the reader's language.
+    briefHref: '/brief/',
     langLabel: 'Passer en anglais',
     menuOpen: 'Ouvrir le menu',
     menuClose: 'Fermer le menu',
@@ -449,7 +451,7 @@ export const fr = {
       { who: 'Investisseurs', what: 'Le dossier complet : économie unitaire, portes de sortie par phase, périmètre réglementaire.' },
     ],
     cta: 'Écrire à l’équipe',
-    ctaSecondary: 'Demander le dossier',
+    ctaSecondary: 'Lire le dossier investisseur',
   },
   footer: {
     rights: '© 2026 Djassa — Abidjan, Côte d’Ivoire',

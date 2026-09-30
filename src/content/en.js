@@ -23,6 +23,8 @@ export const en = {
       { href: '#execution', label: 'Execution' },
     ],
     cta: 'Investor brief',
+    // The printable brief (public/brief/), in the reader's language.
+    briefHref: '/brief/en.html',
     langLabel: 'Switch to French',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
@@ -444,7 +446,7 @@ export const en = {
       { who: 'Investors', what: 'The full brief: unit economics, per-phase exit gates, regulatory perimeter.' },
     ],
     cta: 'Write to the team',
-    ctaSecondary: 'Request the brief',
+    ctaSecondary: 'Read the investor brief',
   },
   footer: {
     rights: '© 2026 Djassa — Abidjan, Côte d’Ivoire',

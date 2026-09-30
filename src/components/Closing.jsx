@@ -22,10 +22,7 @@ export function Closing({ content }) {
                 {closing.cta}
                 <span aria-hidden="true">↗</span>
               </a>
-              <a
-                className="text-link"
-                href={`mailto:${CONTACT}?subject=${encodeURIComponent(nav.cta)}`}
-              >
+              <a className="text-link" href={nav.briefHref}>
                 {closing.ctaSecondary}
                 <span aria-hidden="true">↗</span>
               </a>

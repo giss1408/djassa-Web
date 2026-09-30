@@ -57,7 +57,7 @@ export function Nav({ content, locale, onToggleLocale }) {
               {link.label}
             </a>
           ))}
-          <a className="nav-link-cta" href="#contact" onClick={() => setMenuOpen(false)}>
+          <a className="nav-link-cta" href={nav.briefHref} onClick={() => setMenuOpen(false)}>
             {nav.cta}
           </a>
         </div>
@@ -74,7 +74,7 @@ export function Nav({ content, locale, onToggleLocale }) {
             <span className={locale === 'EN' ? 'is-active' : ''}>EN</span>
           </button>
 
-          <a className="nav-cta" href="#contact">
+          <a className="nav-cta" href={nav.briefHref}>
             {nav.cta}
             <span aria-hidden="true">↗</span>
           </a>
