@@ -1,0 +1,169 @@
+/* Download page: ~2 KB, system fonts only, nothing to wait for on 3G. */
+:root {
+  --ink: #18221f;
+  --muted: #5a615a;
+  --paper: #f5f1e8;
+  --line: #e2dccd;
+  --orange: #c94a22;
+  --orange-deep: #9e3517;
+  --green: #234b39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.page {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+header {
+  text-align: center;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--orange);
+  border-radius: 0.9rem;
+  color: #fff;
+  font: 400 2rem/1 Georgia, serif;
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  font: 400 2rem/1.1 Georgia, 'Times New Roman', serif;
+}
+
+.sub {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.warn {
+  margin: 1.25rem 0 0;
+  padding: 0.7rem 0.85rem;
+  background: #fff3d6;
+  border-left: 3px solid #d9a21b;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
+h2 {
+  margin: 0 0 0.3rem;
+  font: 400 1.4rem/1.2 Georgia, 'Times New Roman', serif;
+}
+
+.app {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.app p {
+  margin: 0 0 0.75rem;
+}
+
+/* Big enough to hit with a thumb on a small phone. */
+.btn {
+  display: block;
+  padding: 0.9rem 1rem;
+  background: var(--orange);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:active {
+  background: var(--orange-deep);
+}
+
+.btn small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.alt {
+  margin-top: 0.6rem !important;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.login {
+  margin-bottom: 0 !important;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+code {
+  padding: 0.05rem 0.3rem;
+  background: var(--paper);
+  border-radius: 0.3rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+section[aria-labelledby='how'] {
+  margin-top: 1.5rem;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.steps li + li {
+  margin-top: 0.4rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.share {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1rem;
+  background: var(--green);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+a {
+  color: var(--orange);
+}
+
+footer {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}

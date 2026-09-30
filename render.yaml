@@ -42,6 +42,9 @@ services:
       - path: /brief/*
         name: Cache-Control
         value: public, max-age=0, must-revalidate
+      - path: /app/*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
       - path: /sw.js
         name: Cache-Control
         value: public, max-age=0, must-revalidate
@@ -64,6 +67,10 @@ services:
       - path: /brief/*
         name: X-Robots-Tag
         value: noindex
+      # The test-app download page is shared on WhatsApp, not listed.
+      - path: /app/*
+        name: X-Robots-Tag
+        value: noindex
 
     routes:
       # The brief folder's own index, so /brief/ opens the French brief rather
@@ -75,3 +82,10 @@ services:
       - type: rewrite
         source: /brief/
         destination: /brief/index.html
+      # The link shared on WhatsApp: djassa.onrender.com/app
+      - type: rewrite
+        source: /app
+        destination: /app/index.html
+      - type: rewrite
+        source: /app/
+        destination: /app/index.html
