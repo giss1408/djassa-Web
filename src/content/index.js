@@ -1,13 +1,29 @@
-import { en } from './en.js'
 import { fr } from './fr.js'
 
 export const LOCALES = ['FR', 'EN']
 export const DEFAULT_LOCALE = 'FR'
 
-const dictionaries = { FR: fr, EN: en }
+/**
+ * French ships in the main bundle: it is the default, and it is what the
+ * build prerenders into index.html. English (about a third of all the copy)
+ * is a separate chunk fetched only when a visitor asks for it, so nobody on a
+ * prepaid bundle pays for a language they do not read.
+ */
+const dictionaries = { FR: fr }
 
 export function getContent(locale) {
   return dictionaries[locale] ?? fr
+}
+
+export function hasContent(locale) {
+  return locale in dictionaries
+}
+
+export async function loadContent(locale) {
+  if (!dictionaries[locale] && locale === 'EN') {
+    dictionaries.EN = (await import('./en.js')).en
+  }
+  return getContent(locale)
 }
 
 /**
@@ -55,9 +71,15 @@ function diffShape(a, b, path = '') {
   return problems
 }
 
+export { diffShape }
+
+// Development only: the dynamic import sits behind a constant the production
+// build folds to false, so this never pulls English into the main bundle.
 if (import.meta.env?.DEV) {
-  const problems = diffShape(fr, en)
-  if (problems.length) {
-    console.error('[djassa i18n] FR/EN content shape mismatch:\n' + problems.join('\n'))
-  }
+  import('./en.js').then(({ en }) => {
+    const problems = diffShape(fr, en)
+    if (problems.length) {
+      console.error('[djassa i18n] FR/EN content shape mismatch:\n' + problems.join('\n'))
+    }
+  })
 }

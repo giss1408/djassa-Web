@@ -4173,3 +4173,162 @@
     align-items: flex-start;
   }
 }
+
+/* --------------------------------------------------------------------------
+   5. Polish — effects that cost no downloads.
+   Everything here is CSS (plus one small count-up hook): no images, no
+   animation library. All of it steps aside for prefers-reduced-motion (the
+   base layer's rule) and for lite mode (Data Saver or 2G, below).
+   -------------------------------------------------------------------------- */
+
+/* Reading progress: a hairline that fills as the page scrolls. Scroll-driven
+   animation, so no JavaScript and no scroll listener; browsers without support
+   simply do not show it. */
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, var(--orange), #9e3517);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root block);
+    pointer-events: none;
+  }
+
+  @keyframes scroll-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* Paper grain behind the hero: a 300-byte inline SVG, not an image file.
+   Gives the flat cream a printed, tactile quality at almost no cost. */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Buttons: a short lift and a sheen that crosses on hover. */
+.button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--dur, 0.2s) var(--ease),
+    box-shadow var(--dur, 0.2s) var(--ease),
+    background-color var(--dur, 0.2s) var(--ease);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.6s var(--ease);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -14px rgba(24, 34, 31, 0.55);
+  }
+
+  .button:hover::after {
+    transform: translateX(110%);
+  }
+
+  /* Cards answer the pointer: a slight rise and a warmer shadow. */
+  .case,
+  .gap,
+  .never,
+  .stat,
+  .status-col {
+    transition:
+      transform 0.25s var(--ease),
+      box-shadow 0.25s var(--ease),
+      opacity var(--dur-slow) var(--ease);
+  }
+
+  .case:hover,
+  .gap:hover,
+  .never:hover,
+  .stat:hover,
+  .status-col:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -22px rgba(59, 20, 6, 0.45);
+  }
+}
+
+/* Market figures count up (useCountUp); tabular digits keep the width steady
+   while they move, so nothing around them jitters. */
+.stat-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Demo: each screen slides in when the reader steps to it. */
+.walk-screen {
+  animation: screen-in 0.45s var(--ease) both;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The phone rests on a soft, warm shadow rather than floating on nothing. */
+.walk-device .phone {
+  filter: drop-shadow(0 28px 36px rgba(59, 20, 6, 0.22));
+}
+
+/* --- Lite mode -------------------------------------------------------------
+   Data Saver or 2G (index.html). The page stays complete and legible; what
+   goes is motion, blur and heavy shadow, which cost battery and frame time on
+   an entry-level phone and add nothing to the argument. */
+.lite *,
+.lite *::before,
+.lite *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.lite .nav-wrap,
+.lite [class*='nav'] {
+  backdrop-filter: none !important;
+}
+
+.lite .hero::after,
+.lite .scroll-progress,
+.lite .button::after {
+  display: none;
+}
+
+.lite .walk-device .phone {
+  filter: none;
+}

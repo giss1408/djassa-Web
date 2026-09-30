@@ -1,7 +1,11 @@
+import { useRef } from 'react'
+import { useCountUp } from '../hooks/useCountUp.js'
 import { Kicker, Lede, Section, SplitHeading } from './Primitives.jsx'
 
 export function Market({ content }) {
   const { market } = content
+  const stats = useRef(null)
+  useCountUp(stats, '.stat-value', content.locale)
 
   return (
     <Section id="marche" className="market" labelledBy="market-title">
@@ -14,9 +18,9 @@ export function Market({ content }) {
       {/* Every figure carries its source inline. The research notes warn that
           inclusion numbers diverge by methodology, so an unsourced stat here
           would be a credibility liability in an investor conversation. */}
-      <dl className="stat-grid" data-reveal>
-        {market.stats.map((stat) => (
-          <div className="stat" key={stat.label}>
+      <dl className="stat-grid" data-reveal ref={stats}>
+        {market.stats.map((stat, index) => (
+          <div className="stat" key={stat.label} style={{ '--i': index }}>
             <dt>
               <span className="stat-value">{stat.value}</span>
               <span className="stat-label">{stat.label}</span>

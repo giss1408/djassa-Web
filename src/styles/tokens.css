@@ -1,3 +1,25 @@
+/* Instrument Serif, self-hosted (SIL OFL 1.1, public/fonts/OFL.txt). Latin
+   subset only, which covers French and English: ~15 KB per style. `swap`
+   shows the headline in Georgia at once and upgrades it when the file lands,
+   so a slow connection never hides text. */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
+}
+
 /* ==========================================================================
    Design tokens — Djassa
    Warm-paper editorial identity. One deliberate light theme: the brand is a
@@ -39,7 +61,9 @@
 
   /* --- Typography ------------------------------------------------------- */
   --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* The phone's own UI font (Roboto on Android, SF on iOS, Segoe on Windows):
+     professional, already installed, zero bytes on the wire. */
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --step--1: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
   --step-0: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
@@ -66,4 +90,10 @@
 
 @media (max-width: 760px) {
   :root { --gutter: 1.25rem; }
+}
+
+/* Lite mode (Data Saver or 2G, set by the inline script in index.html): the
+   serif falls back to Georgia, so the webfont is never requested at all. */
+.lite {
+  --serif: Georgia, 'Times New Roman', serif;
 }

@@ -43,12 +43,29 @@
       content="Une seule habitude — enregistrer une vente vérifiée — qui devient fidélité, historique de revenus et accès consenti aux services financiers agréés."
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
-    />
+    <!-- Low-bandwidth first. On Data Saver or a 2G connection the page goes
+         "lite": no webfont download (Georgia stands in for the serif) and no
+         decorative motion or blur. Otherwise the one font the first screen
+         needs is preloaded from our own origin, so no third-party DNS and TLS
+         round trips sit in front of the headline. Body text uses the phone's
+         own system font and costs nothing to load. -->
+    <script>
+      ;(function () {
+        var c = navigator.connection || {}
+        var d = document.documentElement
+        if (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')) {
+          d.classList.add('lite')
+        } else {
+          var l = document.createElement('link')
+          l.rel = 'preload'
+          l.as = 'font'
+          l.type = 'font/woff2'
+          l.crossOrigin = ''
+          l.href = '/fonts/instrument-serif-latin.woff2'
+          document.head.appendChild(l)
+        }
+      })()
+    </script>
 
     <script type="application/ld+json">
       {

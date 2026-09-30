@@ -11,22 +11,61 @@ The narrative and every factual claim come from the business documents in
 ```bash
 npm install
 npm run dev      # dev server with HMR
-npm run build    # production build to dist/
+npm run build    # client build + prerender + service worker + .br/.gz, with a size report
 npm run preview  # serve the production build
 npm run lint     # oxlint
+npm run check:content  # FR/EN parity, fails on a missing key (CI-friendly)
 ```
 
 ## Structure
 
 ```
 src/
-  content/       fr.js + en.js — all copy; index.js holds the parity check
+  content/       fr.js + en.js — all copy; index.js loads EN lazily and holds the parity check
+  entry-server.jsx  build-time prerender of the French page
   components/    one component per page section, in narrative order
-  hooks/         useLocale (locale + document side effects), useReveal
+  hooks/         useLocale (locale + document side effects), useReveal, useCountUp
   styles/        tokens.css — colour, type scale, spacing, motion
   index.css      base layer: reset, focus, reveal, print
   App.css        section styles, in the order sections appear
+public/fonts/    self-hosted Instrument Serif (OFL) — the only webfont
+scripts/         postbuild.mjs (prerender, service worker, compression, size report),
+                 check-content.mjs (FR/EN parity)
 ```
+
+## Low-bandwidth budget
+
+The audience is on prepaid mobile data, often 3G, on entry-level Android
+phones. Every change should keep the first visit near **~120 KB (brotli)**;
+`npm run build` prints the figure. What keeps it there:
+
+- **Prerendered HTML.** `src/entry-server.jsx` renders the French page at build
+  time and `scripts/postbuild.mjs` writes it into `dist/index.html`. The page
+  is readable as soon as ~15 KB of HTML arrives; React hydrates it afterwards
+  instead of drawing it from a blank screen. The first client render must
+  therefore stay French (`useLocale`), or hydration would discard the markup.
+- **English is a lazy chunk** (`content/index.js`, `loadContent`), fetched only
+  when a visitor switches or their browser prefers English.
+- **Fonts.** Body text is the phone's system font (zero bytes). Only
+  Instrument Serif is self-hosted (`public/fonts`, latin subset, ~15 KB per
+  style, `font-display: swap`); the regular style is preloaded from our own
+  origin, so no third-party DNS/TLS sits in front of the headline.
+- **Lite mode.** An inline script in `index.html` adds `.lite` on Data Saver or
+  2G: no webfont request (Georgia instead), no motion, no blur, no reveal.
+- **Service worker** (generated into `dist/sw.js`): page network-first with a
+  3.5 s fallback to the cached copy, hashed assets cache-first. Repeat visits
+  cost almost nothing and the site opens offline, for a demo in a market with
+  no signal.
+- **Precompressed** `.br`/`.gz` beside each text file, and `public/_headers`
+  with year-long immutable caching for `/assets` and `/fonts` (Netlify /
+  Cloudflare Pages syntax; mirror it on any other host).
+- **Effects cost no downloads**: CSS only (paper grain as a 300-byte inline SVG,
+  scroll-driven reading progress, staggered reveals, hover lift, demo screen
+  transitions) plus one small count-up hook. All yield to
+  `prefers-reduced-motion` and lite mode.
+
+Next step if the budget tightens: alias React to `preact/compat` (~45 KB
+brotli less). Not done yet because it adds dependencies to the lockfile.
 
 ## Editing copy
 

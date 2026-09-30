@@ -1,0 +1,17 @@
+# Cache rules for hosts that read a _headers file (Netlify, Cloudflare Pages).
+# Other hosts: apply the same rules in their config.
+
+# Hashed file names change with their content: cache for a year.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The page and the service worker must be revalidated, or a published change
+# would not reach visitors.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate

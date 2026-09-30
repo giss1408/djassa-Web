@@ -11,11 +11,20 @@ import { useEffect } from 'react'
 export function useReveal(deps = []) {
   useEffect(() => {
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduced || typeof IntersectionObserver === 'undefined') return
+    const lite = document.documentElement.classList.contains('lite')
+    if (reduced || lite || typeof IntersectionObserver === 'undefined') return
 
     const targets = Array.from(document.querySelectorAll('[data-reveal]'))
     if (!targets.length) return
 
+    // Anything already on screen is marked visible *before* reveal styles
+    // apply. With prerendered HTML the first screen has been readable since
+    // the HTML arrived; hiding it for one frame to fade it back in would be a
+    // flash, not an effect.
+    const viewport = window.innerHeight
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top < viewport) target.classList.add('is-visible')
+    }
     document.documentElement.classList.add('reveal-enabled')
 
     const observer = new IntersectionObserver(
@@ -30,7 +39,9 @@ export function useReveal(deps = []) {
       { rootMargin: '0px 0px -12% 0px', threshold: 0.08 },
     )
 
-    for (const target of targets) observer.observe(target)
+    for (const target of targets) {
+      if (!target.classList.contains('is-visible')) observer.observe(target)
+    }
     return () => observer.disconnect()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)

@@ -99,7 +99,9 @@ export function Learn({ content }) {
         <div className="walk">
           {/* --- The device ------------------------------------------------- */}
           <figure className="walk-device" aria-label={`${learn.mockLabel} — ${current.name}`}>
-            <Mock />
+            <div className="walk-screen" key={`${app}-${current.id}`}>
+              <Mock />
+            </div>
             <figcaption>{learn.fidelity}</figcaption>
           </figure>
 

@@ -43,6 +43,10 @@ export default function App() {
         {content.nav.skip}
       </a>
 
+      {/* Reading progress. Pure CSS (scroll-driven animation): no script, no
+          scroll listener, and simply absent where unsupported. */}
+      <div className="scroll-progress" aria-hidden="true" />
+
       <Nav content={content} locale={locale} onToggleLocale={toggle} />
 
       <main id="main">
