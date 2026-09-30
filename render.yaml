@@ -1,0 +1,77 @@
+# Render Blueprint: the Djassa public site as a static site.
+# Render dashboard → New → Blueprint → pick this repository.
+#
+# The build prerenders the French page, writes the service worker and
+# precompressed files, and prints the bytes-on-the-wire report
+# (scripts/postbuild.mjs). Render's CDN serves dist/ with HTTPS and compression.
+
+services:
+  - type: web
+    runtime: static
+    name: djassa-web
+    # Deploys from the repository's default branch. The latest work lives on
+    # `integration`: merge it into the default branch first, or uncomment and
+    # set the branch this service should follow.
+    # branch: integration
+    buildCommand: npm ci && npm run check:content && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    envVars:
+      # Vite 8 needs Node ^20.19 or >=22.12.
+      - key: NODE_VERSION
+        value: "22.12.0"
+
+    headers:
+      # Hashed file names change with their content: cache for a year. This is
+      # what makes repeat visits nearly free on a prepaid data bundle.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+
+      # The page, the briefs and the service worker must be revalidated, or a
+      # published change would not reach visitors.
+      - path: /
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /index.html
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /brief/*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /sw.js
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+
+      # Baseline security headers for every response.
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=(), payment=()
+
+      # The investor brief and NDA are shared by link, not listed.
+      - path: /brief/*
+        name: X-Robots-Tag
+        value: noindex
+
+    routes:
+      # The brief folder's own index, so /brief/ opens the French brief rather
+      # than a 404. No catch-all rewrite: this is a one-page site with anchors,
+      # and a real 404 for a wrong URL is more honest than the home page.
+      - type: rewrite
+        source: /brief
+        destination: /brief/index.html
+      - type: rewrite
+        source: /brief/
+        destination: /brief/index.html

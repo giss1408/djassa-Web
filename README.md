@@ -33,6 +33,27 @@ scripts/         postbuild.mjs (prerender, service worker, compression, size rep
                  check-content.mjs (FR/EN parity)
 ```
 
+## Deploy on Render
+
+The repository is ready to deploy as a Render **static site** from
+[`render.yaml`](render.yaml) (a Blueprint):
+
+1. Render dashboard → **New → Blueprint** → connect this GitHub repository.
+2. Render reads `render.yaml` and creates `djassa-web`: build
+   `npm ci && npm run check:content && npm run build`, publish `./dist`,
+   Node 22.12 (also pinned in `.node-version` and `engines`).
+3. Deploys follow the repository's **default branch**. The latest work is on
+   `integration`: merge it first, or set `branch:` in `render.yaml`.
+4. Custom domain: add `djassa.co` under the service's Settings → Custom
+   Domains. The canonical and Open Graph URLs in `index.html` already use it.
+
+`render.yaml` also sets the cache rules (a year for `/assets` and `/fonts`,
+revalidate for pages and `sw.js`), baseline security headers, `noindex` for
+`/brief/*`, and `/brief/` → the French brief. Pull requests get preview
+deployments. Render compresses responses itself, so the precompressed
+`.br`/`.gz` files are simply unused there; `public/_headers` serves the same
+purpose on Netlify or Cloudflare Pages.
+
 ## Low-bandwidth budget
 
 The audience is on prepaid mobile data, often 3G, on entry-level Android

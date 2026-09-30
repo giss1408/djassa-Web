@@ -1,5 +1,5 @@
 # Cache rules for hosts that read a _headers file (Netlify, Cloudflare Pages).
-# Other hosts: apply the same rules in their config.
+# Render reads render.yaml instead; other hosts: apply the same rules in their config.
 
 # Hashed file names change with their content: cache for a year.
 /assets/*
