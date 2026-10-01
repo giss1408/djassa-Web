@@ -226,7 +226,7 @@ export const fr = {
     streamsTitle: 'Ordre des revenus',
     streams: [
       { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers, avec une formule gratuite plafonnée. Revenu principal du MVP.', status: 'now' },
-      { step: '02', title: 'Bons plans à la une et campagnes', detail: 'Emplacement sponsorisé dans l’app client ; messages refacturés en transparence.', status: 'now' },
+      { step: '02', title: 'Bons plans sponsorisés et campagnes', detail: 'Emplacement ponctuel et limité dans le temps pour promouvoir un produit, un service ou une offre. Réservation assistée par l’équipe pendant le pilote ; prix à tester. Messages refacturés en transparence.', status: 'now' },
       { step: '03', title: 'Contrats multi-points de vente', detail: 'Réseaux et associations de commerçants, tarifés séparément.', status: 'next' },
       { step: '04', title: 'Orchestration de paiement', detail: 'Revenu secondaire, jamais plus cher pour le commerçant que son portefeuille actuel.', status: 'next' },
       { step: '05', title: 'Apport d’affaires consenti', detail: 'Rémunéré par un partenaire agréé : crédit de stock, épargne, tontine.', status: 'later' },
