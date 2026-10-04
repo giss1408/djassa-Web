@@ -1,8 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App.jsx'
+import { installErrorReporter } from './errorReporter.js'
 import './styles/tokens.css'
 import './index.css'
+
+installErrorReporter()
 
 const root = document.getElementById('root')
 const app = (

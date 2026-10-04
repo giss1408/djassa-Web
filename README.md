@@ -54,6 +54,15 @@ deployments. Render compresses responses itself, so the precompressed
 `.br`/`.gz` files are simply unused there; `public/_headers` serves the same
 purpose on Netlify or Cloudflare Pages.
 
+## Error reporting
+
+`src/errorReporter.js` sends uncaught errors to the Djassa API
+(`POST /api/client-events`), where they join the apps' errors in Grafana. No
+SDK and no visitor id; at most one small request per page view, and only when
+something broke. It is off unless the build sets `VITE_DJASSA_API_BASE`
+(e.g. `https://api.djassa.ci`); the API's `CORS_ORIGINS` must then include this
+site's origin.
+
 ## Low-bandwidth budget
 
 The audience is on prepaid mobile data, often 3G, on entry-level Android

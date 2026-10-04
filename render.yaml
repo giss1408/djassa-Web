@@ -20,6 +20,10 @@ services:
       # Vite 8 needs Node ^20.19 or >=22.12.
       - key: NODE_VERSION
         value: "22.12.0"
+      # Uncaught errors go to the API's /api/client-events (src/errorReporter.js).
+      # Unset = reporting off. The API's CORS_ORIGINS must list this site.
+      # - key: VITE_DJASSA_API_BASE
+      #   value: https://api.djassa.ci
 
     headers:
       # Hashed file names change with their content: cache for a year. This is
