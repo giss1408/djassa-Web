@@ -44,8 +44,9 @@ The repository is ready to deploy as a Render **static site** from
    Node 22.12 (also pinned in `.node-version` and `engines`).
 3. Deploys follow the repository's **default branch**. The latest work is on
    `integration`: merge it first, or set `branch:` in `render.yaml`.
-4. Custom domain: add `djassa.co` under the service's Settings → Custom
-   Domains. The canonical and Open Graph URLs in `index.html` already use it.
+4. Custom domain: add it under the service's Settings → Custom Domains. Then
+   add its canonical and `og:url` tags to `index.html`, and the domain to the
+   API's `CORS_ORIGINS` if the site reports errors to it.
 
 `render.yaml` also sets the cache rules (a year for `/assets` and `/fonts`,
 revalidate for pages and `sw.js`), baseline security headers, `noindex` for
