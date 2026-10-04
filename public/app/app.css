@@ -99,6 +99,18 @@ h2 small {
   background: var(--orange-deep);
 }
 
+/* Holds the button's place until the address is known. */
+.btn.soon {
+  margin: 0;
+  background: var(--paper);
+  color: var(--muted);
+}
+
+/* `display: block` above would otherwise win over the hidden attribute. */
+.btn[hidden] {
+  display: none;
+}
+
 .btn small {
   display: block;
   font-weight: 400;

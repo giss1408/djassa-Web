@@ -59,6 +59,19 @@
         <p class="login">Compte de test : numéro <code>07 00 00 00 01</code>, code <code>000000</code><br />Ancienne version (identifiant) : <code>client</code> / <code>client123</code></p>
       </section>
 
+      <section class="app" aria-labelledby="installer">
+        <h2 id="installer">Djassa Installateur <small>· pour les agents terrain</small></h2>
+        <p>Pour l’équipe Djassa : inscrire un commerce sur place et suivre les commerces inscrits. S’ouvre dans le navigateur, rien à télécharger.</p>
+        <a class="btn" id="installer-open" href="#" hidden>
+          Ouvrir <small>dans le navigateur</small>
+        </a>
+        <p class="btn soon" id="installer-soon">Bientôt disponible</p>
+        <p class="alt">
+          Pour l’avoir comme une application : dans Chrome, touchez <b>⋮</b> puis <b>« Ajouter à l’écran d’accueil »</b>.
+        </p>
+        <p class="login">Compte de test : numéro <code>07 00 00 00 04</code> (agent terrain), code <code>000000</code></p>
+      </section>
+
       <section aria-labelledby="how">
         <h2 id="how">Comment installer</h2>
         <ol class="steps">
@@ -87,6 +100,18 @@
         var a = document.getElementById('share')
         var url = location.origin + '/app/'
         a.href = 'https://wa.me/?text=' + encodeURIComponent('Installez Djassa (version de test) : ' + url)
+      })()
+
+      // djassa-installer's address once it is deployed on Render. Copy it
+      // from the dashboard (Render may add a suffix to the name); never guess.
+      // While empty, the section shows "Bientôt disponible" instead of a link.
+      ;(function () {
+        var INSTALLER_URL = ''
+        if (!INSTALLER_URL) return
+        var a = document.getElementById('installer-open')
+        a.href = INSTALLER_URL
+        a.hidden = false
+        document.getElementById('installer-soon').hidden = true
       })()
     </script>
   </body>
