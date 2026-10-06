@@ -221,7 +221,7 @@ export const en = {
     streamsTitle: 'Revenue order',
     streams: [
       { step: '01', title: 'Merchant subscription', detail: 'Monthly per outlet, tiered, with a capped free plan. Primary MVP revenue.', status: 'now' },
-      { step: '02', title: 'Featured deals and campaigns', detail: 'Sponsored slot in the customer app; messages passed through at cost.', status: 'now' },
+      { step: '02', title: 'Sponsored deals and campaigns', detail: 'One-off, time-limited placement for a merchant product, service, or special offer. Bookings are admin-assisted during the pilot; pricing is to be tested. Messages passed through at cost.', status: 'now' },
       { step: '03', title: 'Multi-outlet contracts', detail: 'Merchant networks and associations, priced separately.', status: 'next' },
       { step: '04', title: 'Payment orchestration', detail: 'Secondary revenue, never more expensive for the merchant than their current wallet.', status: 'next' },
       { step: '05', title: 'Consented referrals', detail: 'Paid by a licensed partner: stock credit, savings, tontine.', status: 'later' },
