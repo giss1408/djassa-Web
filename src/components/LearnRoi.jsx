@@ -3,7 +3,7 @@ import { Kicker, Lede, Section, SplitHeading } from './Primitives.jsx'
 /**
  * The return side of the walkthrough.
  *
- * Two deliberate choices, both from `docs/optimization_claude_djassa.md`:
+ * Two deliberate choices, both from `docs/optimization_claude_hossouko.md`:
  *
  * 1. **The per-outlet arithmetic is labelled illustrative, in the markup, next
  *    to the numbers** — not in a footnote further down. The source document

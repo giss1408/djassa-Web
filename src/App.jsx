@@ -20,7 +20,7 @@ import './App.css'
 
 /**
  * Narrative order is deliberate and mirrors how the docs argue the case:
- * the name (what djassa means) → concept (one habit) → demo (the two apps,
+ * the name (what hossouko means) → concept (one habit) → demo (the two apps,
  * screen by screen) → what the screens protect → what they earn → market (the
  * gap) → positioning (where we don't go) → thesis (why it compounds) → model
  * (how it earns) → metric (what governs) → execution (phases and gates) →

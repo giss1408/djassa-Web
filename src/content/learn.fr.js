@@ -7,13 +7,13 @@
  * check in content/index.js still walks it.
  *
  * Sources for every claim, and nothing outside them:
- * * `djassa-App-retailer/lib/` and `djassa-App-user/lib/` for what the screens
+ * * `hossouko-App-retailer/lib/` and `hossouko-App-user/lib/` for what the screens
  *   do and why (the screen mocks are reconstructions of that code).
- * * `djassa-BE/Architecture/SECURITY.md` for the control matrix and its honest
+ * * `hossouko-BE/Architecture/SECURITY.md` for the control matrix and its honest
  *   per-control status — "Prototype", "Partiel" and "À faire" are that
  *   document's words, not a softening of them.
- * * `djassa-BE/docs/business/BUSINESS-MODEL.md` (value equation) and
- *   `djassa-BE/docs/business/MARKET.md` § 9 (merchant fees) for the revenue
+ * * `hossouko-BE/docs/business/BUSINESS-MODEL.md` (value equation) and
+ *   `hossouko-BE/docs/business/MARKET.md` § 9 (merchant fees) for the revenue
  *   lines and the per-outlet arithmetic, labelled illustrative.
  */
 export const learnFr = {
@@ -31,7 +31,7 @@ export const learnFr = {
     {
       id: 'retailer',
       label: 'Commerçant',
-      file: 'djassa-App-retailer',
+      file: 'hossouko-App-retailer',
       tag: 'Hors ligne d’abord',
       pitch:
         'Le même style que l’application client, pour qu’elles forment un seul produit, mais conçue pour un étal en plein soleil sur un téléphone d’entrée de gamme : cibles de 52 dp, texte de 15 sp minimum, état de synchronisation en mots plus une icône, rien qui attende le réseau.',
@@ -39,7 +39,7 @@ export const learnFr = {
     {
       id: 'user',
       label: 'Client',
-      file: 'djassa-App-user',
+      file: 'hossouko-App-user',
       tag: 'Paiement et fidélité',
       pitch:
         'Conçue pour la vie de quartier : trouver son maquis ou sa pharmacie de garde, payer au comptoir par mobile money, et voir ses points monter chez chaque commerçant.',
@@ -144,7 +144,7 @@ export const learnFr = {
         security:
           'Rien de ce qui est lu dans le QR n’est affiché ni cru au-delà du code lui-même. Le code part au serveur, et l’écran suivant montre le commerçant que le serveur désigne. Un autocollant contrefait ne peut donc pas afficher un nom de confiance.',
         roi:
-          'Aucun frais pour le client, jamais. Ce parcours Djassa sert de solution de repli pour les commerçants dont le portefeuille n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que le QR de son propre portefeuille aujourd’hui.',
+          'Aucun frais pour le client, jamais. Ce parcours Hossouko sert de solution de repli pour les commerçants dont le portefeuille n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que le QR de son propre portefeuille aujourd’hui.',
       },
       {
         id: 'pay',
@@ -154,7 +154,7 @@ export const learnFr = {
         strength:
           'Les points annoncés avant le paiement sont l’incitation qui achète le changement de comportement : payer par téléphone au comptoir plutôt que tendre des espèces. C’est le vrai rôle de la fidélité dans ce dispositif, et il doit être mesuré comme tel.',
         security:
-          'L’argent va du portefeuille du client à celui du commerçant via un prestataire agréé : Djassa ne détient jamais de fonds, et l’écran le dit. Si la requête expire, « Réessayer » renvoie la même clé d’idempotence, le serveur répond avec le paiement d’origine, et le formulaire se verrouille pour empêcher un nouveau montant sous l’ancienne clé.',
+          'L’argent va du portefeuille du client à celui du commerçant via un prestataire agréé : Hossouko ne détient jamais de fonds, et l’écran le dit. Si la requête expire, « Réessayer » renvoie la même clé d’idempotence, le serveur répond avec le paiement d’origine, et le formulaire se verrouille pour empêcher un nouveau montant sous l’ancienne clé.',
         roi:
           'Lignes 4 et 5. Le rapprochement des règlements du prestataire avec le registre interne n’est pas encore implémenté : c’est un prérequis explicite avant tout usage financier réel.',
       },
@@ -190,12 +190,12 @@ export const learnFr = {
     title: 'Le même événement,',
     titleEm: 'lu six fois.',
     lede:
-      'Ce que les dix écrans ci-dessus font ensemble. Chaque étape a un propriétaire, et Djassa n’est jamais celui qui détient l’argent.',
+      'Ce que les dix écrans ci-dessus font ensemble. Chaque étape a un propriétaire, et Hossouko n’est jamais celui qui détient l’argent.',
     steps: [
       { owner: 'Application client', text: 'Le client scanne le QR code affiché au comptoir.' },
-      { owner: 'Backend Djassa', text: 'Le serveur vérifie le code et renvoie le commerçant qu’il désigne, avec le montant demandé.' },
-      { owner: 'Prestataire agréé', text: 'L’argent passe du portefeuille du client à celui du commerçant. Djassa ne s’interpose pas dans le flux de fonds.' },
-      { owner: 'Backend Djassa', text: 'Le rappel du prestataire est signé, horodaté, idempotent, et enregistré avant tout accusé de réception.' },
+      { owner: 'Backend Hossouko', text: 'Le serveur vérifie le code et renvoie le commerçant qu’il désigne, avec le montant demandé.' },
+      { owner: 'Prestataire agréé', text: 'L’argent passe du portefeuille du client à celui du commerçant. Hossouko ne s’interpose pas dans le flux de fonds.' },
+      { owner: 'Backend Hossouko', text: 'Le rappel du prestataire est signé, horodaté, idempotent, et enregistré avant tout accusé de réception.' },
       { owner: 'Les deux applications', text: 'Un événement, deux lectures : les points du client d’un côté, le chiffre du commerçant de l’autre.' },
       { owner: 'Phase 5 — partenaire agréé', text: 'Sur consentement explicite et révocable, une attestation de revenus part vers une institution agréée.' },
     ],
@@ -279,7 +279,7 @@ export const learnFr = {
       { value: '5 000 – 10 000 F', label: 'hypothèse d’abonnement', detail: 'Peu, face à la marge que rapportent les clients qui reviennent' },
     ],
     mathVerdict:
-      'Prendre une part des paiements obligerait le commerçant à passer sur un rail plus cher, ce qui lui coûterait plus que l’abonnement et plus que ce que la fidélité rapporte. Djassa se branche donc sur le QR du portefeuille que le commerçant utilise déjà — Wave d’abord, les autres opérateurs et le QR interopérable PI-SPI ensuite — et fait payer ce qu’il ajoute : des clients qui reviennent, et la preuve de son activité.',
+      'Prendre une part des paiements obligerait le commerçant à passer sur un rail plus cher, ce qui lui coûterait plus que l’abonnement et plus que ce que la fidélité rapporte. Hossouko se branche donc sur le QR du portefeuille que le commerçant utilise déjà — Wave d’abord, les autres opérateurs et le QR interopérable PI-SPI ensuite — et fait payer ce qu’il ajoute : des clients qui reviennent, et la preuve de son activité.',
     mathSource: 'Chiffres illustratifs, non contractuels. Frais : Kolonell 2026 (Wave ~1 %, CinetPay ~3 % + 50 F). À revérifier avec les commerçants du pilote.',
     linesTitle: 'Ordre des lignes de revenu',
     lines: [
@@ -310,7 +310,7 @@ export const learnFr = {
       {
         step: '04',
         title: 'Partage du revenu de paiement',
-        body: 'Ligne mineure, sur les seuls paiements du parcours Djassa, là où le prestataire agréé l’autorise. Jamais plus cher que ce que le commerçant paie aujourd’hui sur son propre portefeuille.',
+        body: 'Ligne mineure, sur les seuls paiements du parcours Hossouko, là où le prestataire agréé l’autorise. Jamais plus cher que ce que le commerçant paie aujourd’hui sur son propre portefeuille.',
         depends: 'Un tarif au niveau du portefeuille actuel du commerçant ou en dessous',
         state: 'Mineure',
         tone: 'later',
@@ -341,7 +341,7 @@ export const learnFr = {
     ],
     moatTitle: 'Le vrai fossé',
     moat:
-      'La part du chiffre d’un commerçant confirmée par un prestataire de paiement, qu’elle soit capturée sur son propre portefeuille ou payée via Djassa, est un fossé plus solide que le programme de fidélité. Elle ne s’achète pas : elle s’accumule un événement à la fois sans demander au commerçant de changer sa façon d’encaisser, et la fidélité donne à ses clients une raison de payer en numérique.',
+      'La part du chiffre d’un commerçant confirmée par un prestataire de paiement, qu’elle soit capturée sur son propre portefeuille ou payée via Hossouko, est un fossé plus solide que le programme de fidélité. Elle ne s’achète pas : elle s’accumule un événement à la fois sans demander au commerçant de changer sa façon d’encaisser, et la fidélité donne à ses clients une raison de payer en numérique.',
     gateNote:
       'Rien de tout cela ne justifie une expansion : aucun second corridor avant que le premier n’ait démontré ses seuils d’économie unitaire.',
     gateLink: 'Voir les seuils du modèle',

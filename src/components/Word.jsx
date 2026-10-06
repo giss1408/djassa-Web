@@ -1,8 +1,8 @@
 /**
- * "The name" — a dictionary-style entry for the word djassa.
+ * "The name" — a dictionary-style entry presenting Hossouko and its slogan.
  *
- * Sits between the hero and the concept on purpose: a reader outside Abidjan
- * meets the brand name before any argument is built on it. Unnumbered kicker,
+ * Sits between the hero and the concept on purpose: a reader meets the brand
+ * and its promise before any argument is built on it. Unnumbered kicker,
  * so it does not shift the 01–10 section sequence.
  */
 export function Word({ content }) {
@@ -19,7 +19,7 @@ export function Word({ content }) {
         <article className="word-entry" data-reveal>
           <header className="word-head">
             <h2 id="word-title" className="word-term" lang="fr-CI">
-              djassa
+              hossouko
             </h2>
             <p className="word-meta">
               <span className="word-phon">{word.phonetic}</span>

@@ -7,13 +7,13 @@ import { learnEn } from './learn.en.js'
 export const en = {
   locale: 'en',
   meta: {
-    title: 'Djassa — Proof infrastructure for local commerce',
+    title: 'Hossouko — Proof infrastructure for local commerce',
     description:
-      'Djassa turns one habit — recording a verified sale — into usable business history for independent merchants in Abidjan, and into a consented bridge to licensed financial institutions.',
+      'Hossouko turns one habit — recording a verified sale — into usable business history for independent merchants in Abidjan, and into a consented bridge to licensed financial institutions.',
   },
   nav: {
     skip: 'Skip to main content',
-    home: 'Djassa — home',
+    home: 'Hossouko — home',
     links: [
       { href: '#concept', label: 'The concept' },
       { href: '#demo', label: 'The demo' },
@@ -33,7 +33,7 @@ export const en = {
     eyebrow: 'Financial inclusion — built from local commerce',
     title: 'Progress starts at the corner shop.',
     intro:
-      'In Côte d’Ivoire, 25 million active mobile-money accounts coexist with a 31% banked rate. Access is solved; proof of activity is not. Djassa builds that proof from what already happens at the counter, a customer paying from their mobile wallet and a merchant getting paid, and turns it into a reason for the customer to come back.',
+      'In Côte d’Ivoire, 25 million active mobile-money accounts coexist with a 31% banked rate. Access is solved; proof of activity is not. Hossouko builds that proof from what already happens at the counter, a customer paying from their mobile wallet and a merchant getting paid, and turns it into a reason for the customer to come back.',
     primary: 'Read the investment thesis',
     secondary: 'Understand the concept',
     stage: {
@@ -42,7 +42,7 @@ export const en = {
       detail: 'Backend and two prototype apps (merchant, customer). Abidjan pilot: 5 to 10 merchants, not yet launched.',
     },
     card: {
-      tag: 'DJASSA / TRANSACTION',
+      tag: 'HOSSOUKO / TRANSACTION',
       line: 'who · where · how much · when',
       holder: 'VERIFIED MERCHANT',
       foot: 'RECORDED OFFLINE · SYNCED WITHOUT DUPLICATES',
@@ -68,21 +68,21 @@ export const en = {
   learn: learnEn,
   word: {
     kicker: 'The name',
-    phonetic: '/dja.sa/',
-    pos: 'noun',
-    origin: 'Nouchi — Abidjan street language',
+    phonetic: '“La fidélité, ça rapporte”',
+    pos: 'loyalty pays off',
+    origin: 'Our promise',
     senses: [
-      'An informal street market: the spontaneous roadside or neighbourhood market where vendors sell everything from second-hand clothes to phones, often without official stalls or permits.',
-      'By extension, the street, the “hood”: the world of the informal economy and the daily hustle — the rough, lively place where people get by through small trades, deals and street smarts.',
+      'For customers: every purchase at the shops they already go to earns points, and points become rewards.',
+      'For merchants: every recorded sale builds a business history they own, proof of real activity they can choose to show a licensed lender.',
     ],
-    why: 'We took the name because that is exactly who we build for: the merchants of the djassa, whose everyday activity is real but leaves no proof behind.',
+    why: 'Loyalty pays off on both sides of the counter: customers are rewarded for coming back, merchants for the activity they already have.',
   },
   concept: {
     kicker: '01 / The concept',
     title: 'One habit.',
     titleEm: 'Five uses.',
     lede:
-      'Most merchant tools fail because every new feature asks for a new habit. Djassa asks for one: record the sale. Everything else is a different read of the same event.',
+      'Most merchant tools fail because every new feature asks for a new habit. Hossouko asks for one: record the sale. Everything else is a different read of the same event.',
     body:
       'When a customer pays with the wallet QR the merchant already uses (Wave first, other operators next), the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
     coreLabel: 'THE EVENT',
@@ -176,7 +176,7 @@ export const en = {
     title: 'Start small.',
     titleEm: 'Compound.',
     lede:
-      'Djassa does not ask a market to believe in a super-app. It first solves a frequent, monetizable merchant problem, then reuses the same infrastructure to make financial inclusion progressive and measurable.',
+      'Hossouko does not ask a market to believe in a super-app. It first solves a frequent, monetizable merchant problem, then reuses the same infrastructure to make financial inclusion progressive and measurable.',
     cards: [
       {
         icon: '↗',
@@ -207,7 +207,7 @@ export const en = {
       label: 'Platform horizon',
       title: 'A federated trust layer — hypothesis, not promise.',
       body:
-        'The event stream and progressive verification could found a federated identity service for Côte d’Ivoire: consent orchestration, assurance-level normalization, audit services for licensed institutions. Djassa would not own national identity and would not copy any operator KYC database.',
+        'The event stream and progressive verification could found a federated identity service for Côte d’Ivoire: consent orchestration, assurance-level normalization, audit services for licensed institutions. Hossouko would not own national identity and would not copy any operator KYC database.',
       guard:
         'This direction requires a separate legal, governance and security programme with ARTCI, BCEAO, the operators and qualified local counsel. We present it as a strategic option downstream of the merchant product — never as a current capability.',
     },
@@ -255,7 +255,7 @@ export const en = {
     kicker: '06 / The master metric',
     title: 'Signal before narrative.',
     lede:
-      'One metric governs all the others: the share of a merchant’s real transactions actually recorded through Djassa. If that number is low, nothing downstream works — not the loyalty perception, not the indicator, not the lender conversation.',
+      'One metric governs all the others: the share of a merchant’s real transactions actually recorded through Hossouko. If that number is low, nothing downstream works — not the loyalty perception, not the indicator, not the lender conversation.',
     headline: '% of real sales recorded',
     headlineSub: 'The number we check before any roadmap decision.',
     comparison: {
@@ -361,7 +361,7 @@ export const en = {
           'Direct fund flow to the licensed provider',
           'Referral and outcome tracking',
         ],
-        exit: 'Djassa remains a technology and distribution partner unless its regulatory status changes.',
+        exit: 'Hossouko remains a technology and distribution partner unless its regulatory status changes.',
       },
     ],
     verification: {
@@ -400,7 +400,7 @@ export const en = {
       'These constraints are not legal boilerplate at the bottom of a page. They determine what we build and what we refuse to sell.',
     never: [
       { title: 'No loan promise', body: 'We guarantee no approval, no rate and no savings return.' },
-      { title: 'No deposits held by Djassa', body: 'Custody, lending and settlement go through licensed institutions.' },
+      { title: 'No deposits held by Hossouko', body: 'Custody, lending and settlement go through licensed institutions.' },
       { title: 'No data shared without consent', body: 'No resale of personal data; stated purpose, limited fields, revocable.' },
       { title: 'No opaque score', body: 'Anyone affected by an indicator can see its inputs and request correction.' },
       { title: 'No pan-African launch', body: 'One country, one corridor, one segment at a time — with local partner, support and compliance plan.' },
@@ -449,10 +449,10 @@ export const en = {
     ctaSecondary: 'Read the investor brief',
   },
   footer: {
-    rights: '© 2026 Djassa — Abidjan, Côte d’Ivoire',
+    rights: '© 2026 Hossouko — Abidjan, Côte d’Ivoire',
     note: 'A product under construction, built with care.',
     brandNote:
-      'Djassa is a single product; the name “Dkassa”, used in early notes, is no longer used. The final brand name remains to be legally confirmed.',
+      'Hossouko is a single product; the name “Dkassa”, used in early notes, is no longer used. The final brand name remains to be legally confirmed.',
     disclaimer:
       'Information document. Not an offer of financial services and not an investment solicitation. Market figures are cited with their source and must be re-verified before any contractual use.',
     sourcesLabel: 'Cited sources',

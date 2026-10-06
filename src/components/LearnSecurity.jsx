@@ -1,7 +1,7 @@
 import { Kicker, Lede, Section, SplitHeading } from './Primitives.jsx'
 
 /**
- * The control matrix, taken from `djassa-BE/Architecture/SECURITY.md`.
+ * The control matrix, taken from `hossouko-BE/Architecture/SECURITY.md`.
  *
  * That document keeps a per-control status column that includes "Partial" and
  * "Not complete", and the page publishes those words unchanged. Softening them

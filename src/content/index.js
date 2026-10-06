@@ -79,7 +79,7 @@ if (import.meta.env?.DEV) {
   import('./en.js').then(({ en }) => {
     const problems = diffShape(fr, en)
     if (problems.length) {
-      console.error('[djassa i18n] FR/EN content shape mismatch:\n' + problems.join('\n'))
+      console.error('[hossouko i18n] FR/EN content shape mismatch:\n' + problems.join('\n'))
     }
   })
 }

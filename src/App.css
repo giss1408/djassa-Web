@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Djassa — page styles
+   Hossouko — page styles
    Organised in the order the sections appear in App.jsx.
    ========================================================================== */
 
@@ -92,20 +92,21 @@
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 1.7rem;
-  height: 1.7rem;
-  color: var(--paper);
-  background: var(--orange);
-  border-radius: 50% 50% 50% 4px;
-  font: 400 1.3rem/1 var(--serif);
-  transform: rotate(-10deg);
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
   transition: transform var(--dur) var(--ease);
 }
 
 .brand:hover .brand-mark {
-  transform: rotate(0deg) scale(1.06);
+  transform: rotate(45deg);
+}
+
+/* The wordmark: Instrument Serif italic, the site's display face. */
+.brand-word {
+  font: italic 400 1.7rem/1 var(--serif);
+  letter-spacing: -0.01em;
+  padding-right: 0.1em;
 }
 
 /* --- Buttons --- */
@@ -433,14 +434,9 @@
 }
 
 .mini-logo {
-  display: grid;
-  place-items: center;
   flex: none;
   width: 1.3rem;
   height: 1.3rem;
-  border: 1px solid currentColor;
-  border-radius: 50% 50% 50% 2px;
-  font: 1rem/1 var(--serif);
 }
 
 .card-line {
@@ -593,7 +589,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   3b. The name — dictionary entry for "djassa"
+   3b. The name — dictionary entry for "hossouko"
    -------------------------------------------------------------------------- */
 
 .word-entry {
@@ -1280,7 +1276,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4d. Device mocks — merchant app (djassa-App-retailer)
+   4d. Device mocks — merchant app (hossouko-App-retailer)
    Same visual language as the customer app (shared tokens, serif wordmark,
    gradient header, soft cards), per the app's theme.dart. Kept from the
    original merchant design: unaccented French, large targets, and sync state
@@ -1370,12 +1366,15 @@
   margin-bottom: 0.4rem;
   background: #fff;
   border-radius: 0.75rem;
-  color: #c94a22;
-  font: 400 1.75rem/1 var(--serif);
+}
+
+.r-badge svg {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .r-wordmark {
-  font: 400 1.75rem/1 var(--serif);
+  font: italic 400 1.9rem/1 var(--serif);
 }
 
 .r-sub {
@@ -1748,7 +1747,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4e. Device mocks — customer app (djassa-App-user)
+   4e. Device mocks — customer app (hossouko-App-user)
    Rounder, warmer, gradient headers and a raised centre pay button, per that
    app's theme.dart — which itself derives from this site's tokens.
    -------------------------------------------------------------------------- */
