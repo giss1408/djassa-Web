@@ -92,3 +92,16 @@ services:
       - type: rewrite
         source: /app/
         destination: /app/index.html
+      # Google Play links: the privacy policy and the account deletion page.
+      - type: rewrite
+        source: /confidentialite
+        destination: /confidentialite/index.html
+      - type: rewrite
+        source: /confidentialite/
+        destination: /confidentialite/index.html
+      - type: rewrite
+        source: /supprimer-mon-compte
+        destination: /supprimer-mon-compte/index.html
+      - type: rewrite
+        source: /supprimer-mon-compte/
+        destination: /supprimer-mon-compte/index.html
