@@ -1,5 +1,5 @@
 /**
- * Customer-app screen reconstructions (`hossouko-App-user/lib/features/`).
+ * Customer-app screen reconstructions (`fidelia-App-user/lib/features/`).
  *
  * This app, unlike the merchant one, *does* carry accents and *does* use icons,
  * so the mocks do too. Colours come from `lib/ui/theme.dart`, which is itself
@@ -53,7 +53,7 @@ export function UserHome() {
         </span>
         <div className="u-card">
           <strong>Maquis Chez Tante Adjo</strong>
-          <span className="u-meta">Cocody · Paiement Hossouko · 1 pt / 100 F</span>
+          <span className="u-meta">Cocody · Paiement Fidelia · 1 pt / 100 F</span>
         </div>
 
         <UserNav active="home" />
@@ -70,7 +70,7 @@ export function UserScan() {
           <div className="u-scan-reticle" />
           <span className="u-scan-title">Scannez le QR code</span>
           <span className="u-scan-hint">
-            Visez le QR code Hossouko affiché par le commerçant.
+            Visez le QR code Fidelia affiché par le commerçant.
           </span>
         </div>
         <div className="u-scan-actions">
@@ -92,7 +92,7 @@ export function UserPay() {
             code, never from the QR payload itself. */}
         <div className="u-merchant">
           <strong>Maquis Chez Tante Adjo</strong>
-          <span className="u-verified">✓ Commerçant vérifié par Hossouko</span>
+          <span className="u-verified">✓ Commerçant vérifié par Fidelia</span>
         </div>
 
         <div className="u-amount-block">
@@ -126,7 +126,7 @@ export function UserPay() {
         <div className="u-button">Payer 2{NBSP}500{NBSP}F</div>
         {/* Stated on the screen, not buried in terms. */}
         <span className="u-notice">
-          L'argent va directement de votre portefeuille à celui du commerçant. Hossouko ne
+          L'argent va directement de votre portefeuille à celui du commerçant. Fidelia ne
           garde jamais votre argent.
         </span>
       </div>

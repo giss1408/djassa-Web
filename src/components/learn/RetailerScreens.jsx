@@ -1,5 +1,5 @@
 /**
- * Merchant-app screen reconstructions (`hossouko-App-retailer/lib/features/`).
+ * Merchant-app screen reconstructions (`fidelia-App-retailer/lib/features/`).
  *
  * The app now shares the customer app's visual language (tokens, serif
  * wordmark, gradient headers, soft cards — `lib/ui/theme.dart`), so these mocks
@@ -18,7 +18,7 @@
  * groups, no decimals, a bare "F".
  */
 import { PhoneFrame, RetailerBar } from './PhoneFrame.jsx'
-import { RingMark } from '../Primitives.jsx'
+import { Mark } from '../Primitives.jsx'
 
 const NBSP = ' '
 
@@ -28,9 +28,9 @@ export function RetailerSignIn() {
       <div className="r-screen r-screen-flush">
         <div className="r-hero">
           <span className="r-badge">
-            <RingMark />
+            <Mark />
           </span>
-          <span className="r-wordmark">Hossouko</span>
+          <span className="r-wordmark">Fidelia</span>
           <span className="r-sub">Espace marchand</span>
         </div>
         <div className="r-body">
@@ -49,7 +49,7 @@ export function RetailerSignIn() {
             </span>
           </div>
           <div className="r-button">Se connecter</div>
-          <span className="r-link">Que veut dire hossouko ?</span>
+          <span className="r-link">Que veut dire fidelia ?</span>
         </div>
       </div>
     </PhoneFrame>
@@ -177,13 +177,13 @@ export function RetailerDeals() {
       <div className="r-screen">
         <span className="r-note">
           <span className="r-ico-inline">ⓘ</span> Vos offres apparaissent dans
-          l'application client Hossouko, dans Bons plans et sur la page de votre commerce.
+          l'application client Fidelia, dans Bons plans et sur la page de votre commerce.
         </span>
         <div className="r-button">+ Nouveau bon plan</div>
         <span className="r-note">Maximum 5 bons plans en meme temps.</span>
 
         <div className="r-deal">
-          <span className="r-tag">⚡ Mis en avant par Hossouko</span>
+          <span className="r-tag">⚡ Mis en avant par Fidelia</span>
           <strong className="r-deal-title">Poulet braise + attieke</strong>
           <span className="r-deal-price">
             2{NBSP}000{NBSP}F <s>3{NBSP}000{NBSP}F</s>

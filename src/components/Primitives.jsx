@@ -43,32 +43,20 @@ export function Lede({ children, className = '' }) {
 }
 
 /**
- * The Hossouko mark: eight dots that grow round the ring like a loyalty card
- * filling up; the last, orange one is the reward. `light` sits on paper or
- * white, `mono` takes the text colour (dots fade in, the reward stays orange).
+ * The Fidelia mark: a geometric F whose middle bar ends in an orange point,
+ * the point a customer earns (fidelia-brand/make_logo.py). `tile` draws it on
+ * the logo's green tile; `mono` draws the F in the text colour with no tile,
+ * and the point stays orange.
  */
-const RING = [
-  [60, 20, 5.5],
-  [88.28, 31.72, 7],
-  [100, 60, 8],
-  [88.28, 88.28, 9],
-  [60, 100, 10],
-  [31.72, 88.28, 11],
-  [20, 60, 12],
-  [31.72, 31.72, 13.5],
-]
-const RING_LIGHT = ['#b9cdb0', '#9db894', '#81a27a', '#658c62', '#4c7652', '#366145', '#234b39', '#e65e32']
-
-export function RingMark({ tone = 'light', className }) {
+export function Mark({ tone = 'tile', className }) {
+  const letter = tone === 'mono' ? 'currentColor' : '#f5f1e8'
   return (
-    <svg className={className} viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-      {RING.map(([cx, cy, r], i) =>
-        tone === 'mono' && i < RING.length - 1 ? (
-          <circle key={i} cx={cx} cy={cy} r={r} fill="currentColor" opacity={0.35 + i * 0.1} />
-        ) : (
-          <circle key={i} cx={cx} cy={cy} r={r} fill={RING_LIGHT[i]} />
-        ),
-      )}
+    <svg className={className} viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      {tone === 'tile' ? <rect width="100" height="100" rx="24" fill="#234b39" /> : null}
+      <rect x="31" y="24" width="11" height="52" rx="1.5" fill={letter} />
+      <rect x="31" y="24" width="40" height="11" rx="1.5" fill={letter} />
+      <rect x="31" y="45" width="26" height="10" rx="1.5" fill={letter} />
+      <circle cx="66" cy="50" r="5.5" fill="#e65e32" />
     </svg>
   )
 }
@@ -76,8 +64,8 @@ export function RingMark({ tone = 'light', className }) {
 export function Brand({ withWordmark = true, label }) {
   return (
     <a className="brand" href="#top" aria-label={label}>
-      <RingMark className="brand-mark" />
-      {withWordmark ? <span className="brand-word">hossouko</span> : null}
+      <Mark className="brand-mark" />
+      {withWordmark ? <span className="brand-word">Fidelia</span> : null}
     </a>
   )
 }

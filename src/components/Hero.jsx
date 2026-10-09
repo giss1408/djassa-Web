@@ -1,4 +1,4 @@
-import { RingMark } from './Primitives.jsx'
+import { Mark } from './Primitives.jsx'
 
 export function Hero({ content }) {
   const { hero, ticker } = content
@@ -52,7 +52,7 @@ export function Hero({ content }) {
 
             <div className="wallet-card" aria-hidden="true">
               <div className="card-top">
-                <RingMark tone="mono" className="mini-logo" />
+                <Mark tone="mono" className="mini-logo" />
                 <span>{hero.card.tag}</span>
               </div>
               <div className="card-line">{hero.card.line}</div>

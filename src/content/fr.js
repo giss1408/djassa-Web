@@ -1,5 +1,5 @@
 /**
- * French copy. Source of truth for claims: hossouko-BE/docs/business/{CONCEPT,
+ * French copy. Source of truth for claims: fidelia-BE/docs/business/{CONCEPT,
  * MARKET,BUSINESS-MODEL,ROADMAP,PARTNERS}.md.
  *
  * Every market figure carries its own source and date, because the research
@@ -12,13 +12,13 @@ import { learnFr } from './learn.fr.js'
 export const fr = {
   locale: 'fr-CI',
   meta: {
-    title: 'Hossouko — L’infrastructure de preuve du commerce de proximité',
+    title: 'Fidelia — L’infrastructure de preuve du commerce de proximité',
     description:
-      'Hossouko transforme une seule habitude — enregistrer une vente vérifiée — en historique d’activité exploitable pour les commerçants indépendants d’Abidjan, et en passerelle consentie vers les institutions financières agréées.',
+      'Fidelia transforme une seule habitude — enregistrer une vente vérifiée — en historique d’activité exploitable pour les commerçants indépendants d’Abidjan, et en passerelle consentie vers les institutions financières agréées.',
   },
   nav: {
     skip: 'Aller au contenu principal',
-    home: 'Hossouko — accueil',
+    home: 'Fidelia — accueil',
     links: [
       { href: '#concept', label: 'Le concept' },
       { href: '#demo', label: 'La démo' },
@@ -38,7 +38,7 @@ export const fr = {
     eyebrow: 'Inclusion financière — construite depuis le commerce local',
     title: 'Le progrès commence au coin de la rue.',
     intro:
-      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Hossouko construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son portefeuille mobile, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
+      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Fidelia construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son portefeuille mobile, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
     primary: 'Lire la thèse d’investissement',
     secondary: 'Comprendre le concept',
     stage: {
@@ -47,7 +47,7 @@ export const fr = {
       detail: 'Backend et deux applications prototypes (commerçant, client). Pilote Abidjan : 5 à 10 commerçants, à lancer.',
     },
     card: {
-      tag: 'HOSSOUKO / TRANSACTION',
+      tag: 'FIDELIA / TRANSACTION',
       line: 'qui · où · combien · quand',
       holder: 'COMMERÇANT VÉRIFIÉ',
       foot: 'ENREGISTRÉ HORS LIGNE · SYNCHRONISÉ SANS DOUBLON',
@@ -73,21 +73,21 @@ export const fr = {
   learn: learnFr,
   word: {
     kicker: 'Le nom',
-    phonetic: '« La fidélité, ça rapporte »',
+    phonetic: '« La fidélité, ça compte »',
     pos: 'notre slogan',
     origin: 'Notre promesse',
     senses: [
       'Pour les clients : chaque achat chez leurs commerçants habituels rapporte des points, et les points deviennent des récompenses.',
       'Pour les commerçants : chaque vente enregistrée construit un historique qui leur appartient, une preuve de leur activité qu’ils peuvent choisir de montrer à un prêteur agréé.',
     ],
-    why: 'La fidélité rapporte des deux côtés du comptoir : le client est récompensé de revenir, le commerçant de l’activité qu’il a déjà.',
+    why: 'Fidelia vient de « fidélité ». Elle compte des deux côtés du comptoir : le client est récompensé de revenir, le commerçant de l’activité qu’il a déjà.',
   },
   concept: {
     kicker: '01 / Le concept',
     title: 'Une seule habitude.',
     titleEm: 'Cinq usages.',
     lede:
-      'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Hossouko n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
+      'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Fidelia n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
     body:
       'Quand le client paie avec le QR du portefeuille que le commerçant utilise déjà (Wave d’abord, les autres opérateurs ensuite), la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
     coreLabel: 'L’ÉVÉNEMENT',
@@ -181,7 +181,7 @@ export const fr = {
     title: 'Commencer petit.',
     titleEm: 'Composer grand.',
     lede:
-      'Hossouko ne demande pas à un marché de croire à une super-app. Il résout d’abord un problème fréquent et monétisable pour le commerçant, puis réutilise la même infrastructure pour faire de l’inclusion financière une réalité progressive et mesurable.',
+      'Fidelia ne demande pas à un marché de croire à une super-app. Il résout d’abord un problème fréquent et monétisable pour le commerçant, puis réutilise la même infrastructure pour faire de l’inclusion financière une réalité progressive et mesurable.',
     cards: [
       {
         icon: '↗',
@@ -212,7 +212,7 @@ export const fr = {
       label: 'L’horizon plateforme',
       title: 'Une couche de confiance fédérée — hypothèse, pas promesse.',
       body:
-        'Le flux d’événements et la vérification progressive pourraient fonder un service d’identité fédérée pour la Côte d’Ivoire : orchestration du consentement, normalisation des niveaux d’assurance, audit pour les institutions agréées. Hossouko ne deviendrait pas propriétaire de l’identité nationale et ne copierait aucune base KYC d’opérateur.',
+        'Le flux d’événements et la vérification progressive pourraient fonder un service d’identité fédérée pour la Côte d’Ivoire : orchestration du consentement, normalisation des niveaux d’assurance, audit pour les institutions agréées. Fidelia ne deviendrait pas propriétaire de l’identité nationale et ne copierait aucune base KYC d’opérateur.',
       guard:
         'Cette direction exige un programme juridique, de gouvernance et de sécurité distinct avec l’ARTCI, la BCEAO, les opérateurs et un conseil local qualifié. Nous la présentons comme une option stratégique en aval du produit marchand — jamais comme une capacité actuelle.',
     },
@@ -260,7 +260,7 @@ export const fr = {
     kicker: '06 / La métrique maîtresse',
     title: 'Le signal avant le récit.',
     lede:
-      'Une seule métrique gouverne toutes les autres : la part des transactions réelles d’un commerçant effectivement enregistrées dans Hossouko. Si ce chiffre est bas, rien en aval ne fonctionne — ni la perception de la fidélité, ni l’indicateur, ni la conversation avec un prêteur.',
+      'Une seule métrique gouverne toutes les autres : la part des transactions réelles d’un commerçant effectivement enregistrées dans Fidelia. Si ce chiffre est bas, rien en aval ne fonctionne — ni la perception de la fidélité, ni l’indicateur, ni la conversation avec un prêteur.',
     headline: '% des ventes réelles enregistrées',
     headlineSub: 'La métrique que nous regardons avant toute décision de roadmap.',
     comparison: {
@@ -366,7 +366,7 @@ export const fr = {
           'Flux de fonds direct vers le prestataire agréé',
           'Suivi des apports et des résultats',
         ],
-        exit: 'Hossouko reste partenaire technologique et de distribution, sauf changement de statut réglementaire.',
+        exit: 'Fidelia reste partenaire technologique et de distribution, sauf changement de statut réglementaire.',
       },
     ],
     verification: {
@@ -405,7 +405,7 @@ export const fr = {
       'Ces contraintes ne sont pas un avertissement légal ajouté en bas de page. Elles déterminent ce que nous construisons et ce que nous refusons de vendre.',
     never: [
       { title: 'Aucune promesse de prêt', body: 'Nous ne garantissons ni approbation, ni taux, ni rendement d’épargne.' },
-      { title: 'Aucun dépôt détenu par Hossouko', body: 'La custody, le crédit et le règlement passent par des institutions agréées.' },
+      { title: 'Aucun dépôt détenu par Fidelia', body: 'La custody, le crédit et le règlement passent par des institutions agréées.' },
       { title: 'Aucune donnée partagée sans consentement', body: 'Pas de revente de données personnelles ; finalité déclarée, champs limités, révocation possible.' },
       { title: 'Aucun score opaque', body: 'Toute personne concernée par un indicateur peut en voir les entrées et demander correction.' },
       { title: 'Aucun lancement panafricain', body: 'Un pays, un corridor, un segment à la fois — avec partenaire, support et plan de conformité locaux.' },
@@ -454,10 +454,10 @@ export const fr = {
     ctaSecondary: 'Lire le dossier investisseur',
   },
   footer: {
-    rights: '© 2026 Hossouko — Abidjan, Côte d’Ivoire',
+    rights: '© 2026 Fidelia — Abidjan, Côte d’Ivoire',
     note: 'Un produit en construction, avec soin.',
     brandNote:
-      'Hossouko est un produit unique ; le nom « Dkassa », employé dans des notes anciennes, n’est plus utilisé. Le nom de marque définitif reste à confirmer juridiquement.',
+      'Fidelia est un produit unique ; le nom « Dkassa », employé dans des notes anciennes, n’est plus utilisé. Le nom de marque définitif reste à confirmer juridiquement.',
     disclaimer:
       'Document d’information. Ne constitue ni une offre de services financiers, ni une sollicitation d’investissement. Les chiffres de marché sont cités avec leur source et doivent être revérifiés avant tout usage contractuel.',
     sourcesLabel: 'Sources citées',

@@ -5,8 +5,8 @@
  *
  * Same sourcing rule as the French file: the screen annotations come from the
  * two Flutter apps' own code and comments, the control table from
- * `hossouko-BE/Architecture/SECURITY.md` (including its honest per-control
- * status), and the revenue lines from `hossouko-BE/docs/business/BUSINESS-MODEL.md`
+ * `fidelia-BE/Architecture/SECURITY.md` (including its honest per-control
+ * status), and the revenue lines from `fidelia-BE/docs/business/BUSINESS-MODEL.md`
  * (value equation) and `docs/business/MARKET.md` § 9 (merchant fees).
  */
 export const learnEn = {
@@ -24,7 +24,7 @@ export const learnEn = {
     {
       id: 'retailer',
       label: 'Merchant',
-      file: 'hossouko-App-retailer',
+      file: 'fidelia-App-retailer',
       tag: 'Offline first',
       pitch:
         'The same look as the customer app, so the two read as one product, but built for a market stall in full sun on an entry-level phone: 52dp targets, a 15sp text floor, sync state in words plus an icon, and nothing that waits on the network.',
@@ -32,7 +32,7 @@ export const learnEn = {
     {
       id: 'user',
       label: 'Customer',
-      file: 'hossouko-App-user',
+      file: 'fidelia-App-user',
       tag: 'Payment and loyalty',
       pitch:
         'Built for neighbourhood life: find your maquis or the on-duty pharmacy, pay at the counter by mobile money, and watch your points build up at each merchant.',
@@ -137,7 +137,7 @@ export const learnEn = {
         security:
           'Nothing read from the QR is displayed or trusted beyond the code itself. The code goes to the server, and the next screen shows the merchant the server names. A forged sticker therefore cannot display a trusted name.',
         roi:
-          'No fee for the customer, ever. This Hossouko route is the fallback for merchants whose own wallet is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their own wallet QR does today.',
+          'No fee for the customer, ever. This Fidelia route is the fallback for merchants whose own wallet is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their own wallet QR does today.',
       },
       {
         id: 'pay',
@@ -147,7 +147,7 @@ export const learnEn = {
         strength:
           'Points shown before paying are the incentive that buys the behaviour change: paying by phone at the counter instead of handing over cash. That is loyalty’s real job in this design, and it should be measured as such.',
         security:
-          'Money moves from the customer’s wallet to the merchant’s through a licensed provider: Hossouko never holds funds, and the screen says so. If the request times out, “Retry” resends the same idempotency key, the server answers with the original payment, and the form locks to stop a new amount going out under the old key.',
+          'Money moves from the customer’s wallet to the merchant’s through a licensed provider: Fidelia never holds funds, and the screen says so. If the request times out, “Retry” resends the same idempotency key, the server answers with the original payment, and the form locks to stop a new amount going out under the old key.',
         roi:
           'Lines 4 and 5. Reconciling the provider’s settlement reports against the internal ledger is not implemented yet: it is an explicit prerequisite before any real financial use.',
       },
@@ -183,12 +183,12 @@ export const learnEn = {
     title: 'The same event,',
     titleEm: 'read six times.',
     lede:
-      'What the ten screens above do together. Every step has an owner, and Hossouko is never the one holding the money.',
+      'What the ten screens above do together. Every step has an owner, and Fidelia is never the one holding the money.',
     steps: [
       { owner: 'Customer app', text: 'The customer scans the QR code displayed at the counter.' },
-      { owner: 'Hossouko backend', text: 'The server checks the code and returns the merchant it names, with the amount requested.' },
-      { owner: 'Licensed provider', text: 'Money moves from the customer’s wallet to the merchant’s. Hossouko does not sit in the flow of funds.' },
-      { owner: 'Hossouko backend', text: 'The provider callback is signed, timestamped, idempotent, and recorded before it is acknowledged.' },
+      { owner: 'Fidelia backend', text: 'The server checks the code and returns the merchant it names, with the amount requested.' },
+      { owner: 'Licensed provider', text: 'Money moves from the customer’s wallet to the merchant’s. Fidelia does not sit in the flow of funds.' },
+      { owner: 'Fidelia backend', text: 'The provider callback is signed, timestamped, idempotent, and recorded before it is acknowledged.' },
       { owner: 'Both apps', text: 'One event, two reads: the customer’s points on one side, the merchant’s turnover on the other.' },
       { owner: 'Phase 5 — licensed partner', text: 'On explicit, revocable consent, a revenue attestation goes to a licensed institution.' },
     ],
@@ -272,7 +272,7 @@ export const learnEn = {
       { value: '5,000 – 10,000 F', label: 'subscription hypothesis', detail: 'Small against the gross profit returning customers bring in' },
     ],
     mathVerdict:
-      'Taking a share of payments would mean moving the merchant onto a more expensive rail, which costs them more than the subscription and more than loyalty brings in. So Hossouko sits on top of the wallet QR the merchant already uses — Wave first, other operators and the interoperable PI-SPI QR next — and charges for what it adds: customers who come back, and proof of the business.',
+      'Taking a share of payments would mean moving the merchant onto a more expensive rail, which costs them more than the subscription and more than loyalty brings in. So Fidelia sits on top of the wallet QR the merchant already uses — Wave first, other operators and the interoperable PI-SPI QR next — and charges for what it adds: customers who come back, and proof of the business.',
     mathSource: 'Illustrative, non-contractual figures. Fees: Kolonell 2026 (Wave ~1%, CinetPay ~3% + 50 F). To be re-verified with pilot merchants.',
     linesTitle: 'Revenue line order',
     lines: [
@@ -303,7 +303,7 @@ export const learnEn = {
       {
         step: '04',
         title: 'Payment revenue share',
-        body: 'A minor line, on Hossouko-route payments only, where the licensed provider allows it. Never priced above what the merchant pays on their own wallet today.',
+        body: 'A minor line, on Fidelia-route payments only, where the licensed provider allows it. Never priced above what the merchant pays on their own wallet today.',
         depends: 'A rate at or below the merchant’s current wallet',
         state: 'Minor',
         tone: 'later',
@@ -334,7 +334,7 @@ export const learnEn = {
     ],
     moatTitle: 'The real moat',
     moat:
-      'The share of a merchant’s turnover confirmed by a payment provider, whether captured from their own wallet or paid through Hossouko, is a stronger moat than the loyalty programme. It cannot be bought: it accumulates one event at a time without asking the merchant to change how they get paid, and loyalty gives their customers a reason to pay digitally.',
+      'The share of a merchant’s turnover confirmed by a payment provider, whether captured from their own wallet or paid through Fidelia, is a stronger moat than the loyalty programme. It cannot be bought: it accumulates one event at a time without asking the merchant to change how they get paid, and loyalty gives their customers a reason to pay digitally.',
     gateNote:
       'None of this justifies expansion: no second corridor before the first has demonstrated its unit-economics gates.',
     gateLink: 'See the model’s gates',

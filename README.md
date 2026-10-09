@@ -1,9 +1,9 @@
-# Hossouko — public site
+# Fidelia — public site
 
-Single-page investor and partner site for Hossouko. React + Vite, no UI framework.
+Single-page investor and partner site for Fidelia. React + Vite, no UI framework.
 
 The narrative and every factual claim come from the business documents in
-`../hossouko-BE/docs/business/`: `CONCEPT.md`, `MARKET.md`, `BUSINESS-MODEL.md`,
+`../fidelia-BE/docs/business/`: `CONCEPT.md`, `MARKET.md`, `BUSINESS-MODEL.md`,
 `ROADMAP.md` and `PARTNERS.md`. **When a claim changes there, change it here.**
 
 ## Commands
@@ -39,7 +39,7 @@ The repository is ready to deploy as a Render **static site** from
 [`render.yaml`](render.yaml) (a Blueprint):
 
 1. Render dashboard → **New → Blueprint** → connect this GitHub repository.
-2. Render reads `render.yaml` and creates `hossouko-web`: build
+2. Render reads `render.yaml` and creates `fidelia-web`: build
    `npm ci && npm run check:content && npm run build`, publish `./dist`,
    Node 22.12 (also pinned in `.node-version` and `engines`).
 3. Deploys follow the repository's **default branch**. The latest work is on
@@ -57,11 +57,11 @@ purpose on Netlify or Cloudflare Pages.
 
 ## Error reporting
 
-`src/errorReporter.js` sends uncaught errors to the Hossouko API
+`src/errorReporter.js` sends uncaught errors to the Fidelia API
 (`POST /api/client-events`), where they join the apps' errors in Grafana. No
 SDK and no visitor id; at most one small request per page view, and only when
-something broke. It is off unless the build sets `VITE_HOSSOUKO_API_BASE`
-(e.g. `https://api.hossouko.ci`); the API's `CORS_ORIGINS` must then include this
+something broke. It is off unless the build sets `VITE_FIDELIA_API_BASE`
+(e.g. `https://api.fidelia.ci`); the API's `CORS_ORIGINS` must then include this
 site's origin.
 
 ## Low-bandwidth budget

@@ -1,4 +1,4 @@
-# Render Blueprint: the Hossouko public site as a static site.
+# Render Blueprint: the Fidelia public site as a static site.
 # Render dashboard → New → Blueprint → pick this repository.
 #
 # The build prerenders the French page, writes the service worker and
@@ -8,7 +8,7 @@
 services:
   - type: web
     runtime: static
-    name: hossouko-web
+    name: fidelia-web
     # Deploys from the repository's default branch. The latest work lives on
     # `integration`: merge it into the default branch first, or uncomment and
     # set the branch this service should follow.
@@ -22,8 +22,8 @@ services:
         value: "22.12.0"
       # Uncaught errors go to the API's /api/client-events (src/errorReporter.js).
       # Unset = reporting off. The API's CORS_ORIGINS must list this site.
-      # - key: VITE_HOSSOUKO_API_BASE
-      #   value: https://api.hossouko.ci
+      # - key: VITE_FIDELIA_API_BASE
+      #   value: https://api.fidelia.ci
 
     headers:
       # Hashed file names change with their content: cache for a year. This is

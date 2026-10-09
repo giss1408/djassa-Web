@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { DEFAULT_LOCALE, getContent, hasContent, loadContent } from '../content/index.js'
 
-const STORAGE_KEY = 'hossouko.locale'
+const STORAGE_KEY = 'fidelia.locale'
 
 /** The visitor's saved or browser language. Browser-only: called in an effect. */
 function preferredLocale() {

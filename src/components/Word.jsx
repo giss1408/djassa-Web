@@ -1,5 +1,5 @@
 /**
- * "The name" — a dictionary-style entry presenting Hossouko and its slogan.
+ * "The name" — a dictionary-style entry presenting Fidelia and its slogan.
  *
  * Sits between the hero and the concept on purpose: a reader meets the brand
  * and its promise before any argument is built on it. Unnumbered kicker,
@@ -19,7 +19,7 @@ export function Word({ content }) {
         <article className="word-entry" data-reveal>
           <header className="word-head">
             <h2 id="word-title" className="word-term" lang="fr-CI">
-              hossouko
+              fidelia
             </h2>
             <p className="word-meta">
               <span className="word-phon">{word.phonetic}</span>

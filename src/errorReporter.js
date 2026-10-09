@@ -1,13 +1,13 @@
-// Uncaught errors from the site, sent to the Hossouko API (POST /api/client-events)
+// Uncaught errors from the site, sent to the Fidelia API (POST /api/client-events)
 // so they show in the same Grafana dashboard as the apps'. No SDK, no cookie,
 // no visitor id: the message with digit runs removed, the stack, the browser
 // family, a count. At most 10 distinct errors per page view, sent together a
 // few seconds after the first one or when the tab is hidden.
 //
-// Off unless the build sets VITE_HOSSOUKO_API_BASE (e.g. https://api.hossouko.ci),
+// Off unless the build sets VITE_FIDELIA_API_BASE (e.g. https://api.fidelia.ci),
 // and that API's CORS_ORIGINS must list this site's origin.
 
-const API_BASE = (import.meta.env.VITE_HOSSOUKO_API_BASE || '').replace(/\/+$/, '')
+const API_BASE = (import.meta.env.VITE_FIDELIA_API_BASE || import.meta.env.VITE_HOSSOUKO_API_BASE || import.meta.env.VITE_DJASSA_API_BASE || '').replace(/\/+$/, '')
 const MAX_DISTINCT = 10
 
 const queue = new Map()

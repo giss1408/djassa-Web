@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Hossouko — page styles
+   Fidelia — page styles
    Organised in the order the sections appear in App.jsx.
    ========================================================================== */
 
@@ -99,12 +99,12 @@
 }
 
 .brand:hover .brand-mark {
-  transform: rotate(45deg);
+  transform: translateY(-2px);
 }
 
-/* The wordmark: Instrument Serif italic, the site's display face. */
+/* The wordmark: Instrument Serif, the site's display face, set upright as in the logo. */
 .brand-word {
-  font: italic 400 1.7rem/1 var(--serif);
+  font: 400 1.7rem/1 var(--serif);
   letter-spacing: -0.01em;
   padding-right: 0.1em;
 }
@@ -589,7 +589,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   3b. The name — dictionary entry for "hossouko"
+   3b. The name — dictionary entry for "fidelia"
    -------------------------------------------------------------------------- */
 
 .word-entry {
@@ -1276,7 +1276,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4d. Device mocks — merchant app (hossouko-App-retailer)
+   4d. Device mocks — merchant app (fidelia-App-retailer)
    Same visual language as the customer app (shared tokens, serif wordmark,
    gradient header, soft cards), per the app's theme.dart. Kept from the
    original merchant design: unaccented French, large targets, and sync state
@@ -1364,17 +1364,15 @@
   width: 2.4rem;
   height: 2.4rem;
   margin-bottom: 0.4rem;
-  background: #fff;
-  border-radius: 0.75rem;
 }
 
 .r-badge svg {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 100%;
+  height: 100%;
 }
 
 .r-wordmark {
-  font: italic 400 1.9rem/1 var(--serif);
+  font: 400 1.9rem/1 var(--serif);
 }
 
 .r-sub {
@@ -1747,7 +1745,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4e. Device mocks — customer app (hossouko-App-user)
+   4e. Device mocks — customer app (fidelia-App-user)
    Rounder, warmer, gradient headers and a raised centre pay button, per that
    app's theme.dart — which itself derives from this site's tokens.
    -------------------------------------------------------------------------- */
