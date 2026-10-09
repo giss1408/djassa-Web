@@ -1,6 +1,6 @@
 import { Brand } from './Primitives.jsx'
 
-const CONTACT = 'ptck2e@duck.mail'
+const CONTACT = 'contact.fidelia@regisse.com'
 
 export function Closing({ content }) {
   const { closing, footer, nav } = content
