@@ -1,9 +1,29 @@
 # Changelog — Fidelia website
 
 What the public site offers, newest first. It has no version numbers: the
-test site deploys `integration`. Entries are grouped by the day the work
-landed. The product was called **Djassa** until 6 October 2026, then
-**Hossouko**, and is **Fidelia** since 9 October.
+test site deploys `integration`, production deploys `trunk`. Entries are
+grouped by the day the work landed. The product was called **Djassa** until
+6 October 2026, then **Hossouko**, and is **Fidelia** since 9 October.
+
+## 2026-10-10
+
+- **Investor brief moved to the API**, behind a password: the brief, the NDA
+  and the letters of interest are no longer public files of the site
+  (`public/brief/` removed). The "Investor brief" buttons open
+  `<API>/brief/` in the reader's language (`src/apiBase.js`).
+- **Pilot round** on the investor brief: a XOF 31M pre-seed round in two
+  tranches (XOF 14M at signing, XOF 17M at the Phase 0 exit gate), a BSA AIR
+  under OHADA law with a USD 1.3M post-money cap and a 20% discount, use of
+  funds and milestones per tranche.
+- **Pilot boundaries** on the site and the brief: the daily cash book first,
+  maquis and grocery shops in one commune, the customer app bringing new
+  customers, a free pilot with the paid plan offered at the end. The status
+  line shows on-duty pharmacies again.
+- **Installateur button** on the download page points at
+  `fidelia-installer.onrender.com` (the old djassa address was gone).
+- **Deployment**: the Render service is named `fidelia` and follows its
+  Blueprint's branch, so the same `render.yaml` serves production (`trunk`)
+  and the test site (`integration`).
 
 ## 2026-10-09
 
