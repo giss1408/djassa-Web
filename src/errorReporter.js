@@ -7,7 +7,8 @@
 // Off unless the build sets VITE_FIDELIA_API_BASE (e.g. https://api.fidelia.ci),
 // and that API's CORS_ORIGINS must list this site's origin.
 
-const API_BASE = (import.meta.env.VITE_FIDELIA_API_BASE || import.meta.env.VITE_HOSSOUKO_API_BASE || import.meta.env.VITE_DJASSA_API_BASE || '').replace(/\/+$/, '')
+import { API_BASE } from './apiBase.js'
+
 const MAX_DISTINCT = 10
 
 const queue = new Map()

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { briefUrl } from '../apiBase.js'
 import { Brand } from './Primitives.jsx'
 
 export function Nav({ content, locale, onToggleLocale }) {
@@ -57,7 +58,7 @@ export function Nav({ content, locale, onToggleLocale }) {
               {link.label}
             </a>
           ))}
-          <a className="nav-link-cta" href={nav.briefHref} onClick={() => setMenuOpen(false)}>
+          <a className="nav-link-cta" href={briefUrl(nav.briefHref, content.locale)} onClick={() => setMenuOpen(false)}>
             {nav.cta}
           </a>
         </div>
@@ -74,7 +75,7 @@ export function Nav({ content, locale, onToggleLocale }) {
             <span className={locale === 'EN' ? 'is-active' : ''}>EN</span>
           </button>
 
-          <a className="nav-cta" href={nav.briefHref}>
+          <a className="nav-cta" href={briefUrl(nav.briefHref, content.locale)}>
             {nav.cta}
             <span aria-hidden="true">↗</span>
           </a>

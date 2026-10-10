@@ -23,8 +23,8 @@ export const en = {
       { href: '#execution', label: 'Execution' },
     ],
     cta: 'Investor brief',
-    // The printable brief (public/brief/), in the reader's language.
-    briefHref: '/brief/en.html',
+    // The brief, behind a password on the API (src/apiBase.js), in the reader's language.
+    briefHref: '/brief/?lang=en',
     langLabel: 'Switch to French',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',

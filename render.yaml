@@ -19,10 +19,14 @@ services:
       # Vite 8 needs Node ^20.19 or >=22.12.
       - key: NODE_VERSION
         value: "22.12.0"
-      # Uncaught errors go to the API's /api/client-events (src/errorReporter.js).
-      # Unset = reporting off. The API's CORS_ORIGINS must list this site.
-      # - key: VITE_FIDELIA_API_BASE
-      #   value: https://api.fidelia.ci
+      # The Fidelia API's address (src/apiBase.js). It serves the investor
+      # brief behind its password: the "Investor brief" button opens
+      # <API>/brief/. It also receives uncaught errors (src/errorReporter.js;
+      # the API's CORS_ORIGINS must list this site). Unset = no error reports,
+      # and the brief button becomes an email request. Enter the API service's
+      # address as Render shows it.
+      - key: VITE_FIDELIA_API_BASE
+        sync: false
 
     headers:
       # Hashed file names change with their content: cache for a year. This is
@@ -34,15 +38,12 @@ services:
         name: Cache-Control
         value: public, max-age=31536000, immutable
 
-      # The page, the briefs and the service worker must be revalidated, or a
+      # The page, the download page and the service worker must be revalidated, or a
       # published change would not reach visitors.
       - path: /
         name: Cache-Control
         value: public, max-age=0, must-revalidate
       - path: /index.html
-        name: Cache-Control
-        value: public, max-age=0, must-revalidate
-      - path: /brief/*
         name: Cache-Control
         value: public, max-age=0, must-revalidate
       - path: /app/*
@@ -66,25 +67,15 @@ services:
         name: Permissions-Policy
         value: camera=(), microphone=(), geolocation=(), payment=()
 
-      # The investor brief and NDA are shared by link, not listed.
-      - path: /brief/*
-        name: X-Robots-Tag
-        value: noindex
       # The test-app download page is shared on WhatsApp, not listed.
       - path: /app/*
         name: X-Robots-Tag
         value: noindex
 
     routes:
-      # The brief folder's own index, so /brief/ opens the French brief rather
-      # than a 404. No catch-all rewrite: this is a one-page site with anchors,
-      # and a real 404 for a wrong URL is more honest than the home page.
-      - type: rewrite
-        source: /brief
-        destination: /brief/index.html
-      - type: rewrite
-        source: /brief/
-        destination: /brief/index.html
+      # No catch-all rewrite: this is a one-page site with anchors, and a real
+      # 404 for a wrong URL is more honest than the home page. The investor
+      # brief is not here: the API serves it behind a password (src/apiBase.js).
       # The link shared on WhatsApp: <this site's address>/app
       - type: rewrite
         source: /app

@@ -1,3 +1,4 @@
+import { briefUrl } from '../apiBase.js'
 import { Brand } from './Primitives.jsx'
 
 const CONTACT = 'contact.fidelia@regisse.com'
@@ -22,7 +23,7 @@ export function Closing({ content }) {
                 {closing.cta}
                 <span aria-hidden="true">↗</span>
               </a>
-              <a className="text-link" href={nav.briefHref}>
+              <a className="text-link" href={briefUrl(nav.briefHref, content.locale)}>
                 {closing.ctaSecondary}
                 <span aria-hidden="true">↗</span>
               </a>
