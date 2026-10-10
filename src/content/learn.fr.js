@@ -81,7 +81,7 @@ export const learnFr = {
         security:
           'La file d’attente est annoncée en mots plutôt qu’en spinner : « 2 en attente d’envoi », « Envoyée », « Refusée ». Un commerçant qui ne sait pas ce qui a quitté son téléphone ne confiera pas sa comptabilité à l’application. L’état est porté par un mot, jamais par une couleur seule.',
         roi:
-          'Ligne 1 — abonnement commerçant, la première ligne recommandée. La conversion se joue au jour 30, quand cet écran a accumulé assez d’activité pour valoir un prix, et non au jour 0. Formules et paiements sont tenus dans un registre de facturation en ajout seul ; pendant le pilote, le virement mobile money est saisi à la main.',
+          'Ligne 1 — abonnement commerçant, la première ligne recommandée. Le pilote est gratuit ; la conversion se joue à sa fin, quand cet écran a accumulé assez d’activité pour valoir un prix. Formules et paiements sont tenus dans un registre de facturation en ajout seul ; au début, le virement mobile money est saisi à la main.',
       },
       {
         id: 'record',

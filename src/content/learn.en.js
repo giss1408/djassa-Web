@@ -74,7 +74,7 @@ export const learnEn = {
         security:
           'The queue is stated in words rather than a spinner: “2 waiting to send”, “Sent”, “Rejected”. A merchant who cannot tell what left the phone will not trust the app with their books. State is carried by a word, never by colour alone.',
         roi:
-          'Line 1 — merchant subscription, the recommended first line. Conversion happens at day 30, once this screen has accumulated enough activity to be worth a price, not at day 0. Plans and payments are kept in an append-only billing ledger; for the pilot, the mobile-money transfer is recorded by hand.',
+          'Line 1 — merchant subscription, the recommended first line. The pilot is free; conversion happens when it ends, once this screen has accumulated enough activity to be worth a price. Plans and payments are kept in an append-only billing ledger; at first, the mobile-money transfer is recorded by hand.',
       },
       {
         id: 'record',

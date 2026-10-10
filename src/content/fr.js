@@ -189,7 +189,7 @@ export const fr = {
         title: 'Le commerçant paie pour une valeur visible.',
         body:
           'La fidélité fait revenir les clients : c’est ce que le commerçant voit chaque semaine, et ce pour quoi il paie, avant toute commission financière. Le premier client est celui qui utilise le produit chaque jour — pas un partenaire bancaire hypothétique.',
-        proof: 'Premier revenu : abonnement mensuel par point de vente, payé en mobile money, avec une formule gratuite plafonnée. Prix testés pendant le pilote.',
+        proof: 'Premier revenu : abonnement mensuel par point de vente, payé en mobile money, avec une formule gratuite plafonnée. Le pilote est gratuit pour tous les commerçants ; la formule payante est proposée à la fin.',
       },
       {
         icon: '∞',
@@ -421,7 +421,7 @@ export const fr = {
       label: 'Construit',
       items: [
         'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone',
-        'App client : maquis, bons plans et points (prototype, gelée pendant le pilote)',
+        'App client : maquis, pharmacies de garde, bons plans et points (prototype)',
         'Paiement par QR et fidélité en mode sandbox, sans argent réel ; points sur les ventes en espèces par numéro',
         'Un seul flux de ventes, étiqueté paiement confirmé ou espèces déclarées',
         'Pipeline CI/CD avec contrôles de chaîne d’approvisionnement des images',

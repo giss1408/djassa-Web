@@ -184,7 +184,7 @@ export const en = {
         title: 'The merchant pays for visible value.',
         body:
           'Loyalty brings customers back: that is what the merchant sees every week, and what they pay for, before any financial commission. The first customer is the one who uses the product every day — not a hypothetical banking partner.',
-        proof: 'First revenue: a monthly per-outlet subscription, paid in mobile money, with a capped free plan. Prices tested during the pilot.',
+        proof: 'First revenue: a monthly per-outlet subscription, paid in mobile money, with a capped free plan. The pilot is free for every merchant; the paid plan is offered when it ends.',
       },
       {
         icon: '∞',
@@ -416,7 +416,7 @@ export const en = {
       label: 'Built',
       items: [
         'Merchant app: offline sales synced without duplicates, tested on a real phone',
-        'Customer app: maquis, deals and points (prototype, frozen during the pilot)',
+        'Customer app: maquis, on-duty pharmacies, deals and points (prototype)',
         'QR payment and loyalty in sandbox mode, no real money; points on cash sales by phone number',
         'One sale stream, labelled confirmed payment or declared cash',
         'CI/CD pipeline with image supply-chain checks',
