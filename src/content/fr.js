@@ -421,7 +421,7 @@ export const fr = {
       label: 'Construit',
       items: [
         'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone',
-        'App client : maquis, pharmacies de garde, bons plans et points (prototype)',
+        'App client : maquis, bons plans et points (prototype, gelée pendant le pilote)',
         'Paiement par QR et fidélité en mode sandbox, sans argent réel ; points sur les ventes en espèces par numéro',
         'Un seul flux de ventes, étiqueté paiement confirmé ou espèces déclarées',
         'Pipeline CI/CD avec contrôles de chaîne d’approvisionnement des images',
