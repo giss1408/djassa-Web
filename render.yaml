@@ -9,9 +9,9 @@ services:
   - type: web
     runtime: static
     name: fidelia-web
-    # Follows `integration`: every push there deploys. Production
-    # deployments come from `trunk`.
-    branch: integration
+    # No `branch:` on purpose: the service follows its Blueprint's branch.
+    # Production is the Blueprint on `trunk`; the test site is the one on
+    # `integration`. Promote by merging integration into trunk.
     buildCommand: npm ci && npm run check:content && npm run build
     staticPublishPath: ./dist
     pullRequestPreviewsEnabled: true
