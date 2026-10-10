@@ -7,6 +7,18 @@ grouped by the day the work landed. The product was called **Djassa** until
 
 ## 2026-10-10
 
+- **Content aligned with the pilot boundaries** (`CONCEPT.md` § 12): the
+  Thesis section's federated-identity block is replaced by **the pilot**
+  (two questions, 5 to 10 maquis and grocery shops in one commune, free, and
+  what is frozen); the daily cash book is the day-1 benefit; subscriptions
+  and sponsored deals start after the pilot; one commune before a second
+  (no other UEMOA country named); tontine no longer presented as a pilot
+  segment; Phase 0–2 items and the Phase 1 exit gate match `ROADMAP.md`.
+- **Build status updated**: phone and SMS-code sign-in, deal alerts,
+  "Client venu" and Wave capture (in test) are built; the sign-in screen in
+  the learning area now shows the phone and code fields.
+- Learning area: no sponsored on-duty pharmacies, points stay per merchant,
+  win-back by push notification instead of SMS/WhatsApp message packs.
 - **Investor brief moved to the API**, behind a password: the brief, the NDA
   and the letters of interest are no longer public files of the site
   (`public/brief/` removed). The "Investor brief" buttons open

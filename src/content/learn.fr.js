@@ -63,11 +63,11 @@ export const learnFr = {
         id: 'signin',
         name: 'Connexion',
         summary:
-          'Identifiant et mot de passe : le seul mécanisme que le backend expose aujourd’hui. Le concept prévoit à la place une identité Tier 0 ancrée sur le numéro mobile money.',
+          'Numéro de téléphone et code à 6 chiffres reçu par SMS : une identité Tier 0 ancrée sur le numéro, sans mot de passe à retenir. Le gérant et chaque caissier se connectent avec leur propre numéro.',
         strength:
           'Aucune friction inutile à l’entrée. Personne ne passe un contrôle d’identité complet pour enregistrer une vente : le niveau de vérification suit le risque de la fonction, jamais l’inverse.',
         security:
-          'Le jeton signé décide de tout ce qui suit, et l’identité de l’utilisateur n’est jamais lue dans le corps d’une requête. Autocomplétion et suggestions sont désactivées, parce qu’un téléphone de marché passe de main en main.',
+          'Le code expire en cinq minutes et les envois sont limités par numéro. Ensuite, le jeton signé décide de tout ce qui suit, et l’identité de l’utilisateur n’est jamais lue dans le corps d’une requête.',
         roi:
           'Aucune ligne directe, et c’est voulu. Ce que cet écran protège, c’est le temps d’intégration — l’une des économies unitaires que le pilote doit mesurer.',
       },
@@ -101,11 +101,11 @@ export const learnFr = {
         summary:
           'Les offres du commerçant telles que les clients les verront, et le moyen d’en publier une. Cinq au maximum en même temps.',
         strength:
-          'L’offre relie les deux applications sans budget média : elle pousse le commerçant vers l’application client, et l’application client vers le comptoir. Chaque côté rend l’autre plus utile.',
+          'L’offre relie les deux applications sans budget média : publiée, elle part en notification aux clients de la commune, et l’application client les amène au comptoir. Sous chaque offre, « Client venu » compte ceux qui viennent grâce à elle : c’est le chiffre « nouveaux clients amenés par Fidelia ».',
         security:
           'La mise en avant payante n’est jamais auto-attribuée : seul un administrateur peut vendre un placement, qui prend fin avec sa période. Un commerçant ne peut pas se sponsoriser lui-même, et le placement sponsorisé est affiché comme tel côté client.',
         roi:
-          'Ligne 2 — placement d’offre mis en avant. C’est la trésorerie la plus rapide : un commerçant local achète de la publicité bien plus volontiers qu’un abonnement logiciel, et c’est une vente unique plutôt qu’un engagement mensuel.',
+          'Ligne 2 — placement d’offre mis en avant, après le pilote : pendant le pilote, toutes les offres sont gratuites. Ensuite, c’est la trésorerie la plus rapide : un commerçant local achète de la publicité bien plus volontiers qu’un abonnement logiciel, et c’est une vente unique plutôt qu’un engagement mensuel.',
       },
       {
         id: 'newdeal',
@@ -128,11 +128,11 @@ export const learnFr = {
         summary:
           'Le point d’entrée quotidien : les points, les quatre choses pour lesquelles on ouvre l’application, et un aperçu de ce qui se passe autour — qui est de garde, où manger, ce qui a été payé.',
         strength:
-          'La pharmacie de garde est la seule fonction à traction urgente quotidienne, sans API officielle et sans concurrent qui détienne la donnée. Elle fait venir le client ; le paiement et les points le retiennent.',
+          'La pharmacie de garde est la seule fonction à traction urgente quotidienne, sans API officielle et sans concurrent qui détienne la donnée. Elle fait installer l’application ; les offres et les points font revenir le client.',
         security:
           'Chaque bloc charge indépendamment : un appel lent ne vide pas la page et n’invente pas de contenu. L’écran ne montre que les points et les paiements du compte connecté.',
         roi:
-          'Acquisition. La garde est aussi le seul actif de cet écran qui puisse plausiblement être sponsorisé — et son coût réel est la saisie hebdomadaire à la main de la rotation officielle, à budgéter honnêtement plutôt qu’à passer sous silence.',
+          'Acquisition. La garde reste une information, jamais un emplacement vendu : une mise en avant payante ne modifie ni les pharmacies de garde ni l’ordre des résultats ordinaires. Son coût réel est la saisie hebdomadaire à la main de la rotation officielle, à budgéter honnêtement plutôt qu’à passer sous silence.',
       },
       {
         id: 'scan',
@@ -144,7 +144,7 @@ export const learnFr = {
         security:
           'Rien de ce qui est lu dans le QR n’est affiché ni cru au-delà du code lui-même. Le code part au serveur, et l’écran suivant montre le commerçant que le serveur désigne. Un autocollant contrefait ne peut donc pas afficher un nom de confiance.',
         roi:
-          'Aucun frais pour le client, jamais. Ce parcours Fidelia sert de solution de repli pour les commerçants dont le portefeuille n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que le QR de son propre portefeuille aujourd’hui.',
+          'Aucun frais pour le client, jamais. Ce parcours est gelé pendant le pilote : les paiements sur le QR Wave du commerçant sont captés de toute façon. Il sert ensuite de solution de repli pour les commerçants dont le portefeuille n’est pas capturé automatiquement : son partage de revenu est une ligne mineure (4) et ne doit jamais coûter au commerçant plus cher que le QR de son propre portefeuille aujourd’hui.',
       },
       {
         id: 'pay',
@@ -176,7 +176,7 @@ export const learnFr = {
         summary:
           'Les points par commerce, la progression vers la récompense suivante, et l’historique de ce qui a été gagné ou utilisé, chez qui.',
         strength:
-          'Les points se comptent chez chaque commerçant : un maquis ne finance pas les points gagnés à la pharmacie voisine. À l’échelle du pilote, un pool partagé au niveau du quartier est la correction envisagée, avec une table de règlement entre commerçants.',
+          'Les points se comptent chez chaque commerçant : un maquis ne finance pas les points gagnés à l’épicerie voisine. Des points utilisables d’un commerce à l’autre viendront plus tard, avec des règles de règlement entre commerçants et une vérification réglementaire, car des points transférables commencent à ressembler à de la monnaie électronique.',
         security:
           'Les points ne s’échangent pas contre de l’argent, et c’est écrit sur l’écran plutôt que caché dans des conditions générales. Le client voit son propre historique et rien d’autre.',
         roi:
@@ -286,7 +286,7 @@ export const learnFr = {
       {
         step: '01',
         title: 'Abonnement commerçant',
-        body: 'Mensuel par point de vente, avec une formule gratuite plafonnée. Converti au jour 30 sur l’écran qui montre au commerçant son chiffre et les clients revenus. Encaissé par mobile money récurrent.',
+        body: 'Mensuel par point de vente, avec une formule gratuite plafonnée. Gratuit pendant le pilote, puis proposé à chaque commerçant après 60 jours d’usage ou plus, sur l’écran qui montre son chiffre, les clients revenus et les nouveaux clients. Encaissé par mobile money.',
         depends: 'Capture automatique du portefeuille et activité réelle',
         state: 'Recommandée en premier',
         tone: 'first',
@@ -295,14 +295,14 @@ export const learnFr = {
         step: '02',
         title: 'Placement d’offre mis en avant',
         body: 'Créneau payant déjà présent dans le code, attribuable uniquement par un administrateur, et déjà affiché comme sponsorisé côté client.',
-        depends: 'Enregistrement de placement à construire',
-        state: 'Presque prête',
+        depends: 'La fin du pilote : aucune offre payante avant',
+        state: 'Prête, gelée',
         tone: 'near',
       },
       {
         step: '03',
-        title: 'Packs de messages de réactivation',
-        body: 'Faire revenir les clients perdus. Coût de message répercuté de façon transparente, plus une marge, sur le canal déjà choisi pour les notifications.',
+        title: 'Campagnes de relance',
+        body: 'Faire revenir les clients perdus par une offre envoyée en notification dans l’application client. Prix à tester. Ni SMS ni WhatsApp : les clients ne les suivent pas.',
         depends: 'Fonction campagnes, phase 2',
         state: 'Plus tard',
         tone: 'later',

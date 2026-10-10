@@ -44,7 +44,7 @@ export const fr = {
     stage: {
       label: 'Stade actuel',
       value: 'Pré-pilote',
-      detail: 'Backend et deux applications prototypes (commerçant, client). Pilote Abidjan : 5 à 10 commerçants, à lancer.',
+      detail: 'Plateforme et deux applications prototypes (commerçant, client). Pilote gratuit à Abidjan : 5 à 10 maquis et épiceries d’une commune, à lancer.',
     },
     card: {
       tag: 'FIDELIA / TRANSACTION',
@@ -89,7 +89,7 @@ export const fr = {
     lede:
       'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Fidelia n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
     body:
-      'Quand le client paie avec le QR du portefeuille que le commerçant utilise déjà (Wave d’abord, les autres opérateurs ensuite), la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
+      'Quand le client paie avec le QR du portefeuille que le commerçant utilise déjà (Wave d’abord, les autres opérateurs ensuite), la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. Dès la première semaine, le commerçant y gagne un cahier de caisse : le total de sa journée, mobile money et espèces réunis, sans rapprocher ses portefeuilles à la main. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
     coreLabel: 'L’ÉVÉNEMENT',
     coreValue: 'transaction vérifiée',
     coreDetail: 'qui · où · combien · quand',
@@ -130,9 +130,9 @@ export const fr = {
           'APIF, SGPME, GUDE-PME, GIZ, BEI, BII : un empilement d’initiatives qui cherchent des partenaires privés de distribution et de données plutôt que de tout opérer en interne. C’est une fenêtre, à condition de comprendre les mécanismes de garantie.',
       },
       {
-        title: 'La tontine numérique reste vacante localement',
+        title: 'Personne ne fait revenir le client',
         body:
-          'Des modèles validés existent au Sénégal et au Cameroun depuis 2015–2016. Aucun acteur ivoirien ne domine ce segment, malgré la maturité du mobile money local.',
+          'Les portefeuilles encaissent, mais aucun ne fait revenir le client. Un maquis ou une épicerie attire aujourd’hui sa clientèle par le bouche-à-oreille, la proximité et les réseaux sociaux ; la fidélité tient sur des cartes papier et la mémoire. Aucun acteur ivoirien ne domine ce segment.',
       },
     ],
     sourceNote:
@@ -168,7 +168,7 @@ export const fr = {
         why: 'Nous nous branchons sur le QR que le commerçant utilise déjà, quel que soit l’opérateur. Nous ne lui vendons pas un paiement plus cher.',
       },
       {
-        segment: 'Fidélité client, preuve d’activité marchande et tontine numérique',
+        segment: 'Fidélité client et preuve d’activité marchande',
         players: 'Aucun acteur ivoirien dominant',
         stance: 'Notre place',
         verdict: 'in',
@@ -188,7 +188,7 @@ export const fr = {
         label: 'Le wedge',
         title: 'Le commerçant paie pour une valeur visible.',
         body:
-          'La fidélité fait revenir les clients : c’est ce que le commerçant voit chaque semaine, et ce pour quoi il paie, avant toute commission financière. Le premier client est celui qui utilise le produit chaque jour — pas un partenaire bancaire hypothétique.',
+          'Dès le premier jour, un cahier de caisse qui réunit ses encaissements. Ensuite, des clients qui reviennent, et de nouveaux clients amenés par l’application client : c’est ce que le commerçant voit chaque semaine, et ce pour quoi il paiera, avant toute commission financière. Le premier client est celui qui utilise le produit chaque jour — pas un partenaire bancaire hypothétique.',
         proof: 'Premier revenu : abonnement mensuel par point de vente, payé en mobile money, avec une formule gratuite plafonnée. Le pilote est gratuit pour tous les commerçants ; la formule payante est proposée à la fin.',
       },
       {
@@ -204,17 +204,17 @@ export const fr = {
         label: 'La discipline',
         title: 'Le capital suit la preuve.',
         body:
-          'Chaque phase a une porte de sortie chiffrée : capture régulière, rétention, renouvellement payant, économie du support. Aucune expansion géographique avant qu’un corridor unique ne soit démontré.',
-        proof: 'Un seul corridor validé avant d’ouvrir le deuxième pays de l’UEMOA.',
+          'Chaque phase a une porte de sortie chiffrée : capture régulière, rétention, acceptation de la formule payante, économie du support. Aucune expansion géographique avant qu’une première commune ne soit démontrée.',
+        proof: 'Une seule commune validée avant d’ouvrir la deuxième.',
       },
     ],
-    identity: {
-      label: 'L’horizon plateforme',
-      title: 'Une couche de confiance fédérée — hypothèse, pas promesse.',
+    pilot: {
+      label: 'Le pilote',
+      title: 'Deux questions, pas cinq usages.',
       body:
-        'Le flux d’événements et la vérification progressive pourraient fonder un service d’identité fédérée pour la Côte d’Ivoire : orchestration du consentement, normalisation des niveaux d’assurance, audit pour les institutions agréées. Fidelia ne deviendrait pas propriétaire de l’identité nationale et ne copierait aucune base KYC d’opérateur.',
+        'Deux fondateurs et un budget de pilote de six mois ne valident pas cinq usages à la fois. Le pilote répond à deux questions : les gérants de maquis et d’épiceries continuent-ils d’utiliser Fidelia, et l’application client leur amène-t-elle des clients ? Il réunit 5 à 10 commerçants d’une commune d’Abidjan, gratuitement ; la formule payante leur est proposée à la fin, et la part qui l’accepte est le résultat du pilote.',
       guard:
-        'Cette direction exige un programme juridique, de gouvernance et de sécurité distinct avec l’ARTCI, la BCEAO, les opérateurs et un conseil local qualifié. Nous la présentons comme une option stratégique en aval du produit marchand — jamais comme une capacité actuelle.',
+        'Gelés pendant le pilote : le paiement via Fidelia dans l’application client, toute offre payante, les pharmacies comme commerçants payants (elles restent dans l’application comme information de garde), le paiement en plusieurs fois, la tontine et l’indicateur de fiabilité. Le code reste ; rien de cela n’est proposé avant sa propre porte.',
     },
   },
   model: {
@@ -225,21 +225,21 @@ export const fr = {
       'L’abonnement marchand finance le produit. Les revenus partenaires n’arrivent qu’après un usage fiable, un consentement traçable, une réconciliation propre et un périmètre réglementaire confirmé.',
     streamsTitle: 'Ordre des revenus',
     streams: [
-      { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers, avec une formule gratuite plafonnée. Revenu principal du MVP.', status: 'now' },
-      { step: '02', title: 'Bons plans sponsorisés et campagnes', detail: 'Emplacement ponctuel et limité dans le temps pour promouvoir un produit, un service ou une offre. Réservation assistée par l’équipe pendant le pilote ; prix à tester. Messages refacturés en transparence.', status: 'now' },
+      { step: '01', title: 'Abonnement marchand', detail: 'Mensuel par point de vente, par paliers, payé en mobile money, avec une formule gratuite plafonnée. Revenu principal. Gratuit pendant le pilote ; proposé à chaque commerçant à sa fin.', status: 'now' },
+      { step: '02', title: 'Bons plans sponsorisés et campagnes', detail: 'Les offres de base restent gratuites. Emplacement ponctuel, limité dans le temps et affiché « Sponsorisé », pour promouvoir un produit, un service ou une offre ; réservé avec l’équipe ; prix à tester. Aucune offre payante pendant le pilote.', status: 'now' },
       { step: '03', title: 'Contrats multi-points de vente', detail: 'Réseaux et associations de commerçants, tarifés séparément.', status: 'next' },
       { step: '04', title: 'Orchestration de paiement', detail: 'Revenu secondaire, jamais plus cher pour le commerçant que son portefeuille actuel.', status: 'next' },
       { step: '05', title: 'Apport d’affaires consenti', detail: 'Rémunéré par un partenaire agréé : crédit de stock, épargne, tontine.', status: 'later' },
       { step: '06', title: 'Services institutionnels', detail: 'Reporting et réconciliation pour institutions.', status: 'later' },
     ],
-    statusLabels: { now: 'MVP', next: 'Après preuve', later: 'Après partenariat' },
+    statusLabels: { now: 'Après le pilote', next: 'Après preuve', later: 'Après partenariat' },
     warning:
       'Le revenu d’apport d’affaires n’est pas la première hypothèse du modèle. Il dépend d’un accord partenaire, d’une revue réglementaire, du consentement de l’utilisateur et de résultats financiers mesurables.',
     economicsTitle: 'Ce que nous mesurons par commerçant',
     economics: [
       'Revenu récurrent mensuel',
       'Coût d’acquisition et durée d’onboarding',
-      'Clients actifs par point de vente',
+      'Nouveaux clients amenés par l’application client',
       'Taux de retour des clients identifiés',
       'Rétention à 30, 60 et 90 jours',
       'Coût des notifications par point de vente',
@@ -247,7 +247,7 @@ export const fr = {
       'Marge brute par formule',
     ],
     gateTitle: 'Porte d’économie unitaire',
-    gateLede: 'Aucune expansion géographique avant que le corridor pilote ne démontre :',
+    gateLede: 'Aucune deuxième commune avant que la commune pilote ne démontre :',
     gates: [
       'Un coût d’acquisition inférieur à douze mois de marge brute attendue',
       'Trois mois consécutifs de rétention ou de renouvellement',
@@ -271,7 +271,7 @@ export const fr = {
     targets: [
       { value: '60+', label: 'jours de capture régulière', detail: 'Durée minimale avant de tirer une conclusion' },
       { value: '30/60/90', label: 'jours de rétention suivis', detail: 'Rétention marchande, pas inscriptions' },
-      { value: '1', label: 'corridor à valider', detail: 'Avant toute expansion géographique' },
+      { value: '1', label: 'commune à valider', detail: 'Avant toute expansion géographique' },
     ],
   },
   roadmap: {
@@ -288,28 +288,28 @@ export const fr = {
         stateLabel: 'En cours',
         goal: 'Confirmer que le problème, les utilisateurs, les partenaires et le périmètre légal sont réels.',
         items: [
-          '5 à 10 entretiens commerçants',
-          'Un accord de pilote restreint',
-          'Un corridor, un segment, un canal d’acquisition',
-          'Accès aux API des opérateurs pour la capture automatique (Wave d’abord), état de PI-SPI',
-          'Revue de la frontière identité/KYC avec le partenaire mobile money',
+          '5 à 10 entretiens avec des gérants de maquis et d’épiceries, dans une commune d’Abidjan',
+          'Le cahier de caisse quotidien testé comme première raison de s’inscrire',
+          'Accès à l’API Wave pour la capture automatique ; capacités des autres opérateurs, état de PI-SPI',
+          'Une ou deux IMF : paieraient-elles un outil consenti pour suivre les ventes des commerçants qu’elles financent déjà ?',
+          'Revue réglementaire et ARTCI, un partenaire de paiement, un accord de pilote restreint',
         ],
-        exit: 'Un utilisateur pilote et un partenaire identifiés, aucun blocage non résolu sur le flux de données du MVP.',
+        exit: 'Un groupe de commerçants pilotes et un partenaire de paiement identifiés, aucun blocage non résolu sur le flux de données ou de fonds du MVP.',
       },
       {
         id: '1',
-        name: 'MVP fidélité marchande',
+        name: 'Pilote gratuit : enregistrer, récompenser, amener des clients',
         state: 'next',
         stateLabel: 'Suivant',
-        goal: 'Enregistrer une activité utile et créer l’usage répété.',
+        goal: 'Enregistrer une activité utile et créer l’usage répété, avec 5 à 10 commerçants.',
         items: [
-          'Capture automatique des paiements existants du portefeuille, Wave d’abord',
-          'Identité marchand et client par numéro (Tier 0)',
-          'Points, récompenses et rapport hebdo « clients revenus »',
-          'Ventes en espèces hors ligne, synchronisées sans doublon',
-          'Exports sous contrôle de consentement',
+          'Cahier de caisse quotidien ; ventes en espèces hors ligne, synchronisées sans doublon',
+          'Capture automatique des paiements Wave existants ; connexion par numéro et code SMS',
+          'Points, récompenses, rapports hebdo « clients revenus » et « nouveaux clients amenés par Fidelia »',
+          'Application client ciblée : carte des commerçants pilotes, offres gratuites avec notifications, pharmacies de garde',
+          'Relevé de revenus signé et consenti, pour les démonstrations aux IMF',
         ],
-        exit: 'Capture régulière mesurée, rétention marchande suivie, conversion payante observée.',
+        exit: '≥ 70 % des ventes réelles enregistrées à 30 jours, vers 85 % à 60 jours ; l’application amène de nouveaux clients ; ≥ 40 % des commerçants acceptent la formule payante à la fin du pilote.',
       },
       {
         id: '2',
@@ -318,11 +318,11 @@ export const fr = {
         stateLabel: 'Planifié',
         goal: 'Rendre le produit marchand répétable dans le premier corridor avant toute complexité financière.',
         items: [
-          'Bons plans, campagnes et relance des clients perdus',
-          'Onboarding par association et parrainage',
-          'Vérification progressive, là où le régulateur l’approuve',
-          'Playbook d’onboarding et de support',
+          'Premières formules payantes, mise en avant payante des offres, relance des clients perdus par notification',
+          'Paiement via Fidelia dans l’application client',
+          'Onboarding par association et parrainage, comptes multi-points de vente',
           'Deuxième opérateur (MTN ou Orange) ; QR interopérable PI-SPI via un partenaire agréé',
+          'Vérification progressive, là où le partenaire et le régulateur l’approuvent',
         ],
         exit: 'Les commerçants paient ou renouvellent ; l’économie d’acquisition et de support est comprise.',
       },
@@ -420,18 +420,18 @@ export const fr = {
     built: {
       label: 'Construit',
       items: [
-        'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone',
-        'App client : maquis, pharmacies de garde, bons plans et points (prototype)',
-        'Paiement par QR et fidélité en mode sandbox, sans argent réel ; points sur les ventes en espèces par numéro',
-        'Un seul flux de ventes, étiqueté paiement confirmé ou espèces déclarées',
+        'App commerçant : ventes hors ligne synchronisées sans doublon, testée sur un vrai téléphone ; total du jour ; « Client venu » sous chaque offre',
+        'Connexion par numéro de téléphone et code SMS (Tier 0), dans les deux applications',
+        'App client : maquis, pharmacies de garde, bons plans avec alertes, points (prototype)',
+        'Capture des paiements Wave du commerçant et points sur les ventes en espèces par numéro, en test ; un seul flux de ventes, étiqueté paiement confirmé ou espèces déclarées',
         'Pipeline CI/CD avec contrôles de chaîne d’approvisionnement des images',
       ],
     },
     pending: {
       label: 'À durcir avant tout usage financier réel',
       items: [
-        'Connexion par numéro (Tier 0) à la place du compte de démonstration',
-        'Capture automatique des paiements du portefeuille (Wave d’abord)',
+        'Capture Wave avec un vrai commerçant (accès à l’API Wave à confirmer)',
+        'Envoi réel des SMS et des notifications (fournisseurs à activer)',
         'Prestataire de paiement réel et réconciliation',
         'Autorisation par ressource, secrets de production, revue de sécurité indépendante',
         'Accords partenaires écrits et revue réglementaire',
@@ -444,11 +444,11 @@ export const fr = {
     eyebrow: 'La prochaine étape est humaine',
     title: 'Construisons une économie qui se reconnaît.',
     body:
-      'Nous cherchons trois types d’interlocuteurs : des commerçants d’Abidjan prêts à tester, une institution de microfinance intéressée par un pilote consenti et restreint, et des investisseurs qui acceptent qu’une expansion se mérite par la preuve.',
+      'Nous cherchons trois types d’interlocuteurs : des gérants de maquis et d’épiceries d’Abidjan prêts à tester gratuitement, une institution de microfinance intéressée par un pilote consenti et restreint, et des investisseurs qui acceptent qu’une expansion se mérite par la preuve.',
     asks: [
-      { who: 'Commerçants', what: 'Un pilote de 5 à 10 points de vente à Abidjan, sur un corridor dense.' },
-      { who: 'Institutions et partenaires', what: 'Une revue du flux de données, de la capture des paiements existants et du modèle d’apport consenti.' },
-      { who: 'Investisseurs', what: 'Le dossier complet : économie unitaire, portes de sortie par phase, périmètre réglementaire.' },
+      { who: 'Commerçants', what: 'Un pilote gratuit de 5 à 10 maquis et épiceries, dans une commune d’Abidjan.' },
+      { who: 'Institutions et partenaires', what: 'Une revue du flux de données et de la capture des paiements existants ; pour une IMF, un outil consenti pour suivre les ventes des commerçants qu’elle finance.' },
+      { who: 'Investisseurs', what: 'Le dossier complet : tour de pilote, économie unitaire, portes de sortie par phase, périmètre réglementaire.' },
     ],
     cta: 'Écrire à l’équipe',
     ctaSecondary: 'Lire le dossier investisseur',

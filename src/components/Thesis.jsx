@@ -27,19 +27,20 @@ export function Thesis({ content }) {
         ))}
       </div>
 
-      {/* The federated-identity story is the largest upside in the docs and the
-          easiest thing to overclaim. It gets its own framed block with the
-          guardrail attached, so the hypothesis never reads as a capability. */}
+      {/* The pilot boundaries (CONCEPT.md § 12): what the pilot validates, with
+          what is frozen attached, so the long-term concept above never reads
+          as the pilot's scope. The federated-identity horizon is kept out of
+          the public site during the pilot, as § 12 requires. */}
       <aside className="horizon" data-reveal>
         <div className="horizon-head">
-          <span className="horizon-label">{thesis.identity.label}</span>
-          <h3>{thesis.identity.title}</h3>
+          <span className="horizon-label">{thesis.pilot.label}</span>
+          <h3>{thesis.pilot.title}</h3>
         </div>
         <div className="horizon-body">
-          <p>{thesis.identity.body}</p>
+          <p>{thesis.pilot.body}</p>
           <p className="horizon-guard">
             <span aria-hidden="true">⚑</span>
-            {thesis.identity.guard}
+            {thesis.pilot.guard}
           </p>
         </div>
       </aside>

@@ -56,11 +56,11 @@ export const learnEn = {
         id: 'signin',
         name: 'Sign in',
         summary:
-          'Username and password: the only mechanism the backend exposes today. The concept calls instead for a Tier 0 identity anchored to the mobile-money number.',
+          'Phone number and a 6-digit code received by SMS: a Tier 0 identity anchored to the number, with no password to remember. The owner and each cashier sign in with their own number.',
         strength:
           'No needless friction at the door. Nobody goes through a full identity check to record a sale: verification level follows the risk of the feature, never the reverse.',
         security:
-          'The signed token decides everything downstream, and the user’s identity is never read from a request body. Autofill and suggestions are off, because a market phone gets handed around.',
+          'The code expires after five minutes and sends are limited per number. After that, the signed token decides everything downstream, and the user’s identity is never read from a request body.',
         roi:
           'No direct line, deliberately. What this screen protects is onboarding time — one of the unit economics the pilot has to measure.',
       },
@@ -94,11 +94,11 @@ export const learnEn = {
         summary:
           'The merchant’s offers exactly as customers will see them, and the way to publish one. Five live at most.',
         strength:
-          'An offer links the two apps with no media budget: it pushes the merchant toward the customer app, and the customer app toward the counter. Each side makes the other more useful.',
+          'An offer links the two apps with no media budget: once published, it goes out as a notification to customers in the commune, and the customer app brings them to the counter. Under each offer, “Client venu” counts those who come because of it: that is the “new customers brought by Fidelia” figure.',
         security:
           'Paid featuring is never self-granted: only an admin can sell a placement, and it ends with its time window. A merchant cannot sponsor themselves, and sponsored placement is labelled as such on the customer side.',
         roi:
-          'Line 2 — featured deal placement. It is the fastest cash: a local merchant buys advertising far more readily than software, and it is a one-off sale rather than a monthly commitment.',
+          'Line 2 — featured deal placement, after the pilot: during the pilot every offer is free. After that, it is the fastest cash: a local merchant buys advertising far more readily than software, and it is a one-off sale rather than a monthly commitment.',
       },
       {
         id: 'newdeal',
@@ -121,11 +121,11 @@ export const learnEn = {
         summary:
           'The daily hub: points, the four things people open the app for, and a live preview of what is happening nearby — who is on duty, where to eat, what was paid.',
         strength:
-          'The on-duty pharmacy is the only feature with daily urgent pull, no official API and no competitor holding the data. It brings the customer in; payment and points keep them.',
+          'The on-duty pharmacy is the only feature with daily urgent pull, no official API and no competitor holding the data. It gets the app installed; offers and points bring the customer back.',
         security:
           'Each block loads independently: one slow call neither blanks the page nor invents content. The screen shows only the signed-in account’s points and payments.',
         roi:
-          'Acquisition. On-duty is also the only asset on this screen that could plausibly be sponsored — and its real cost is entering the official weekly rotation by hand, to be budgeted honestly rather than left unsaid.',
+          'Acquisition. On-duty stays information, never a slot for sale: paid featuring changes neither the on-duty pharmacies nor the order of ordinary results. Its real cost is entering the official weekly rotation by hand, to be budgeted honestly rather than left unsaid.',
       },
       {
         id: 'scan',
@@ -137,7 +137,7 @@ export const learnEn = {
         security:
           'Nothing read from the QR is displayed or trusted beyond the code itself. The code goes to the server, and the next screen shows the merchant the server names. A forged sticker therefore cannot display a trusted name.',
         roi:
-          'No fee for the customer, ever. This Fidelia route is the fallback for merchants whose own wallet is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their own wallet QR does today.',
+          'No fee for the customer, ever. This route is frozen during the pilot: payments to the merchant’s Wave QR are captured anyway. After that, it is the fallback for merchants whose own wallet is not captured automatically: its revenue share is a minor line (4) and must never cost the merchant more than their own wallet QR does today.',
       },
       {
         id: 'pay',
@@ -169,7 +169,7 @@ export const learnEn = {
         summary:
           'Points per business, progress toward the next reward, and the history of what was earned or spent, and where.',
         strength:
-          'Points are counted per merchant: a maquis does not fund the points earned at the pharmacy next door. At pilot scale a quartier-level shared pool is the intended correction, with a settlement table between merchants.',
+          'Points are counted per merchant: a maquis does not fund the points earned at the grocery next door. Points usable from one shop to another come later, with settlement rules between merchants and a regulatory check, because transferable points start to look like electronic money.',
         security:
           'Points do not convert to cash, and that is written on the screen rather than buried in terms. The customer sees their own history and nothing else.',
         roi:
@@ -279,7 +279,7 @@ export const learnEn = {
       {
         step: '01',
         title: 'Merchant subscription',
-        body: 'Monthly per outlet, with a capped free plan. Converted at day 30 on the screen that shows the merchant their takings and the customers who came back. Collected by recurring mobile money.',
+        body: 'Monthly per outlet, with a capped free plan. Free during the pilot, then offered to every merchant after 60 days of use or more, on the screen that shows their takings, the customers who came back and the new customers. Collected by mobile money.',
         depends: 'Automatic wallet capture and real activity',
         state: 'Recommended first',
         tone: 'first',
@@ -288,14 +288,14 @@ export const learnEn = {
         step: '02',
         title: 'Featured deal placement',
         body: 'A paid slot already in the code, settable only by an admin, and already rendered as sponsored on the customer side.',
-        depends: 'Placement record to build',
-        state: 'Nearly ready',
+        depends: 'The end of the pilot: no paid offers before',
+        state: 'Ready, frozen',
         tone: 'near',
       },
       {
         step: '03',
-        title: 'Reactivation message packs',
-        body: 'Win back lapsed customers. Message cost passed through transparently, plus margin, on the channel already chosen for notifications.',
+        title: 'Win-back campaigns',
+        body: 'Win back lapsed customers with an offer sent as a notification in the customer app. Pricing to be tested. No SMS or WhatsApp: customers do not follow them.',
         depends: 'Campaign feature, phase 2',
         state: 'Later',
         tone: 'later',

@@ -39,7 +39,7 @@ export const en = {
     stage: {
       label: 'Current stage',
       value: 'Pre-pilot',
-      detail: 'Backend and two prototype apps (merchant, customer). Abidjan pilot: 5 to 10 merchants, not yet launched.',
+      detail: 'Platform and two prototype apps (merchant, customer). Free Abidjan pilot: 5 to 10 maquis and grocery shops in one commune, not yet launched.',
     },
     card: {
       tag: 'FIDELIA / TRANSACTION',
@@ -84,7 +84,7 @@ export const en = {
     lede:
       'Most merchant tools fail because every new feature asks for a new habit. Fidelia asks for one: record the sale. Everything else is a different read of the same event.',
     body:
-      'When a customer pays with the wallet QR the merchant already uses (Wave first, other operators next), the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
+      'When a customer pays with the wallet QR the merchant already uses (Wave first, other operators next), the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. From the first week, the merchant gets a cash book: the day’s total, mobile money and cash together, without reconciling wallets by hand. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
     coreLabel: 'THE EVENT',
     coreValue: 'verified transaction',
     coreDetail: 'who · where · how much · when',
@@ -125,9 +125,9 @@ export const en = {
           'APIF, SGPME, GUDE-PME, GIZ, EIB, BII: a stack of initiatives seeking private distribution and data partners rather than operating everything in-house. A real window, provided you understand the guarantee mechanisms.',
       },
       {
-        title: 'Digital tontine is locally vacant',
+        title: 'Nobody brings the customer back',
         body:
-          'Validated models have run in Senegal and Cameroon since 2015–2016. No Ivorian player dominates this segment, despite local mobile-money maturity.',
+          'Wallets collect payments, but none brings the customer back. A maquis or grocery shop attracts customers today by word of mouth, by being nearby and through social networks; loyalty lives on paper cards and memory. No Ivorian player dominates this segment.',
       },
     ],
     sourceNote:
@@ -163,7 +163,7 @@ export const en = {
         why: 'We plug into the QR the merchant already uses, whatever the operator. We do not sell them a more expensive payment.',
       },
       {
-        segment: 'Customer loyalty, merchant activity proof and digital tontine',
+        segment: 'Customer loyalty and merchant activity proof',
         players: 'No dominant Ivorian player',
         stance: 'Our place',
         verdict: 'in',
@@ -183,7 +183,7 @@ export const en = {
         label: 'The wedge',
         title: 'The merchant pays for visible value.',
         body:
-          'Loyalty brings customers back: that is what the merchant sees every week, and what they pay for, before any financial commission. The first customer is the one who uses the product every day — not a hypothetical banking partner.',
+          'From day one, a cash book that brings their takings together. Then customers who come back, and new customers brought by the customer app: that is what the merchant sees every week, and what they will pay for, before any financial commission. The first customer is the one who uses the product every day — not a hypothetical banking partner.',
         proof: 'First revenue: a monthly per-outlet subscription, paid in mobile money, with a capped free plan. The pilot is free for every merchant; the paid plan is offered when it ends.',
       },
       {
@@ -199,17 +199,17 @@ export const en = {
         label: 'The discipline',
         title: 'Capital follows proof.',
         body:
-          'Every phase has a numeric exit gate: consistent capture, retention, paid renewal, support economics. No geographic expansion before a single corridor is demonstrated.',
-        proof: 'One validated corridor before opening a second UEMOA country.',
+          'Every phase has a numeric exit gate: consistent capture, retention, acceptance of the paid plan, support economics. No geographic expansion before a first commune is demonstrated.',
+        proof: 'One validated commune before opening the second.',
       },
     ],
-    identity: {
-      label: 'Platform horizon',
-      title: 'A federated trust layer — hypothesis, not promise.',
+    pilot: {
+      label: 'The pilot',
+      title: 'Two questions, not five uses.',
       body:
-        'The event stream and progressive verification could found a federated identity service for Côte d’Ivoire: consent orchestration, assurance-level normalization, audit services for licensed institutions. Fidelia would not own national identity and would not copy any operator KYC database.',
+        'Two founders and a six-month pilot budget cannot validate five uses at once. The pilot answers two questions: do maquis and grocery owners keep using Fidelia, and does the customer app bring them customers? It brings together 5 to 10 merchants in one Abidjan commune, free of charge; the paid plan is offered to them at the end, and the share who accept it is the pilot’s result.',
       guard:
-        'This direction requires a separate legal, governance and security programme with ARTCI, BCEAO, the operators and qualified local counsel. We present it as a strategic option downstream of the merchant product — never as a current capability.',
+        'Frozen during the pilot: payment through Fidelia in the customer app, every paid offer, pharmacies as paying merchants (they stay in the app as on-duty information), layaway, tontine and the reliability indicator. The code stays; none of it is offered before its own gate.',
     },
   },
   model: {
@@ -220,21 +220,21 @@ export const en = {
       'The merchant subscription funds the product. Partner revenue only arrives after reliable usage, traceable consent, clean reconciliation and a confirmed regulatory perimeter.',
     streamsTitle: 'Revenue order',
     streams: [
-      { step: '01', title: 'Merchant subscription', detail: 'Monthly per outlet, tiered, with a capped free plan. Primary MVP revenue.', status: 'now' },
-      { step: '02', title: 'Sponsored deals and campaigns', detail: 'One-off, time-limited placement for a merchant product, service, or special offer. Bookings are admin-assisted during the pilot; pricing is to be tested. Messages passed through at cost.', status: 'now' },
+      { step: '01', title: 'Merchant subscription', detail: 'Monthly per outlet, tiered, paid in mobile money, with a capped free plan. Primary revenue. Free during the pilot; offered to every merchant when it ends.', status: 'now' },
+      { step: '02', title: 'Sponsored deals and campaigns', detail: 'Basic deals stay free. A one-off, time-limited placement labelled “Sponsored” to promote a merchant product, service or special offer; booked with the team; pricing to be tested. No paid offers during the pilot.', status: 'now' },
       { step: '03', title: 'Multi-outlet contracts', detail: 'Merchant networks and associations, priced separately.', status: 'next' },
       { step: '04', title: 'Payment orchestration', detail: 'Secondary revenue, never more expensive for the merchant than their current wallet.', status: 'next' },
       { step: '05', title: 'Consented referrals', detail: 'Paid by a licensed partner: stock credit, savings, tontine.', status: 'later' },
       { step: '06', title: 'Institutional services', detail: 'Reporting and reconciliation for institutions.', status: 'later' },
     ],
-    statusLabels: { now: 'MVP', next: 'After proof', later: 'After partnership' },
+    statusLabels: { now: 'After the pilot', next: 'After proof', later: 'After partnership' },
     warning:
       'Referral revenue is not the model’s first assumption. It depends on a partner agreement, regulatory review, user consent and measurable financial outcomes.',
     economicsTitle: 'What we measure per merchant',
     economics: [
       'Monthly recurring revenue',
       'Acquisition cost and onboarding time',
-      'Active customers per outlet',
+      'New customers brought by the customer app',
       'Return rate of identified customers',
       'Retention at 30, 60 and 90 days',
       'Notification cost per outlet',
@@ -242,7 +242,7 @@ export const en = {
       'Gross margin by plan',
     ],
     gateTitle: 'Unit-economics gate',
-    gateLede: 'No geographic expansion before the pilot corridor demonstrates:',
+    gateLede: 'No second commune before the pilot commune demonstrates:',
     gates: [
       'Acquisition cost below twelve months of expected gross profit',
       'Three consecutive months of retention or renewal',
@@ -266,7 +266,7 @@ export const en = {
     targets: [
       { value: '60+', label: 'days of consistent capture', detail: 'Minimum window before drawing a conclusion' },
       { value: '30/60/90', label: 'day retention tracked', detail: 'Merchant retention, not sign-ups' },
-      { value: '1', label: 'corridor to validate', detail: 'Before any geographic expansion' },
+      { value: '1', label: 'commune to validate', detail: 'Before any geographic expansion' },
     ],
   },
   roadmap: {
@@ -283,28 +283,28 @@ export const en = {
         stateLabel: 'In progress',
         goal: 'Confirm that the problem, users, partners and legal perimeter are real.',
         items: [
-          '5 to 10 merchant interviews',
-          'A narrow pilot agreement',
-          'One corridor, one segment, one acquisition channel',
-          'Operator API access for automatic capture (Wave first), PI-SPI status',
-          'Identity/KYC boundary review with the mobile-money partner',
+          '5 to 10 interviews with maquis and grocery owners in one Abidjan commune',
+          'The daily cash book tested as the first reason to sign up',
+          'Wave API access for automatic capture; other operators’ capabilities, PI-SPI status',
+          'One or two MFIs: would they pay for a consented tool to follow the sales of merchants they already lend to?',
+          'Regulatory and ARTCI review, one payment partner, a narrow pilot agreement',
         ],
-        exit: 'A pilot user and partner identified, with no unresolved blocker on the MVP data flow.',
+        exit: 'A pilot merchant group and a payment partner identified, with no unresolved blocker on the MVP data or funds flow.',
       },
       {
         id: '1',
-        name: 'Merchant loyalty MVP',
+        name: 'Free pilot: record, reward, bring customers',
         state: 'next',
         stateLabel: 'Next',
-        goal: 'Record useful activity and create repeat usage.',
+        goal: 'Record useful activity and create repeat usage, with 5 to 10 merchants.',
         items: [
-          'Automatic capture of existing wallet payments, Wave first',
-          'Merchant and customer identity by phone number (Tier 0)',
-          'Points, rewards and a weekly “customers who came back” report',
-          'Offline cash sales, synced without duplicates',
-          'Consent-controlled exports',
+          'Daily cash book; offline cash sales, synced without duplicates',
+          'Automatic capture of existing Wave payments; sign-in by phone number and SMS code',
+          'Points, rewards, weekly “customers who came back” and “new customers brought by Fidelia” reports',
+          'Focused customer app: map of pilot merchants, free offers with notifications, on-duty pharmacies',
+          'A signed, consented revenue statement for MFI demos',
         ],
-        exit: 'Consistent capture measured, merchant retention tracked, paid conversion observed.',
+        exit: '≥ 70% of real sales recorded at day 30, rising toward 85% at day 60; the app brings new customers; ≥ 40% of merchants accept the paid plan when the pilot ends.',
       },
       {
         id: '2',
@@ -313,11 +313,11 @@ export const en = {
         stateLabel: 'Planned',
         goal: 'Make the merchant product repeatable in the first corridor before adding financial complexity.',
         items: [
-          'Deals, campaigns and win-back of lapsed customers',
-          'Association and referral onboarding',
-          'Progressive verification, where the regulator approves it',
-          'Onboarding and support playbook',
+          'First paid plans, paid featured placement for offers, win-back of lapsed customers by notification',
+          'Payment through Fidelia in the customer app',
+          'Association and referral onboarding, multi-outlet accounts',
           'Second operator (MTN or Orange); PI-SPI interoperable QR via a licensed partner',
+          'Progressive verification, where the partner and the regulator approve it',
         ],
         exit: 'Merchants pay or renew; acquisition and support economics are understood.',
       },
@@ -415,18 +415,18 @@ export const en = {
     built: {
       label: 'Built',
       items: [
-        'Merchant app: offline sales synced without duplicates, tested on a real phone',
-        'Customer app: maquis, on-duty pharmacies, deals and points (prototype)',
-        'QR payment and loyalty in sandbox mode, no real money; points on cash sales by phone number',
-        'One sale stream, labelled confirmed payment or declared cash',
+        'Merchant app: offline sales synced without duplicates, tested on a real phone; the day’s total; “Client venu” under each offer',
+        'Sign-in by phone number and SMS code (Tier 0), in both apps',
+        'Customer app: maquis, on-duty pharmacies, deals with alerts, points (prototype)',
+        'Capture of the merchant’s Wave payments and points on cash sales by phone number, in test; one sale stream, labelled confirmed payment or declared cash',
         'CI/CD pipeline with image supply-chain checks',
       ],
     },
     pending: {
       label: 'To harden before any real financial use',
       items: [
-        'Phone-number login (Tier 0) instead of the demo account',
-        'Automatic wallet payment capture (Wave first)',
+        'Wave capture with a real merchant (Wave API access to confirm)',
+        'Real SMS and notification sending (providers to switch on)',
         'Live payment provider and reconciliation',
         'Per-resource authorization, production secrets, independent security review',
         'Written partner agreements and regulatory review',
@@ -439,11 +439,11 @@ export const en = {
     eyebrow: 'The next step is human',
     title: 'Let’s build an economy that recognises itself.',
     body:
-      'We are looking for three kinds of counterpart: merchants in Abidjan willing to test, a microfinance institution interested in a narrow consented pilot, and investors who accept that expansion is earned through proof.',
+      'We are looking for three kinds of counterpart: maquis and grocery owners in Abidjan willing to test for free, a microfinance institution interested in a narrow consented pilot, and investors who accept that expansion is earned through proof.',
     asks: [
-      { who: 'Merchants', what: 'A 5-to-10 outlet pilot in Abidjan, on one dense corridor.' },
-      { who: 'Institutions and partners', what: 'A review of the data flow, capture of existing payments and the consented referral model.' },
-      { who: 'Investors', what: 'The full brief: unit economics, per-phase exit gates, regulatory perimeter.' },
+      { who: 'Merchants', what: 'A free pilot with 5 to 10 maquis and grocery shops in one Abidjan commune.' },
+      { who: 'Institutions and partners', what: 'A review of the data flow and of the capture of existing payments; for an MFI, a consented tool to follow the sales of the merchants it finances.' },
+      { who: 'Investors', what: 'The full brief: pilot round, unit economics, per-phase exit gates, regulatory perimeter.' },
     ],
     cta: 'Write to the team',
     ctaSecondary: 'Read the investor brief',

@@ -37,15 +37,15 @@ export function RetailerSignIn() {
           <div className="r-field">
             <span className="r-ico">◯</span>
             <span>
-              <span className="r-field-label">Identifiant</span>
-              <span className="r-field-value">awa.kone</span>
+              <span className="r-field-label">Numero de telephone</span>
+              <span className="r-field-value">07 12 34 56 78</span>
             </span>
           </div>
           <div className="r-field">
             <span className="r-ico">▢</span>
             <span>
-              <span className="r-field-label">Mot de passe</span>
-              <span className="r-field-value">••••••••</span>
+              <span className="r-field-label">Code a 6 chiffres</span>
+              <span className="r-field-value">••••••</span>
             </span>
           </div>
           <div className="r-button">Se connecter</div>
