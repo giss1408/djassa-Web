@@ -327,6 +327,39 @@
   line-height: 1.72;
 }
 
+/* Day 1 → week 1 → month 3 */
+.hero-steps {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 44ch;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-steps li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
+
+.hero-steps strong {
+  color: var(--orange-text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-steps span {
+  color: var(--ink-soft);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

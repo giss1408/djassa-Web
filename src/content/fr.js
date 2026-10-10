@@ -12,9 +12,9 @@ import { learnFr } from './learn.fr.js'
 export const fr = {
   locale: 'fr-CI',
   meta: {
-    title: 'Fidelia — L’infrastructure de preuve du commerce de proximité',
+    title: 'Fidelia — Faire revenir les clients, prouver l’activité',
     description:
-      'Fidelia transforme une seule habitude — enregistrer une vente vérifiée — en historique d’activité exploitable pour les commerçants indépendants d’Abidjan, et en passerelle consentie vers les institutions financières agréées.',
+      'Fidelia aide les commerces de quartier d’Abidjan à faire revenir leurs clients, et transforme leurs ventes de tous les jours en une preuve qu’un prêteur peut croire.',
   },
   nav: {
     skip: 'Aller au contenu principal',
@@ -35,10 +35,15 @@ export const fr = {
     menuClose: 'Fermer le menu',
   },
   hero: {
-    eyebrow: 'Inclusion financière — construite depuis le commerce local',
-    title: 'Le progrès commence au coin de la rue.',
+    eyebrow: 'Pour les maquis et les épiceries d’Abidjan',
+    title: 'Vos clients reviennent. Vos ventes deviennent une preuve.',
     intro:
-      'En Côte d’Ivoire, 25 millions de comptes mobile money coexistent avec un taux de bancarisation de 31 %. L’accès existe ; la preuve d’activité manque. Fidelia construit cette preuve à partir de ce qui se passe déjà au comptoir : le client qui paie avec son portefeuille mobile, le commerçant qui encaisse. Et il en fait une raison pour le client de revenir.',
+      'Fidelia aide les commerces de quartier à faire revenir leurs clients, et transforme leurs ventes de tous les jours en une preuve qu’un prêteur peut croire. Il se branche sur le portefeuille que le commerçant utilise déjà, sans frais en plus.',
+    steps: [
+      { when: 'Jour 1', what: 'Un cahier de caisse : espèces et mobile money dans un seul total du jour.' },
+      { when: 'Semaine 1', what: 'Des points par numéro de téléphone, et chaque semaine les clients revenus et les nouveaux clients.' },
+      { when: 'Mois 3', what: 'Un historique qui appartient au commerçant, montré à un prêteur agréé seulement avec son accord.' },
+    ],
     primary: 'Lire la thèse d’investissement',
     secondary: 'Comprendre le concept',
     stage: {
@@ -84,12 +89,12 @@ export const fr = {
   },
   concept: {
     kicker: '01 / Le concept',
-    title: 'Une seule habitude.',
-    titleEm: 'Cinq usages.',
+    title: 'Une seule habitude :',
+    titleEm: 'enregistrer la vente.',
     lede:
-      'La plupart des outils marchands échouent parce qu’ils demandent une nouvelle habitude à chaque fonctionnalité. Fidelia n’en demande qu’une : enregistrer la vente. Tout le reste est une lecture différente du même événement.',
+      'Les outils marchands échouent quand chaque fonction demande une nouvelle habitude. Fidelia n’en demande qu’une, et les paiements mobile money sont même captés sans geste. Le pilote valide les deux premiers usages ; les trois suivants sont la vision à long terme.',
     body:
-      'Quand le client paie avec le QR du portefeuille que le commerçant utilise déjà (Wave d’abord, les autres opérateurs ensuite), la vente est capturée automatiquement et le client gagne ses points : zéro geste nouveau, zéro frais en plus. Les ventes en espèces s’enregistrent d’un geste, même hors ligne. Dès la première semaine, le commerçant y gagne un cahier de caisse : le total de sa journée, mobile money et espèces réunis, sans rapprocher ses portefeuilles à la main. La fidélité, l’historique de revenus, le suivi de tontine, l’indicateur de fiabilité et l’export de crédit ne sont pas cinq chantiers successifs : ce sont cinq vues sur un flux d’événements unique, qui deviennent visibles à mesure qu’il s’accumule.',
+      'Un paiement sur le QR que le commerçant utilise déjà (Wave d’abord) est capté automatiquement ; une vente en espèces s’enregistre d’un geste, même hors ligne. Chaque vente alimente le même flux : la fidélité et l’historique de revenus dès le pilote, puis, chacun derrière sa propre porte, le suivi de tontine, un indicateur de fiabilité et un dossier de crédit transmis à un partenaire agréé.',
     coreLabel: 'L’ÉVÉNEMENT',
     coreValue: 'transaction vérifiée',
     coreDetail: 'qui · où · combien · quand',
@@ -140,39 +145,46 @@ export const fr = {
   },
   landscape: {
     kicker: '03 / Le positionnement',
-    title: 'Là où le marché est déjà pris,',
-    titleEm: 'nous n’allons pas.',
+    title: 'Ce que les commerçants utilisent aujourd’hui,',
+    titleEm: 'et ce qui leur manque.',
     lede:
-      'L’écosystème ivoirien est structuré sur trois segments et vide sur un quatrième. Notre positionnement est une conséquence de cette lecture, pas une préférence.',
-    columns: ['Segment', 'Acteurs établis', 'Notre position'],
+      'Le vrai concurrent est le cahier papier. Les portefeuilles encaissent bien, mais aucun outil trouvé ne réunit un total couvrant tous les portefeuilles et les espèces, la fidélité par numéro de téléphone et un historique qu’un prêteur accepte.',
+    columns: ['Aujourd’hui', 'Ce qui manque', 'Fidelia'],
     rows: [
       {
-        segment: 'Finances personnelles grand public',
-        players: 'Djamo — 17 M$ levés (2025), 4,5 Md$ de transactions traitées',
-        stance: 'Évité',
-        verdict: 'out',
-        why: 'Leader régional établi. Aucun avantage pour un généraliste entrant.',
+        segment: 'Cahier papier et cartes de fidélité',
+        players: 'Aucun total entre portefeuilles, aucun client reconnu, aucune preuve pour un prêteur.',
+        stance: 'À remplacer',
+        verdict: 'in',
+        why: 'Un cahier de caisse plus rapide que le papier dès le jour 1, et la fidélité sans carte.',
       },
       {
-        segment: 'Paiement B2B et trésorerie PME',
-        players: 'Julaya, Hub2 — 55 clients en infrastructure',
-        stance: 'Évité',
-        verdict: 'out',
-        why: 'Marché déjà financé et structuré.',
-      },
-      {
-        segment: 'Paiement marchand et agrégation',
-        players: 'Wave (~1 % côté marchand, ~1 M de marchands QR), Orange Money, MTN MoMo, CinetPay ; QR interopérable PI-SPI de la BCEAO',
+        segment: 'Applications des portefeuilles (Wave, Orange Money, MTN MoMo)',
+        players: 'Un seul opérateur chacune, pas les espèces, aucun outil de fidélité trouvé.',
         stance: 'Partenaire',
         verdict: 'partner',
-        why: 'Nous nous branchons sur le QR que le commerçant utilise déjà, quel que soit l’opérateur. Nous ne lui vendons pas un paiement plus cher.',
+        why: 'Fidelia se branche sur le QR que le commerçant utilise déjà, quel que soit l’opérateur. Il ne lui vend pas un paiement plus cher.',
       },
       {
-        segment: 'Fidélité client et preuve d’activité marchande',
-        players: 'Aucun acteur ivoirien dominant',
-        stance: 'Notre place',
+        segment: 'WhatsApp Business et Facebook',
+        players: 'Aucune vente enregistrée, aucune mesure de qui revient ; les clients ignorent les diffusions.',
+        stance: 'À remplacer',
         verdict: 'in',
-        why: 'Segment vacant localement : les portefeuilles encaissent, mais aucun ne fait revenir le client. Aligné avec le chantier BCEAO sur le scoring alternatif.',
+        why: 'Des offres en notification dans l’application client, comptées au comptoir quand le client vient.',
+      },
+      {
+        segment: 'Applications de caisse avec fidélité',
+        players: 'Pas reliées au mobile money, pas d’historique consenti pour un prêteur.',
+        stance: 'À dépasser',
+        verdict: 'in',
+        why: 'Capture des portefeuilles, hors ligne d’abord sur des téléphones bon marché, preuve pour le crédit.',
+      },
+      {
+        segment: 'Finances personnelles et paiement B2B (Djamo, Julaya, Hub2)',
+        players: 'Un autre client : le particulier, ou l’entreprise plus grande qu’un maquis.',
+        stance: 'Évité',
+        verdict: 'out',
+        why: 'Segments déjà financés et structurés ; partenaires possibles plutôt que concurrents.',
       },
     ],
   },
@@ -448,7 +460,7 @@ export const fr = {
     asks: [
       { who: 'Commerçants', what: 'Un pilote gratuit de 5 à 10 maquis et épiceries, dans une commune d’Abidjan.' },
       { who: 'Institutions et partenaires', what: 'Une revue du flux de données et de la capture des paiements existants ; pour une IMF, un outil consenti pour suivre les ventes des commerçants qu’elle finance.' },
-      { who: 'Investisseurs', what: 'Le dossier complet : tour de pilote, économie unitaire, portes de sortie par phase, périmètre réglementaire.' },
+      { who: 'Investisseurs', what: 'Le dossier investisseur, derrière un mot de passe : le tour pilote, la taille du marché, la concurrence, les prévisions sur trois ans et les risques.' },
     ],
     cta: 'Écrire à l’équipe',
     ctaSecondary: 'Lire le dossier investisseur',

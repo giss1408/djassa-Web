@@ -16,6 +16,18 @@ export function Hero({ content }) {
             <h1>{hero.title}</h1>
             <p className="hero-intro">{hero.intro}</p>
 
+            {/* What the merchant gets, in the order they get it: the one
+                product story the investor readiness review asked the page
+                to tell before anything else. */}
+            <ol className="hero-steps">
+              {hero.steps.map((step) => (
+                <li key={step.when}>
+                  <strong>{step.when}</strong>
+                  <span>{step.what}</span>
+                </li>
+              ))}
+            </ol>
+
             <div className="hero-actions">
               <a className="button button-dark" href="#these">
                 {hero.primary}

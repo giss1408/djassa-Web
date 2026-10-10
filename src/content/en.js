@@ -7,9 +7,9 @@ import { learnEn } from './learn.en.js'
 export const en = {
   locale: 'en',
   meta: {
-    title: 'Fidelia — Proof infrastructure for local commerce',
+    title: 'Fidelia — Bring customers back, prove the business',
     description:
-      'Fidelia turns one habit — recording a verified sale — into usable business history for independent merchants in Abidjan, and into a consented bridge to licensed financial institutions.',
+      'Fidelia helps neighbourhood shops in Abidjan bring their customers back, and turns their everyday sales into proof a lender can trust.',
   },
   nav: {
     skip: 'Skip to main content',
@@ -30,10 +30,15 @@ export const en = {
     menuClose: 'Close menu',
   },
   hero: {
-    eyebrow: 'Financial inclusion — built from local commerce',
-    title: 'Progress starts at the corner shop.',
+    eyebrow: 'For the maquis and grocery shops of Abidjan',
+    title: 'Your customers come back. Your sales become proof.',
     intro:
-      'In Côte d’Ivoire, 25 million active mobile-money accounts coexist with a 31% banked rate. Access is solved; proof of activity is not. Fidelia builds that proof from what already happens at the counter, a customer paying from their mobile wallet and a merchant getting paid, and turns it into a reason for the customer to come back.',
+      'Fidelia helps neighbourhood shops bring their customers back, and turns their everyday sales into proof a lender can trust. It plugs into the wallet the merchant already uses, at no extra fee.',
+    steps: [
+      { when: 'Day 1', what: 'A cash book: cash and mobile money in one daily total.' },
+      { when: 'Week 1', what: 'Points by phone number, and each week the customers who came back and the new customers.' },
+      { when: 'Month 3', what: 'A history the merchant owns, shown to a licensed lender only with their consent.' },
+    ],
     primary: 'Read the investment thesis',
     secondary: 'Understand the concept',
     stage: {
@@ -79,12 +84,12 @@ export const en = {
   },
   concept: {
     kicker: '01 / The concept',
-    title: 'One habit.',
-    titleEm: 'Five uses.',
+    title: 'One habit:',
+    titleEm: 'record the sale.',
     lede:
-      'Most merchant tools fail because every new feature asks for a new habit. Fidelia asks for one: record the sale. Everything else is a different read of the same event.',
+      'Merchant tools fail when every feature asks for a new habit. Fidelia asks for one, and mobile-money payments are captured with none at all. The pilot validates the first two uses; the next three are the long-term vision.',
     body:
-      'When a customer pays with the wallet QR the merchant already uses (Wave first, other operators next), the sale is captured automatically and the customer earns points: zero new habit, zero extra fee. Cash sales are recorded in one tap, even offline. From the first week, the merchant gets a cash book: the day’s total, mobile money and cash together, without reconciling wallets by hand. Loyalty, revenue history, tontine tracking, the reliability indicator and the credit export are not five sequential projects: they are five views on a single event stream, becoming visible as it accumulates.',
+      'A payment to the QR the merchant already uses (Wave first) is captured automatically; a cash sale is recorded in one tap, even offline. Every sale feeds the same stream: loyalty and revenue history from the pilot, then, each behind its own gate, tontine tracking, a reliability indicator and a credit case sent to a licensed partner.',
     coreLabel: 'THE EVENT',
     coreValue: 'verified transaction',
     coreDetail: 'who · where · how much · when',
@@ -135,39 +140,46 @@ export const en = {
   },
   landscape: {
     kicker: '03 / Positioning',
-    title: 'Where the market is already taken,',
-    titleEm: 'we do not go.',
+    title: 'What merchants use today,',
+    titleEm: 'and what it is missing.',
     lede:
-      'The Ivorian ecosystem is structured across three segments and empty on a fourth. Our positioning follows from that reading, not from preference.',
-    columns: ['Segment', 'Established players', 'Our position'],
+      'The real competitor is the paper notebook. Wallets collect payments well, but no tool we found combines a total across every wallet and cash, loyalty by phone number and a history a lender accepts.',
+    columns: ['Today', 'What is missing', 'Fidelia'],
     rows: [
       {
-        segment: 'Consumer personal finance',
-        players: 'Djamo — $17M raised (2025), $4.5bn transactions processed',
-        stance: 'Avoided',
-        verdict: 'out',
-        why: 'Established regional leader. No edge for a generalist entrant.',
+        segment: 'Paper notebook and loyalty cards',
+        players: 'No total across wallets, no customer recognised, no proof for a lender.',
+        stance: 'To replace',
+        verdict: 'in',
+        why: 'A cash book faster than paper from day 1, and loyalty without cards.',
       },
       {
-        segment: 'B2B payments and SME treasury',
-        players: 'Julaya, Hub2 — 55 infrastructure clients',
-        stance: 'Avoided',
-        verdict: 'out',
-        why: 'Already funded and structured.',
-      },
-      {
-        segment: 'Merchant payments and aggregation',
-        players: 'Wave (~1% merchant fee, ~1M QR merchants), Orange Money, MTN MoMo, CinetPay; BCEAO PI-SPI interoperable QR',
+        segment: 'Wallet apps (Wave, Orange Money, MTN MoMo)',
+        players: 'One operator each, no cash, no loyalty tool found.',
         stance: 'Partner',
         verdict: 'partner',
-        why: 'We plug into the QR the merchant already uses, whatever the operator. We do not sell them a more expensive payment.',
+        why: 'Fidelia plugs into the QR the merchant already uses, whatever the operator. It never sells them a more expensive payment.',
       },
       {
-        segment: 'Customer loyalty and merchant activity proof',
-        players: 'No dominant Ivorian player',
-        stance: 'Our place',
+        segment: 'WhatsApp Business and Facebook',
+        players: 'No sales recorded, no measure of who came back; customers ignore broadcasts.',
+        stance: 'To replace',
         verdict: 'in',
-        why: 'Locally vacant: wallets collect payments, but none brings the customer back. Aligned with BCEAO’s work on alternative scoring.',
+        why: 'Offers by notification in the customer app, counted at the counter when the customer comes.',
+      },
+      {
+        segment: 'Point-of-sale apps with loyalty',
+        players: 'Not connected to mobile money, no consented history for a lender.',
+        stance: 'To outdo',
+        verdict: 'in',
+        why: 'Wallet capture, offline-first on cheap phones, proof for credit.',
+      },
+      {
+        segment: 'Personal finance and B2B payments (Djamo, Julaya, Hub2)',
+        players: 'A different customer: the individual, or a firm larger than a maquis.',
+        stance: 'Avoided',
+        verdict: 'out',
+        why: 'Segments already funded and structured; possible partners rather than competitors.',
       },
     ],
   },
@@ -443,7 +455,7 @@ export const en = {
     asks: [
       { who: 'Merchants', what: 'A free pilot with 5 to 10 maquis and grocery shops in one Abidjan commune.' },
       { who: 'Institutions and partners', what: 'A review of the data flow and of the capture of existing payments; for an MFI, a consented tool to follow the sales of the merchants it finances.' },
-      { who: 'Investors', what: 'The full brief: pilot round, unit economics, per-phase exit gates, regulatory perimeter.' },
+      { who: 'Investors', what: 'The investor brief, behind a password: the pilot round, market size, competition, the three-year forecast and the risks.' },
     ],
     cta: 'Write to the team',
     ctaSecondary: 'Read the investor brief',

@@ -7,6 +7,15 @@ grouped by the day the work landed. The product was called **Djassa** until
 
 ## 2026-10-10
 
+- **Investor readiness applied to the site** (see fidelia-BE
+  `docs/business/INVESTOR-READINESS.md`): the hero tells the story in one
+  sentence ("Vos clients reviennent. Vos ventes deviennent une preuve.") with
+  the day 1 / week 1 / month 3 steps; page title and share previews match;
+  the concept says the pilot validates the first two uses and the rest is the
+  long-term vision; positioning now compares what merchants use today (paper
+  notebook, wallet apps, WhatsApp, point-of-sale apps) with what is missing;
+  the investor call to action says what the password-protected brief holds.
+  Forecasts and round terms stay behind the password.
 - **Content aligned with the pilot boundaries** (`CONCEPT.md` § 12): the
   Thesis section's federated-identity block is replaced by **the pilot**
   (two questions, 5 to 10 maquis and grocery shops in one commune, free, and
