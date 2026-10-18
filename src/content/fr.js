@@ -18,7 +18,8 @@ export const fr = {
   },
   nav: {
     skip: 'Aller au contenu principal',
-    home: 'Fidelia — accueil',
+    home: 'Fidelia, un produit de MILIKEY ENERGY — accueil',
+    byline: 'un produit de MILIKEY ENERGY',
     links: [
       { href: '#concept', label: 'Le concept' },
       { href: '#demo', label: 'La démo' },
@@ -466,7 +467,7 @@ export const fr = {
     ctaSecondary: 'Lire le dossier investisseur',
   },
   footer: {
-    rights: '© 2026 Fidelia — Abidjan, Côte d’Ivoire',
+    rights: '© 2026 Fidelia, un produit de MILIKEY ENERGY SARLU (RCCM CI-ABJ-03-2023-B13-07947) — Abidjan, Côte d’Ivoire',
     note: 'Un produit en construction, avec soin.',
     brandNote:
       'Fidelia est un produit unique ; le nom « Dkassa », employé dans des notes anciennes, n’est plus utilisé. Le nom de marque définitif reste à confirmer juridiquement.',

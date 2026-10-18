@@ -61,11 +61,17 @@ export function Mark({ tone = 'tile', className }) {
   )
 }
 
-export function Brand({ withWordmark = true, label }) {
+// `byline` names the company behind the product (MILIKEY ENERGY) under the wordmark.
+export function Brand({ withWordmark = true, label, byline }) {
   return (
     <a className="brand" href="#top" aria-label={label}>
       <Mark className="brand-mark" />
-      {withWordmark ? <span className="brand-word">Fidelia</span> : null}
+      {withWordmark ? (
+        <span className="brand-text">
+          <span className="brand-word">Fidelia</span>
+          {byline ? <span className="brand-byline">{byline}</span> : null}
+        </span>
+      ) : null}
     </a>
   )
 }

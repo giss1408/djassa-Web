@@ -46,7 +46,7 @@ export function Nav({ content, locale, onToggleLocale }) {
   return (
     <header className={`nav-wrap ${scrolled ? 'is-scrolled' : ''}`}>
       <nav className="nav shell" aria-label={nav.home}>
-        <Brand label={nav.home} />
+        <Brand label={nav.home} byline={nav.byline} />
 
         <div
           id="nav-panel"

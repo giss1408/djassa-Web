@@ -46,7 +46,7 @@ export function Closing({ content }) {
       <footer className="footer">
         <div className="shell">
           <div className="footer-top">
-            <Brand label={nav.home} />
+            <Brand label={nav.home} byline={nav.byline} />
             <div className="footer-meta">
               <span>{footer.rights}</span>
               <span>{footer.note}</span>
