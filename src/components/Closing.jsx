@@ -50,6 +50,9 @@ export function Closing({ content }) {
             <div className="footer-meta">
               <span>{footer.rights}</span>
               <span>{footer.note}</span>
+              <span>
+                <a href="/confidentialite/">{footer.privacy}</a> · <a href="/supprimer-mon-compte/">{footer.deletion}</a>
+              </span>
             </div>
           </div>
 

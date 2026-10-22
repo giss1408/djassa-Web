@@ -468,6 +468,8 @@ export const fr = {
   },
   footer: {
     rights: 'Un produit du groupe MILIKEY ENERGY',
+    privacy: 'Politique de confidentialité',
+    deletion: 'Supprimer votre compte',
     note: 'Un produit en construction, avec soin.',
     brandNote:
       'Fidelia est un produit unique ; le nom « Dkassa », employé dans des notes anciennes, n’est plus utilisé. Le nom de marque définitif reste à confirmer juridiquement.',

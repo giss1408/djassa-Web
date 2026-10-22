@@ -83,7 +83,7 @@ services:
       - type: rewrite
         source: /app/
         destination: /app/index.html
-      # Google Play links: the privacy policy and the account deletion page.
+      # Google Play and App Store links: the privacy policy and the account deletion page.
       - type: rewrite
         source: /confidentialite
         destination: /confidentialite/index.html

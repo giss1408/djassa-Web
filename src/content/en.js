@@ -463,6 +463,8 @@ export const en = {
   },
   footer: {
     rights: 'A product of the MILIKEY ENERGY group',
+    privacy: 'Privacy policy (French)',
+    deletion: 'Delete your account (French)',
     note: 'A product under construction, built with care.',
     brandNote:
       'Fidelia is a single product; the name “Dkassa”, used in early notes, is no longer used. The final brand name remains to be legally confirmed.',
