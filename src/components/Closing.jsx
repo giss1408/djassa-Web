@@ -1,7 +1,7 @@
 import { briefUrl } from '../apiBase.js'
 import { Brand } from './Primitives.jsx'
 
-const CONTACT = 'contact.fidelia@regisse.com'
+const CONTACT = 'fidelia@milikey-energy.com'
 
 export function Closing({ content }) {
   const { closing, footer, nav } = content

@@ -5,6 +5,15 @@ test site deploys `integration`, production deploys `trunk`. Entries are
 grouped by the day the work landed. The product was called **Djassa** until
 6 October 2026, then **Hossouko**, and is **Fidelia** since 9 October.
 
+## 2026-10-24
+
+- **Contact address `fidelia@milikey-energy.com`** everywhere on the site
+  (home page, investor brief link, download page, privacy policy, account
+  deletion page), in place of `contact.fidelia@regisse.com`.
+- **Privacy policy**: sign-in is by phone number and password; the Fidelia
+  team sends verification codes on WhatsApp. No SMS provider any more.
+- **Download page**: test accounts sign in with their number and password.
+
 ## 2026-10-10
 
 - **Investor readiness applied to the site** (see fidelia-BE

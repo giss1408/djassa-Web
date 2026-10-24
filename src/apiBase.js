@@ -13,5 +13,5 @@ export const API_BASE = (
 export function briefUrl(path, locale) {
   if (API_BASE) return `${API_BASE}${path}`
   const subject = locale === 'en' ? 'Fidelia investor brief' : 'Dossier investisseur Fidelia'
-  return `mailto:contact.fidelia@regisse.com?subject=${encodeURIComponent(subject)}`
+  return `mailto:fidelia@milikey-energy.com?subject=${encodeURIComponent(subject)}`
 }
